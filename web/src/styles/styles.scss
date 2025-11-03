@@ -1,0 +1,913 @@
+/* Styles for Aca Ganadería */
+
+// Import custom Bootstrap utilities
+@use 'bootstrap-custom';
+@use 'sass:color';
+
+// Color Palette
+$color-1: #636363; // Text
+$color-2: #ffffff; // White
+$color-3: #586440; // Main Green
+$color-4: #b8cc7a; // Secondary Green
+$color-5: #ff9103; // Accent Orange
+$color-6: #c6923e; // Secondary Orange
+$color-7: #7e9150; // Nutrición
+$color-8: #cbdd92; // Secondary Nutrición
+$color-9: #372725; // Sanidad
+$color-10: #ece5cc; // Secondary Sanidad
+$color-11: #9faf5a; // Hacienda
+$color-12: #eef4ba; // Secondary Hacienda
+$color-13: #c47e3f; // Producción
+$color-14: #f2c688; // Secondary Producción
+$color-15: #fafafa; // Light Gray
+$color-16: #fff2e4; // Tabla BG 1
+$color-17: #fff8f1; // Tabla BG 2
+
+// Layout
+$header-height: 97px;
+
+// Container custom max-width
+.container {
+  @media (min-width: 1400px) {
+    max-width: 1620px;
+  }
+}
+
+// Color utilities
+// Text colors
+.text-color-1 {
+  color: $color-1;
+}
+.text-color-2 {
+  color: $color-2;
+}
+.text-color-3 {
+  color: $color-3;
+}
+.text-color-4 {
+  color: $color-4;
+}
+.text-color-5 {
+  color: $color-5;
+}
+.text-color-6 {
+  color: $color-6;
+}
+.text-color-7 {
+  color: $color-7;
+}
+.text-color-8 {
+  color: $color-8;
+}
+.text-color-9 {
+  color: $color-9;
+}
+.text-color-10 {
+  color: $color-10;
+}
+.text-color-11 {
+  color: $color-11;
+}
+.text-color-12 {
+  color: $color-12;
+}
+.text-color-13 {
+  color: $color-13;
+}
+.text-color-14 {
+  color: $color-14;
+}
+.text-color-15 {
+  color: $color-15;
+}
+
+// Background colors
+.bg-color-1 {
+  background-color: $color-1;
+}
+.bg-color-2 {
+  background-color: $color-2;
+}
+.bg-color-3 {
+  background-color: $color-3;
+}
+.bg-color-4 {
+  background-color: $color-4;
+}
+.bg-color-5 {
+  background-color: $color-5;
+}
+.bg-color-6 {
+  background-color: $color-6;
+}
+.bg-color-7 {
+  background-color: $color-7;
+}
+.bg-color-8 {
+  background-color: $color-8;
+}
+.bg-color-9 {
+  background-color: $color-9;
+}
+.bg-color-10 {
+  background-color: $color-10;
+}
+.bg-color-11 {
+  background-color: $color-11;
+}
+.bg-color-12 {
+  background-color: $color-12;
+}
+.bg-color-13 {
+  background-color: $color-13;
+}
+.bg-color-14 {
+  background-color: $color-14;
+}
+.bg-color-15 {
+  background-color: $color-15;
+}
+.bg-color-16 {
+  background-color: $color-16;
+}
+.bg-color-17 {
+  background-color: $color-17;
+}
+
+// Border colors
+.border-color-1 {
+  border-color: $color-1 !important;
+}
+.border-color-2 {
+  border-color: $color-2 !important;
+}
+.border-color-3 {
+  border-color: $color-3 !important;
+}
+.border-color-4 {
+  border-color: $color-4 !important;
+}
+.border-color-5 {
+  border-color: $color-5 !important;
+}
+.border-color-6 {
+  border-color: $color-6 !important;
+}
+.border-color-7 {
+  border-color: $color-7 !important;
+}
+.border-color-8 {
+  border-color: $color-8 !important;
+}
+.border-color-9 {
+  border-color: $color-9 !important;
+}
+.border-color-10 {
+  border-color: $color-10 !important;
+}
+.border-color-11 {
+  border-color: $color-11 !important;
+}
+.border-color-12 {
+  border-color: $color-12 !important;
+}
+.border-color-13 {
+  border-color: $color-13 !important;
+}
+.border-color-14 {
+  border-color: $color-14 !important;
+}
+.border-color-15 {
+  border-color: $color-15 !important;
+}
+
+// Base styles
+html {
+  // Compensate for fixed header when scrolling to anchors
+  scroll-padding-top: $header-height;
+}
+
+body {
+  font-family: 'Heebo', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $color-1;
+  // Add padding for fixed header
+  padding-top: $header-height;
+}
+
+// Typography
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-weight: 600;
+  color: $color-3;
+}
+
+h1,
+.h1 {
+  font-size: 70px;
+}
+h2,
+.h2 {
+  font-size: 40px;
+}
+h3,
+.h3 {
+  font-size: 24px;
+}
+h4,
+.h4 {
+  font-size: 20px;
+}
+h5,
+.h5 {
+  font-size: 16px;
+}
+h6,
+.h6 {
+  font-size: 14px;
+}
+
+// Responsive typography for mobile
+@media (max-width: 767.98px) {
+  h1,
+  .h1 {
+    font-size: 40px;
+  }
+  h2,
+  .h2 {
+    font-size: 28px;
+  }
+  h3,
+  .h3 {
+    font-size: 20px;
+  }
+  h4,
+  .h4 {
+    font-size: 18px;
+  }
+
+  .lead {
+    font-size: 18px;
+  }
+}
+
+// Product Detail Page
+.product-detail-image {
+  max-height: 420px;
+}
+
+// Font size utilities
+.fs-18 {
+  font-size: 18px;
+}
+.fs-20 {
+  font-size: 20px;
+}
+.fs-24 {
+  font-size: 24px;
+}
+.fs-40 {
+  font-size: 40px;
+}
+
+@media (max-width: 767.98px) {
+  .fs-24 {
+    font-size: 18px;
+  }
+  .fs-40 {
+    font-size: 28px;
+  }
+}
+
+// Line over Heading
+hr {
+  color: $color-3;
+  opacity: 1;
+  width: 118px;
+  --bs-border-width: 10px;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.heading-hr {
+  color: $color-3;
+  opacity: 1;
+  width: 118px;
+  --bs-border-width: 10px;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.heading-hr-white {
+  color: $color-2;
+  opacity: 1;
+  width: 118px;
+  --bs-border-width: 10px;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.lead {
+  font-size: 24px;
+}
+
+small,
+.small {
+  font-size: 14px;
+}
+
+// Rounded corners utilities
+.border-top-left-radius-50 {
+  border-top-left-radius: 50px !important;
+}
+.border-top-right-radius-50 {
+  border-top-right-radius: 50px !important;
+}
+.border-bottom-left-radius-50 {
+  border-bottom-left-radius: 50px !important;
+}
+.border-bottom-right-radius-50 {
+  border-bottom-right-radius: 50px !important;
+}
+
+.border-top-left-radius-40 {
+  border-top-left-radius: 40px !important;
+}
+.border-top-right-radius-40 {
+  border-top-right-radius: 40px !important;
+}
+.border-bottom-left-radius-40 {
+  border-bottom-left-radius: 40px !important;
+}
+.border-bottom-right-radius-40 {
+  border-bottom-right-radius: 40px !important;
+}
+
+// Icons
+.icon-16 {
+  width: 16px;
+  height: 16px;
+}
+.icon-24 {
+  width: 24px;
+  height: 24px;
+}
+.icon-32 {
+  width: 32px;
+  height: 32px;
+}
+.icon-48 {
+  width: 48px;
+  height: 48px;
+}
+.icon-64 {
+  width: 64px;
+  height: 64px;
+}
+.icon-128 {
+  width: 128px;
+  height: 128px;
+}
+.icon-168 {
+  width: 168px;
+  height: 168px;
+}
+
+// Min-Height
+.min-height-48 {
+  height: 48px;
+}
+
+// Components
+.badge {
+  padding: 4px 10px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.btn {
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 12px 20px;
+}
+
+.btn-primary {
+  background-color: $color-5 !important;
+  border-color: $color-5 !important;
+  border-width: 2px !important;
+
+  &:hover {
+    background-color: color.adjust($color-5, $lightness: -5%) !important;
+    border-color: color.adjust($color-5, $lightness: -5%) !important;
+  }
+
+  &:focus-visible {
+    box-shadow: 0px 0px 12px 0px rgba($color-1, 0.5) !important;
+  }
+}
+
+.btn-outline-primary {
+  color: $color-5 !important;
+  border-color: $color-5 !important;
+  border-width: 2px !important;
+  background-color: transparent !important;
+
+  &:hover {
+    background-color: $color-5 !important;
+    border-color: $color-5 !important;
+    color: $color-2 !important;
+  }
+
+  &:focus-visible {
+    box-shadow: 0px 0px 12px 0px rgba($color-1, 0.5) !important;
+  }
+}
+
+.btn-light {
+  color: $color-7 !important;
+
+  &:hover {
+    background-color: $color-8 !important;
+    border-color: $color-8 !important;
+  }
+
+  &:focus-visible {
+    box-shadow: 0px 0px 12px 0px rgba($color-1, 0.5) !important;
+  }
+}
+
+.btn-link {
+  color: $color-5 !important;
+
+  &:hover {
+    color: $color-6 !important;
+  }
+
+  &:focus-visible {
+    box-shadow: 0px 0px 12px 0px rgba($color-1, 0.5) !important;
+  }
+}
+
+// Box hover effect
+.box-hover {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 12px 0px rgba($color-1, 0.5);
+  }
+}
+
+// Form controls
+.form-control,
+textarea {
+  border-radius: 10px !important;
+
+  &:focus {
+    border-color: $color-1 !important;
+    box-shadow: 0px 0px 12px 0px rgba($color-1, 0.5) !important;
+  }
+}
+
+// Allow textareas to respect rows attribute
+.form-floating > textarea {
+  height: auto !important;
+  min-height: auto !important;
+}
+
+// Form select with custom arrow
+.form-select {
+  color: $color-1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%237E9150'/%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M8 10l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 24px;
+  padding: 12px 3rem 12px 16px !important;
+  border-radius: 10px !important;
+  min-height: calc(3.5rem + calc(var(--bs-border-width) * 2));
+
+  &:focus {
+    border-color: $color-1 !important;
+    box-shadow: 0px 0px 12px 0px rgba($color-1, 0.5) !important;
+  }
+}
+
+// =============================================================================
+// TOM SELECT STYLES
+// =============================================================================
+// Custom styling for Tom Select plugin to match Bootstrap form-select
+// Tom Select: https://tom-select.js.org/
+
+// Tom Select - Main control styling
+.ts-wrapper {
+  .ts-control {
+    // Colors and background
+    color: $color-1 !important;
+    background-color: white !important;
+    // Custom dropdown arrow icon (SVG)
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%237E9150'/%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M8 10l4 4 4-4'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.75rem center !important;
+    background-size: 24px !important;
+
+    // Border and shape
+    border: 1px solid #dee2e6 !important;
+    border-radius: 10px !important;
+
+    // Spacing
+    padding: 12px 3rem 12px 16px !important;
+    min-height: calc(3.5rem + calc(var(--bs-border-width) * 2)) !important;
+
+    // Hide default Tom Select dropdown arrow
+    &::after {
+      display: none !important;
+    }
+
+    // Selected item styling
+    .item {
+      padding: 0 !important;
+    }
+  }
+
+  // Tom Select - Focus state
+  &.focus .ts-control {
+    border-color: $color-1 !important;
+    box-shadow: 0px 0px 12px 0px rgba($color-1, 0.5) !important;
+    outline: 0 !important;
+  }
+
+  // Tom Select - Dropdown menu styling
+  .ts-dropdown {
+    border: 1px solid $color-1 !important;
+    border-radius: 10px !important;
+    box-shadow: 0px 0px 12px 0px rgba($color-1, 0.3) !important;
+    margin-top: 0.25rem;
+
+    // Dropdown options
+    .option {
+      padding: 12px 16px !important;
+      border-radius: 5px !important;
+      margin: 4px 8px !important;
+
+      // Option hover and active states
+      &:hover,
+      &.active {
+        background-color: rgba($color-3, 0.1) !important;
+        color: $color-3 !important;
+      }
+    }
+  }
+}
+
+// Tom Select - Floating label integration
+// Works with Bootstrap's .form-floating for animated labels
+html .form-floating {
+  // When select has no value (.no-value class added by JS)
+  &.no-value > .ts-wrapper ~ label {
+    transform: none !important;
+    opacity: 1;
+    color: #636363;
+    top: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  // When select has a value (no .no-value class)
+  &:not(.no-value) > .ts-wrapper ~ label {
+    color: rgba(var(--bs-body-color-rgb), 0.65);
+  }
+
+  // Adjust Tom Select control padding when has value (matches floating label inputs)
+  &:not(.no-value) .ts-control {
+    padding-top: 1.625rem !important;
+    padding-bottom: 0.625rem !important;
+    line-height: 1;
+  }
+}
+
+// Pagination
+.pagination {
+  .page-item {
+    .page-link {
+      border: none;
+      background-color: transparent;
+      color: $color-1;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 4px;
+
+      &:hover {
+        background-color: $color-5;
+        color: $color-2;
+      }
+    }
+
+    &.active .page-link {
+      background-color: $color-5;
+      color: $color-2;
+
+      &:hover {
+        background-color: $color-5;
+        color: $color-2;
+      }
+    }
+  }
+}
+
+// Header
+header {
+  background-color: $color-3;
+  height: $header-height;
+}
+
+// Navbar
+.navbar {
+  // Off-canvas mobile menu styles
+  .offcanvas {
+    background-color: $color-3;
+
+    .btn-close {
+      filter: invert(1) grayscale(100%) brightness(200%);
+    }
+
+    .offcanvas-header {
+      height: $header-height;
+    }
+
+    .offcanvas-title {
+      img {
+        height: 50px;
+        width: auto;
+      }
+    }
+  }
+
+  &.fixed-top {
+    box-shadow: 0 2px 4px rgba($color-3, 0.1);
+  }
+
+  .navbar-logo {
+    height: 64px;
+    width: auto;
+  }
+
+  .nav-link {
+    color: $color-2 !important;
+    transition: color 0.3s ease;
+    font-weight: 600;
+
+    &:hover,
+    &.active {
+      color: $color-4 !important;
+    }
+  }
+
+  .navbar-brand {
+    color: $color-2;
+    &:hover {
+      color: $color-4;
+    }
+  }
+
+  .navbar-collapse {
+    flex-grow: 0;
+  }
+
+  .navbar-nav {
+    margin: 0 auto;
+
+    .nav-item {
+      margin-right: 60px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// Hero styles
+#home-hero {
+  .carousel-item {
+    height: calc(100vh - #{$header-height});
+    min-height: 600px;
+    position: relative;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+    }
+  }
+
+  .carousel-caption {
+    bottom: 80px;
+    text-align: left;
+    z-index: 9;
+
+    .carousel-logo {
+      max-height: 108px;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      opacity: 0.9;
+    }
+
+    h1 {
+      font-weight: 300;
+      line-height: 1.2;
+      margin-top: 1rem;
+    }
+  }
+
+  .carousel-indicators {
+    bottom: 20px;
+  }
+}
+
+#internal-hero {
+  height: 500px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+  }
+}
+
+// Carousel secundario styles
+#carousel-secundario {
+  .carousel-item {
+    height: 600px;
+    position: relative;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    }
+  }
+
+  .carousel-caption {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: left;
+    z-index: 9;
+    padding: 0;
+
+    .carousel-logo {
+      height: 108px;
+      width: auto;
+    }
+
+    .carousel-product-image {
+      height: auto;
+      max-height: 600px;
+    }
+  }
+
+  .carousel-indicators {
+    position: relative;
+    margin: 0;
+  }
+
+  @media (max-width: 991.98px) {
+    .carousel-item {
+      height: auto;
+      min-height: 600px;
+
+      > img {
+        position: absolute;
+        height: 100%;
+        min-height: 100%;
+      }
+    }
+
+    .carousel-caption {
+      position: relative;
+    }
+  }
+}
+
+// Carousel general styles
+.carousel-indicators {
+  [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background-color: $color-3;
+    margin: 0 15px;
+    opacity: 1;
+
+    &.active {
+      background-color: $color-5;
+    }
+  }
+}
+
+// Áreas Section - Background images
+.nutricion-bg {
+  background-image: url('/img/icons/icon-nutricion-bg.svg');
+  background-repeat: repeat-y;
+  background-position: 5px 0px;
+  background-size: 65px;
+}
+
+.sanidad-bg {
+  background-image: url('/img/icons/icon-sanidad-bg.svg');
+  background-repeat: repeat-y;
+  background-position: 5px 0px;
+  background-size: 65px;
+}
+
+.hacienda-bg {
+  background-image: url('/img/icons/icon-hacienda-bg.svg');
+  background-repeat: repeat-y;
+  background-position: 5px 0px;
+  background-size: 65px;
+}
+
+.produccion-bg {
+  background-image: url('/img/icons/icon-produccion-bg.svg');
+  background-repeat: repeat-y;
+  background-position: 5px 0px;
+  background-size: 65px;
+}
+
+// Contacto Section
+.contacto-bg {
+  background-image: url('/img/sections/contacto/news-placeholder.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 600px;
+}
+
+.contacto-form-pe {
+  padding-right: max(12px, calc((100% - 1320px) / 2));
+}
+
+.contacto-content-bg {
+  @media (min-width: 1600px) {
+    background-image: url('/img/icons/icon-contacto-bg.svg');
+    background-repeat: repeat-y;
+    background-position: right top;
+    background-size: 88px;
+  }
+}
+
+// Footer
+footer {
+  background-color: $color-7;
+  color: $color-2;
+
+  .footer-logo {
+    max-height: 80px;
+  }
+  .footer-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
