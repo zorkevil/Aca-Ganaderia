@@ -52,7 +52,7 @@ export default function Footer() {
         </div>
 
         {/* Footer bottom */}
-        <div className="row mt-4 pt-4 border-top border-color-2">
+        <div className="row mt-4 pt-4">
           {/* Redes sociales */}
           <div
             className="col-md-4 mb-3 mb-md-0 d-flex align-items-center justify-content-center justify-content-md-start wow animate__animated animate__fadeInUp"

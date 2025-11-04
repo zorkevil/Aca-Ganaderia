@@ -1,18 +1,5 @@
 // Bootstrap custom utilities
-
-// Custom spacing sizes
-$space-6: 4rem;  // 64px
-$space-7: 5rem;  // 80px
-
-// Bootstrap breakpoints
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
-);
+@use 'variables' as *;
 
 // Responsive spacing utilities mixin
 @mixin create-responsive-spaces($size, $space) {

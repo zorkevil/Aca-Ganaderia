@@ -1,0 +1,48 @@
+// =============================================================================
+// VARIABLES
+// =============================================================================
+// Archivo centralizado para todas las variables del proyecto
+
+// =============================================================================
+// COLOR PALETTE
+// =============================================================================
+$color-1: #636363;   // Text
+$color-2: #ffffff;   // White
+$color-3: #586440;   // Main Green
+$color-4: #B8CC7A;   // Secondary Green
+$color-5: #FF9103;   // Accent Orange
+$color-6: #C6923E;   // Secondary Orange
+$color-7: #7E9150;   // Nutrición
+$color-8: #CBDD92;   // Secondary Nutrición
+$color-9: #372725;   // Sanidad
+$color-10: #ECE5CC;  // Secondary Sanidad
+$color-11: #9FAF5A;  // Hacienda
+$color-12: #EEF4BA;  // Secondary Hacienda
+$color-13: #C47E3F;  // Producción
+$color-14: #F2C688;  // Secondary Producción
+$color-15: #FAFAFA;  // Light Gray
+$color-16: #FFF2E4;  // Tabla BG 1
+$color-17: #FFF8F1;  // Tabla BG 2
+
+// =============================================================================
+// LAYOUT
+// =============================================================================
+$header-height: 97px;
+
+// =============================================================================
+// SPACING
+// =============================================================================
+$space-6: 4rem;  // 64px
+$space-7: 5rem;  // 80px
+
+// =============================================================================
+// BREAKPOINTS
+// =============================================================================
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
