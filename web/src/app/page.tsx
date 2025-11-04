@@ -1,12 +1,15 @@
-import { heroSlides, areas, news } from '@/lib/home';
-import Badge from '@/components/Badge';
+'use client';
+
+import { heroSlides, services, news } from '@/lib/home';
+import NewsCard from '@/components/NewsCard';
+import TomSelectControl from '@/components/TomSelectControl';
 
 /*
 // Futuro:
-import { getHeroSlides, getAreas, getLatestNews } from "@/lib/api";
+import { getHeroSlides, getServices, getLatestNews } from "@/lib/api";
 
 const heroSlides = await getHeroSlides();
-const areas = await getAreas();
+const services = await getServices();
 const news = await getLatestNews();
 */
 
@@ -135,7 +138,7 @@ export default function HomePage() {
           <div className="row justify-content-center">
             <div className="col-xxl-10">
               <div className="row g-4">
-                {areas.map((a, i) => {
+                {services.map((a, i) => {
                   const delay = (0 + i * 0.1).toFixed(1);
                   return (
                     <div
@@ -184,50 +187,9 @@ export default function HomePage() {
           </div>
 
           <div className="row g-4">
-            {news.map((n, i) => {
-              const delay = (0.2 + i * 0.1).toFixed(1);
-
-              // Formatear fecha (día y mes)
-              const date = new Date(n.date);
-              const day = date.getDate().toString().padStart(2, '0');
-              const month = date.toLocaleString('es-AR', { month: 'short' }).toUpperCase();
-
-              // Imagen con fallback si está vacía
-              const imageSrc =
-                n.image && n.image.trim() !== ''
-                  ? n.image
-                  : '/img/sections/noticias/news-placeholder.jpg';
-
-              return (
-                <div
-                  key={i}
-                  className="col-md-6 col-xl-3 wow animate__animated animate__fadeInUp"
-                  data-wow-delay={`${delay}s`}
-                >
-                  <div className="h-100 border border-color-3 overflow-hidden border-top-right-radius-50 border-bottom-left-radius-50 bg-white">
-                    <div className="position-relative">
-                      <img
-                        src={imageSrc}
-                        className="w-100 wow animate__animated animate__fadeIn"
-                        alt={n.title}
-                      />
-                      <div className="position-absolute top-0 start-0 bg-color-6 text-white p-3">
-                        <div className="fs-40 fw-semibold lh-1">{day}</div>
-                        <div className="fs-24 fw-semibold lh-1">{month}</div>
-                      </div>
-                    </div>
-                    <div className="p-3 d-flex flex-column text-center">
-                      <h4 className="text-color-3">{n.title}</h4>
-                      <Badge n={n} />
-                      <p className="text-color-1 small flex-grow-1 mb-2">{n.excerpt}</p>
-                      <a href={`${n.href}`} className="btn btn-link mt-auto">
-                        Ver noticia
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+            {news.map((n, i) => (
+              <NewsCard key={i} n={n} index={i} />
+            ))}
           </div>
 
           <div className="row mt-5">
@@ -333,14 +295,52 @@ export default function HomePage() {
                     data-wow-delay="0.7s"
                   >
                     <div className="form-floating">
-                      <select className="form-select tom-select" id="rol" required defaultValue="">
+                      <TomSelectControl
+                        id="rol"
+                        className="form-select"
+                        required
+                        defaultValue=""
+                        tomOptions={{
+                          controlInput: null,
+                          allowEmptyOption: false,
+                          dropdownParent: 'body',
+                          onChange: (value: string | string[]) => {
+                            const val = Array.isArray(value) ? value[0] : value;
+                            const otroContainer = document.getElementById('otro-rol-container');
+                            const otroInput = document.getElementById(
+                              'otro-rol',
+                            ) as HTMLInputElement | null;
+                            if (!otroContainer || !otroInput) return;
+
+                            if (val === 'otro') {
+                              otroContainer.style.display = 'block';
+                              otroInput.required = true;
+
+                              const wowElements = otroContainer.querySelectorAll('.wow');
+                              wowElements.forEach((element) => {
+                                // Clonar el nodo para reiniciar animación
+                                const clone = element.cloneNode(true) as HTMLElement;
+                                clone.style.visibility = 'hidden';
+                                element.parentNode?.replaceChild(clone, element);
+                                setTimeout(() => {
+                                  clone.style.visibility = 'visible';
+                                }, 50); // pequeño delay para suavizar
+                              });
+                            } else {
+                              otroContainer.style.display = 'none';
+                              otroInput.required = false;
+                              otroInput.value = '';
+                            }
+                          },
+                        }}
+                      >
                         <option value=""></option>
                         <option value="productor">Productor</option>
                         <option value="asesor">Asesor</option>
                         <option value="ingeniero-agronomo">Ingeniero Agrónomo</option>
                         <option value="veterinario">Veterinario</option>
                         <option value="otro">Otro</option>
-                      </select>
+                      </TomSelectControl>
                       <label htmlFor="rol">Rol</label>
                     </div>
                   </div>

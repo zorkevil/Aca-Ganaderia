@@ -1,4 +1,4 @@
-import type { HeroSlide, Area, NewsItem } from './types';
+import type { HeroSlide, ServicesItem, NewsItem } from './types';
 
 export const heroSlides: HeroSlide[] = [
   {
@@ -24,7 +24,7 @@ export const heroSlides: HeroSlide[] = [
   },
 ];
 
-export const areas: Area[] = [
+export const services: ServicesItem[] = [
   {
     id: 'nutricion',
     title: 'Nutrición',

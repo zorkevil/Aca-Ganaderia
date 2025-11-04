@@ -7,7 +7,7 @@ export interface HeroSlide {
   link?: string;
 }
 
-export interface Area {
+export interface ServicesItem {
   id: string;
   title: string;
   description: string;
