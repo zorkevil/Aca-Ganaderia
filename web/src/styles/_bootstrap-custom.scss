@@ -4,11 +4,21 @@
 // Responsive spacing utilities mixin
 @mixin create-responsive-spaces($size, $space) {
   // Default (xs)
-  .m-#{$size} { margin: $space !important; }
-  .mt-#{$size} { margin-top: $space !important; }
-  .mb-#{$size} { margin-bottom: $space !important; }
-  .ms-#{$size} { margin-left: $space !important; }
-  .me-#{$size} { margin-right: $space !important; }
+  .m-#{$size} {
+    margin: $space !important;
+  }
+  .mt-#{$size} {
+    margin-top: $space !important;
+  }
+  .mb-#{$size} {
+    margin-bottom: $space !important;
+  }
+  .ms-#{$size} {
+    margin-left: $space !important;
+  }
+  .me-#{$size} {
+    margin-right: $space !important;
+  }
   .mx-#{$size} {
     margin-left: $space !important;
     margin-right: $space !important;
@@ -17,11 +27,21 @@
     margin-top: $space !important;
     margin-bottom: $space !important;
   }
-  .p-#{$size} { padding: $space !important; }
-  .pt-#{$size} { padding-top: $space !important; }
-  .pb-#{$size} { padding-bottom: $space !important; }
-  .ps-#{$size} { padding-left: $space !important; }
-  .pe-#{$size} { padding-right: $space !important; }
+  .p-#{$size} {
+    padding: $space !important;
+  }
+  .pt-#{$size} {
+    padding-top: $space !important;
+  }
+  .pb-#{$size} {
+    padding-bottom: $space !important;
+  }
+  .ps-#{$size} {
+    padding-left: $space !important;
+  }
+  .pe-#{$size} {
+    padding-right: $space !important;
+  }
   .px-#{$size} {
     padding-left: $space !important;
     padding-right: $space !important;
@@ -35,11 +55,21 @@
   @each $breakpoint, $width in $grid-breakpoints {
     @if $breakpoint != 'xs' {
       @media (min-width: $width) {
-        .m-#{$breakpoint}-#{$size} { margin: $space !important; }
-        .mt-#{$breakpoint}-#{$size} { margin-top: $space !important; }
-        .mb-#{$breakpoint}-#{$size} { margin-bottom: $space !important; }
-        .ms-#{$breakpoint}-#{$size} { margin-left: $space !important; }
-        .me-#{$breakpoint}-#{$size} { margin-right: $space !important; }
+        .m-#{$breakpoint}-#{$size} {
+          margin: $space !important;
+        }
+        .mt-#{$breakpoint}-#{$size} {
+          margin-top: $space !important;
+        }
+        .mb-#{$breakpoint}-#{$size} {
+          margin-bottom: $space !important;
+        }
+        .ms-#{$breakpoint}-#{$size} {
+          margin-left: $space !important;
+        }
+        .me-#{$breakpoint}-#{$size} {
+          margin-right: $space !important;
+        }
         .mx-#{$breakpoint}-#{$size} {
           margin-left: $space !important;
           margin-right: $space !important;
@@ -48,11 +78,21 @@
           margin-top: $space !important;
           margin-bottom: $space !important;
         }
-        .p-#{$breakpoint}-#{$size} { padding: $space !important; }
-        .pt-#{$breakpoint}-#{$size} { padding-top: $space !important; }
-        .pb-#{$breakpoint}-#{$size} { padding-bottom: $space !important; }
-        .ps-#{$breakpoint}-#{$size} { padding-left: $space !important; }
-        .pe-#{$breakpoint}-#{$size} { padding-right: $space !important; }
+        .p-#{$breakpoint}-#{$size} {
+          padding: $space !important;
+        }
+        .pt-#{$breakpoint}-#{$size} {
+          padding-top: $space !important;
+        }
+        .pb-#{$breakpoint}-#{$size} {
+          padding-bottom: $space !important;
+        }
+        .ps-#{$breakpoint}-#{$size} {
+          padding-left: $space !important;
+        }
+        .pe-#{$breakpoint}-#{$size} {
+          padding-right: $space !important;
+        }
         .px-#{$breakpoint}-#{$size} {
           padding-left: $space !important;
           padding-right: $space !important;
@@ -71,4 +111,6 @@
 @include create-responsive-spaces(7, $space-7);
 
 // Line height utility
-.lh-0 { line-height: 0 !important; }
+.lh-0 {
+  line-height: 0 !important;
+}

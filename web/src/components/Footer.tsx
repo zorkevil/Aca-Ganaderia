@@ -16,7 +16,7 @@ export default function Footer() {
               alt="ACA Ganadería"
               width={180}
               height={60}
-              className="footer-logo img-fluid mb-3 animate__animated animate__fadeIn"
+              className="aca-logo img-fluid mb-3 animate__animated animate__fadeIn"
             />
             <p className="small">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
@@ -30,7 +30,7 @@ export default function Footer() {
             data-wow-delay="0.1s"
           >
             <h3 className="text-color-2 mb-3">Links útiles</h3>
-            <ul className="list-unstyled">
+            <ul className="chevron-list-white">
               {footerNavigation.map((item) => (
                 <li key={item.href} className="mb-2">
                   <Link href={item.href} className="text-color-2 text-decoration-none">
@@ -64,7 +64,7 @@ export default function Footer() {
                   key={social.name}
                   href={social.href}
                   aria-label={social.name}
-                  className="btn btn-light rounded-circle p-0 d-flex align-items-center justify-content-center footer-icon"
+                  className="btn btn-light rounded-circle p-0 d-flex align-items-center justify-content-center icon-32"
                 >
                   <i className={`bi ${social.icon} lh-0`} />
                 </Link>

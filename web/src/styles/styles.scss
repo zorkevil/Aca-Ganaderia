@@ -4,187 +4,58 @@
 @use 'variables' as *;
 @use 'functions' as *;
 
-// Import custom Bootstrap utilities
+// Import utilities and Sass modules
 @use 'bootstrap-custom';
 @use 'sass:color';
+@use 'sass:map';
 
-// Container custom max-width
-.container {
-  @media (min-width: 1400px) {
-    max-width: 1620px;
+// =============================================================================
+// COLOR UTILITIES
+// =============================================================================
+
+// Dynamic color utility classes for text, background, and border colors
+
+$colors: (
+  1: $color-1,
+  2: $color-2,
+  3: $color-3,
+  4: $color-4,
+  5: $color-5,
+
+  6: $color-6,
+  7: $color-7,
+  8: $color-8,
+  9: $color-9,
+  10: $color-10,
+
+  11: $color-11,
+  12: $color-12,
+  13: $color-13,
+  14: $color-14,
+  15: $color-15,
+
+  16: $color-16,
+  17: $color-17,
+);
+
+@each $num, $color in $colors {
+  .text-color-#{$num} {
+    color: $color;
+  }
+
+  .bg-color-#{$num} {
+    background-color: $color;
+  }
+
+  .border-color-#{$num} {
+    border-color: $color !important;
   }
 }
 
-// Container custom max-width
-.container {
-  @media (min-width: 1400px) {
-    max-width: 1620px;
-  }
-}
+// =============================================================================
+// BASE STYLES
+// =============================================================================
 
-// Color utilities
-// Text colors
-.text-color-1 {
-  color: $color-1;
-}
-
-.text-color-2 {
-  color: $color-2;
-}
-
-.text-color-3 {
-  color: $color-3;
-}
-
-.text-color-4 {
-  color: $color-4;
-}
-
-.text-color-5 {
-  color: $color-5;
-}
-
-.text-color-6 {
-  color: $color-6;
-}
-
-.text-color-7 {
-  color: $color-7;
-}
-
-.text-color-8 {
-  color: $color-8;
-}
-
-.text-color-9 {
-  color: $color-9;
-}
-
-.text-color-10 {
-  color: $color-10;
-}
-
-.text-color-11 {
-  color: $color-11;
-}
-
-.text-color-12 {
-  color: $color-12;
-}
-
-.text-color-13 {
-  color: $color-13;
-}
-
-.text-color-14 {
-  color: $color-14;
-}
-
-.text-color-15 {
-  color: $color-15;
-}
-
-// Background colors
-.bg-color-1 {
-  background-color: $color-1;
-}
-.bg-color-2 {
-  background-color: $color-2;
-}
-.bg-color-3 {
-  background-color: $color-3;
-}
-.bg-color-4 {
-  background-color: $color-4;
-}
-.bg-color-5 {
-  background-color: $color-5;
-}
-.bg-color-6 {
-  background-color: $color-6;
-}
-.bg-color-7 {
-  background-color: $color-7;
-}
-.bg-color-8 {
-  background-color: $color-8;
-}
-.bg-color-9 {
-  background-color: $color-9;
-}
-.bg-color-10 {
-  background-color: $color-10;
-}
-.bg-color-11 {
-  background-color: $color-11;
-}
-.bg-color-12 {
-  background-color: $color-12;
-}
-.bg-color-13 {
-  background-color: $color-13;
-}
-.bg-color-14 {
-  background-color: $color-14;
-}
-.bg-color-15 {
-  background-color: $color-15;
-}
-.bg-color-16 {
-  background-color: $color-16;
-}
-.bg-color-17 {
-  background-color: $color-17;
-}
-
-// Border colors
-.border-color-1 {
-  border-color: $color-1 !important;
-}
-.border-color-2 {
-  border-color: $color-2 !important;
-}
-.border-color-3 {
-  border-color: $color-3 !important;
-}
-.border-color-4 {
-  border-color: $color-4 !important;
-}
-.border-color-5 {
-  border-color: $color-5 !important;
-}
-.border-color-6 {
-  border-color: $color-6 !important;
-}
-.border-color-7 {
-  border-color: $color-7 !important;
-}
-.border-color-8 {
-  border-color: $color-8 !important;
-}
-.border-color-9 {
-  border-color: $color-9 !important;
-}
-.border-color-10 {
-  border-color: $color-10 !important;
-}
-.border-color-11 {
-  border-color: $color-11 !important;
-}
-.border-color-12 {
-  border-color: $color-12 !important;
-}
-.border-color-13 {
-  border-color: $color-13 !important;
-}
-.border-color-14 {
-  border-color: $color-14 !important;
-}
-.border-color-15 {
-  border-color: $color-15 !important;
-}
-
-// Base styles
 html {
   // Compensate for fixed header when scrolling to anchors
   scroll-padding-top: $header-height;
@@ -199,7 +70,9 @@ body {
   padding-top: $header-height;
 }
 
-// Typography
+// =============================================================================
+// TYPOGRAPHY
+// =============================================================================
 h1,
 .h1,
 h2,
@@ -270,23 +143,24 @@ h6,
   max-height: 420px;
 }
 
-// Font size utilities
-.fs-12 {
-  font-size: 12px;
-}
-.fs-18 {
-  font-size: 18px;
-}
-.fs-20 {
-  font-size: 20px;
-}
-.fs-24 {
-  font-size: 24px;
-}
-.fs-40 {
-  font-size: 40px;
+// =============================================================================
+// FONT SIZE UTILITIES
+// =============================================================================
+$font-sizes: (
+  12: 12px,
+  18: 18px,
+  20: 20px,
+  24: 24px,
+  40: 40px,
+);
+
+@each $size, $value in $font-sizes {
+  .fs-#{$size} {
+    font-size: $value;
+  }
 }
 
+// Responsive font sizes for mobile
 @media (max-width: 767.98px) {
   .fs-24 {
     font-size: 18px;
@@ -297,15 +171,6 @@ h6,
 }
 
 // Line over Heading
-hr {
-  color: $color-3;
-  opacity: 1;
-  width: 118px;
-  --bs-border-width: 10px;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-}
-
 .heading-hr {
   color: $color-3;
   opacity: 1;
@@ -333,77 +198,39 @@ small,
   font-size: 14px;
 }
 
-// Rounded corners utilities
-.border-top-left-radius-50 {
-  border-top-left-radius: 50px !important;
-}
-.border-top-right-radius-50 {
-  border-top-right-radius: 50px !important;
-}
-.border-bottom-left-radius-50 {
-  border-bottom-left-radius: 50px !important;
-}
-.border-bottom-right-radius-50 {
-  border-bottom-right-radius: 50px !important;
+// =============================================================================
+// BORDER RADIUS UTILITIES
+// =============================================================================
+
+$border-radius-sizes: (10, 40, 50);
+
+$border-radius-corners: (
+  'top-left': border-top-left-radius,
+  'top-right': border-top-right-radius,
+  'bottom-left': border-bottom-left-radius,
+  'bottom-right': border-bottom-right-radius,
+);
+
+@each $size in $border-radius-sizes {
+  @each $corner-name, $property in $border-radius-corners {
+    .border-#{$corner-name}-radius-#{$size} {
+      #{$property}: #{$size}px !important;
+    }
+  }
 }
 
-.border-top-left-radius-40 {
-  border-top-left-radius: 40px !important;
-}
-.border-top-right-radius-40 {
-  border-top-right-radius: 40px !important;
-}
-.border-bottom-left-radius-40 {
-  border-bottom-left-radius: 40px !important;
-}
-.border-bottom-right-radius-40 {
-  border-bottom-right-radius: 40px !important;
-}
+// =============================================================================
+// ICON SIZE UTILITIES
+// =============================================================================
 
-.border-top-left-radius-10 {
-  border-top-left-radius: 10px !important;
-}
+$icon-sizes: (16, 24, 32, 48, 64, 128, 168);
 
-.border-top-right-radius-10 {
-  border-top-right-radius: 10px !important;
-}
+@each $size in $icon-sizes {
+  .icon-#{$size} {
+    width: #{$size}px;
 
-.border-bottom-left-radius-10 {
-  border-bottom-left-radius: 10px !important;
-}
-
-.border-bottom-right-radius-10 {
-  border-bottom-right-radius: 10px !important;
-}
-
-// Icons
-.icon-16 {
-  width: 16px;
-  height: 16px;
-}
-.icon-24 {
-  width: 24px;
-  height: 24px;
-}
-.icon-32 {
-  width: 32px;
-  height: 32px;
-}
-.icon-48 {
-  width: 48px;
-  height: 48px;
-}
-.icon-64 {
-  width: 64px;
-  height: 64px;
-}
-.icon-128 {
-  width: 128px;
-  height: 128px;
-}
-.icon-168 {
-  width: 168px;
-  height: 168px;
+    height: #{$size}px;
+  }
 }
 
 // Min-Height
@@ -411,8 +238,14 @@ small,
   height: 48px;
 }
 
-// List with chevron bullets - applies to all ul lists
-ul {
+// =============================================================================
+// LIST STYLES
+// =============================================================================
+
+// List with chevron bullets using Bootstrap Icons
+
+ul.chevron-list,
+ul.chevron-list-white {
   list-style: none;
   padding-left: 0;
 
@@ -426,17 +259,28 @@ ul {
       font-family: 'bootstrap-icons';
       position: absolute;
       left: 0;
-      color: $color-3;
       font-weight: bold;
     }
   }
 }
 
-// Components
+// Chevron color variants
+ul.chevron-list li::before {
+  color: $color-3;
+}
+
+ul.chevron-list-white li::before {
+  color: $color-2;
+}
+
+// =============================================================================
+// COMPONENTS
+// =============================================================================
 .badge {
   padding: 4px 10px;
   font-weight: 600;
   border-radius: 10px;
+  font-size: 14px;
 }
 
 .btn {
@@ -516,7 +360,17 @@ ul {
   }
 }
 
-// Form controls
+// Producción servicio boxes (image background only)
+.produccion-servicio-box {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+// =============================================================================
+// FORM CONTROLS
+// =============================================================================
 .form-control,
 textarea {
   border-radius: 10px !important;
@@ -643,7 +497,9 @@ html .form-floating {
   }
 }
 
-// Pagination
+// =============================================================================
+// PAGINATION
+// =============================================================================
 .pagination {
   .page-item {
     .page-link {
@@ -676,7 +532,9 @@ html .form-floating {
   }
 }
 
-// Header
+// =============================================================================
+// HEADER & NAVIGATION
+// =============================================================================
 header {
   background-color: $color-3;
   height: $header-height;
@@ -748,7 +606,9 @@ header {
   }
 }
 
-// Hero styles
+// =============================================================================
+// HERO SECTIONS
+// =============================================================================
 #home-hero {
   .carousel-item {
     height: calc(100vh - #{$header-height});
@@ -813,7 +673,9 @@ header {
   }
 }
 
-// Carousel secundario styles
+// =============================================================================
+// CAROUSELS
+// =============================================================================
 #carousel-secundario {
   .carousel-item {
     height: 600px;
@@ -849,9 +711,12 @@ header {
       width: auto;
     }
 
-    .carousel-product-image {
-      height: auto;
-      max-height: 400px;
+    @media (max-width: 991.98px) {
+      .carousel-product-image {
+        max-height: 400px;
+        width: 100%;
+        object-fit: contain;
+      }
     }
   }
 
@@ -895,7 +760,11 @@ header {
   }
 }
 
-// Servicios - Background images
+// =============================================================================
+// SERVICE BACKGROUNDS
+// =============================================================================
+// SVG pattern backgrounds for each service area using secondary colors
+
 .nutricion-bg {
   background-image: shape-svg($color-8);
   background-repeat: repeat-y;
@@ -924,7 +793,9 @@ header {
   background-size: 65px;
 }
 
-// Contacto Section
+// =============================================================================
+// CONTACT SECTION
+// =============================================================================
 .contacto-bg {
   background-image: url('/img/sections/contacto/contacto-bg.jpg');
   background-size: cover;
@@ -945,16 +816,17 @@ header {
   }
 }
 
-// Footer
+// =============================================================================
+// LOGO UTILITIES
+// =============================================================================
+.aca-logo {
+  max-height: 80px;
+}
+
+// =============================================================================
+// FOOTER
+// =============================================================================
 footer {
   background-color: $color-7;
   color: $color-2;
-
-  .footer-logo {
-    max-height: 80px;
-  }
-  .footer-icon {
-    width: 40px;
-    height: 40px;
-  }
 }

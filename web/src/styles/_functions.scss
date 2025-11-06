@@ -3,8 +3,8 @@
 // =============================================================================
 // Funciones reutilizables del proyecto
 
-@use "sass:string";
-@use "sass:meta";
+@use 'sass:string';
+@use 'sass:meta';
 
 // =============================================================================
 // SVG URL ENCODER
@@ -13,7 +13,7 @@
 // @param {String} $svg - El string SVG a convertir
 // @return {String} - Data URL del SVG
 @function svg-url($svg) {
-  @return url("data:image/svg+xml;utf8,#{$svg}");
+  @return url('data:image/svg+xml;utf8,#{$svg}');
 }
 
 // =============================================================================
