@@ -1,4 +1,4 @@
-import Badge from '@/components/Badge';
+import Badge from '@/components/misc/Badge';
 
 export default function NewsCard({ n, index }: { n: any; index: number }) {
   const delay = (0.2 + index * 0.1).toFixed(1);
