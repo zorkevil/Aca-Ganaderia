@@ -1,8 +1,12 @@
 'use client';
 
-import { heroSlides } from '@/lib/mock';
+import type { HeroSlide } from '@/lib/types';
 
-export default function HeroSection() {
+type Props = {
+  slides: HeroSlide[];
+};
+
+export default function HeroSection({ slides }: Props) {
   return (
     <section id="home-hero">
       <div className="container-fluid">
@@ -10,7 +14,7 @@ export default function HeroSection() {
           <div className="col p-0">
             <div id="heroCarousel" className="carousel slide" data-bs-ride="carousel">
               <div className="carousel-indicators">
-                {heroSlides.map((_, i) => (
+                {slides.map((_, i) => (
                   <button
                     key={i}
                     type="button"
@@ -24,7 +28,7 @@ export default function HeroSection() {
               </div>
 
               <div className="carousel-inner">
-                {heroSlides.map((slide, i) => (
+                {slides.map((slide, i) => (
                   <div key={i} className={`carousel-item ${i === 0 ? 'active' : ''}`}>
                     <img src={slide.image} className="d-block w-100" alt={slide.imageAlt} />
                     <div className="carousel-caption">

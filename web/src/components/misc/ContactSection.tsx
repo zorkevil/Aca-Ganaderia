@@ -10,6 +10,7 @@ export default function ContactSection({
   submitTo = '/api/contacto',
 }: ContactSectionProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showOtroRol, setShowOtroRol] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -27,6 +28,7 @@ export default function ContactSection({
       if (!res.ok) throw new Error('Error al enviar formulario');
       alert('Mensaje enviado correctamente');
       form.reset();
+      setShowOtroRol(false);
     } catch (err) {
       console.error(err);
       alert('Hubo un problema al enviar el mensaje');
@@ -39,8 +41,10 @@ export default function ContactSection({
     <section id="contacto" className="bg-color-4">
       <div className="container-fluid">
         <div className="row">
+          {/* Imagen lateral */}
           <div className="col-lg-6 contacto-bg border-top-right-radius-40 wow animate__animated animate__fadeIn"></div>
 
+          {/* Formulario */}
           <div className="col-lg-6 contacto-form-pe contacto-content-bg py-7 ps-lg-5">
             <hr className="heading-hr mb-4 wow animate__animated animate__fadeInUp" />
             <h2 className="mb-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
@@ -51,6 +55,7 @@ export default function ContactSection({
             </p>
 
             <form onSubmit={handleSubmit}>
+              {/* Nombre y Apellido */}
               <div className="row">
                 <div
                   className="col-md-6 mb-4 wow animate__animated animate__fadeInUp"
@@ -60,6 +65,7 @@ export default function ContactSection({
                     <input
                       type="text"
                       name="nombre"
+                      id="nombre"
                       className="form-control"
                       placeholder="Nombre"
                       required
@@ -76,6 +82,7 @@ export default function ContactSection({
                     <input
                       type="text"
                       name="apellido"
+                      id="apellido"
                       className="form-control"
                       placeholder="Apellido"
                       required
@@ -85,6 +92,7 @@ export default function ContactSection({
                 </div>
               </div>
 
+              {/* Celular y Email */}
               <div className="row">
                 <div
                   className="col-md-6 mb-4 wow animate__animated animate__fadeInUp"
@@ -94,6 +102,7 @@ export default function ContactSection({
                     <input
                       type="tel"
                       name="celular"
+                      id="celular"
                       className="form-control"
                       placeholder="Celular"
                       required
@@ -110,6 +119,7 @@ export default function ContactSection({
                     <input
                       type="email"
                       name="email"
+                      id="email"
                       className="form-control"
                       placeholder="E-mail"
                       required
@@ -119,21 +129,21 @@ export default function ContactSection({
                 </div>
               </div>
 
+              {/* Área de negocio y Localidad */}
               <div className="row">
                 <div
                   className="col-md-6 mb-4 wow animate__animated animate__fadeInUp"
                   data-wow-delay="0.7s"
                 >
                   <div className="form-floating">
-                    <TomSelectControl id="rol" className="form-select" required defaultValue="">
+                    <TomSelectControl id="area" className="form-select" required defaultValue="">
                       <option value=""></option>
-                      <option value="productor">Productor</option>
-                      <option value="asesor">Asesor</option>
-                      <option value="ingeniero-agronomo">Ingeniero Agrónomo</option>
-                      <option value="veterinario">Veterinario</option>
-                      <option value="otro">Otro</option>
+                      <option value="nutricion">Nutrición</option>
+                      <option value="sanidad">Sanidad</option>
+                      <option value="hacienda">Hacienda</option>
+                      <option value="produccion">Producción</option>
                     </TomSelectControl>
-                    <label htmlFor="rol">Rol</label>
+                    <label htmlFor="area">Área de negocio</label>
                   </div>
                 </div>
 
@@ -145,6 +155,7 @@ export default function ContactSection({
                     <input
                       type="text"
                       name="localidad"
+                      id="localidad"
                       className="form-control"
                       placeholder="Localidad"
                       required
@@ -154,20 +165,75 @@ export default function ContactSection({
                 </div>
               </div>
 
-              <div className="mb-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.9s">
+              {/* Rol */}
+              <div className="row">
+                <div
+                  className="col-12 mb-4 wow animate__animated animate__fadeInUp"
+                  data-wow-delay="0.9s"
+                >
+                  <div className="form-floating">
+                    <TomSelectControl
+                      id="rol"
+                      className="form-select"
+                      required
+                      defaultValue=""
+                      tomOptions={{
+                        onChange: (value: string) => {
+                          setShowOtroRol(value === 'otro');
+                        },
+                      }}
+                    >
+                      <option value=""></option>
+                      <option value="productor">Productor</option>
+                      <option value="asesor">Asesor</option>
+                      <option value="ingeniero-agronomo">Ingeniero Agrónomo</option>
+                      <option value="veterinario">Veterinario</option>
+                      <option value="otro">Otro</option>
+                    </TomSelectControl>
+                    <label htmlFor="rol">Rol</label>
+                  </div>
+                </div>
+              </div>
+
+              {/* Campo "Otro rol" */}
+              {showOtroRol && (
+                <div className="row" id="otro-rol-container">
+                  <div className="col-md-12 mb-4 wow animate__animated animate__fadeInUp">
+                    <div className="form-floating">
+                      <input
+                        type="text"
+                        name="otro_rol"
+                        id="otro_rol"
+                        className="form-control"
+                        placeholder="Otro"
+                        required
+                      />
+                      <label htmlFor="otro_rol">Otro</label>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Mensaje */}
+              <div className="mb-4 wow animate__animated animate__fadeInUp" data-wow-delay="1s">
                 <div className="form-floating">
                   <textarea
                     name="mensaje"
+                    id="mensaje"
                     className="form-control"
                     placeholder="Mensaje"
                     rows={4}
                     required
-                  />
+                  ></textarea>
                   <label htmlFor="mensaje">Mensaje: ¿Qué te gustaría consultar?</label>
                 </div>
               </div>
 
-              <div className="text-end wow animate__animated animate__fadeInUp" data-wow-delay="1s">
+              {/* Botón */}
+              <div
+                className="text-end wow animate__animated animate__fadeInUp"
+                data-wow-delay="1.1s"
+              >
                 <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
                   {isSubmitting ? 'Enviando...' : 'Enviar'}
                 </button>

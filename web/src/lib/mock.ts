@@ -1,4 +1,4 @@
-import type { HeroSlide, ServicesItem, NewsItem } from './types';
+import type { HeroSlide, ServicesItem, NewsItem, SubserviceItem } from './types';
 
 export const heroSlides: HeroSlide[] = [
   {
@@ -111,3 +111,24 @@ export const news: NewsItem[] = [
     href: '#',
   },
 ];
+
+export const subservicesByArea: Record<string, SubserviceItem[]> = {
+  nutricion: [
+    {
+      icon: '/img/icons/icon-asesoramiento-en-produccion.svg',
+      title: 'Asesoramiento en producción',
+    },
+    {
+      icon: '/img/icons/icon-asesoramiento-en-formulacion-de-raciones.svg',
+      title: 'Asesoramiento en formulación de raciones',
+    },
+    {
+      icon: '/img/icons/icon-analisis-completo-de-raciones-o-materias-primas.svg',
+      title: 'Análisis completo de raciones o materias primas',
+    },
+    {
+      icon: '/img/icons/icon-venta-de-materias-primas-especificas.svg',
+      title: 'Venta de materias primas específicas',
+    },
+  ],
+};

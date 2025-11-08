@@ -14,9 +14,10 @@ export default function TomSelectControl({ tomOptions, children, ...rest }: Prop
     if (!ref.current) return;
 
     const instance = new TomSelect(ref.current, {
-      allowEmptyOption: true,
+      allowEmptyOption: false,
       plugins: { remove_button: { title: 'Quitar' } },
       dropdownParent: 'body',
+      controlInput: null,
       ...(tomOptions || {}),
     });
 

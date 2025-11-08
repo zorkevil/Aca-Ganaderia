@@ -1,31 +1,20 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import NewsCard from '@/components/misc/NewsCard';
-import { news as mockNews } from '@/lib/mock';
-import type { NewsSectionProps } from '@/lib/types';
+import type { NewsItem, NewsSectionProps } from '@/lib/types';
 
 export default function NewsSection({
   title = 'Últimas noticias',
   category,
   limit = 4,
   showButton = true,
-}: NewsSectionProps) {
-  const [filteredNews, setFilteredNews] = useState(mockNews);
+  news = [],
+}: NewsSectionProps & { news: NewsItem[] }) {
+  const filteredNews = category
+    ? news.filter((item) => item.category.toLowerCase() === category.toLowerCase())
+    : news;
 
-  useEffect(() => {
-    // Filtra por categoría si se indica
-    let filtered = mockNews;
-
-    if (category) {
-      filtered = filtered.filter((item) => item.category.toLowerCase() === category.toLowerCase());
-    }
-
-    // Limita cantidad
-    filtered = filtered.slice(0, limit);
-
-    setFilteredNews(filtered);
-  }, [category, limit]);
+  const limitedNews = filteredNews.slice(0, limit);
 
   return (
     <section id="noticias" className="bg-color-15 py-7">

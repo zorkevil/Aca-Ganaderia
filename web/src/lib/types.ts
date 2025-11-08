@@ -33,6 +33,11 @@ export interface NewsItem {
   href: string;
 }
 
+export type SubserviceItem = {
+  icon: string;
+  title: string;
+};
+
 // =============================================================================
 // INTERFACES DE SECCIONES
 // =============================================================================
@@ -52,4 +57,10 @@ export interface NewsSectionProps {
 export interface RelatedServicesProps {
   excludeId?: string;
   title?: string;
+}
+
+export interface HeroSectionProps {
+  title: string;
+  showBreadcrumb?: boolean;
+  backgroundImage?: string;
 }

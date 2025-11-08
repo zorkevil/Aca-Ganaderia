@@ -1,3 +1,5 @@
+'use client';
+
 export default function OurValuesSection() {
   return (
     <section id="nuestros-valores" className="py-7">
@@ -19,14 +21,20 @@ export default function OurValuesSection() {
             </h2>
 
             <p className="wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
-              Reconociéndonos como una empresa que participa en todos los eslabones de la
-              producción, en este caso desde nuestra óptica ganadera queremos colaborar desde la
-              originación, diseñando productos, asesorando, investigando y divulgando tecnologías.
+              Reconociéndonos como una empresa que participa de una o de otra manera en todos los
+              eslabones de la producción, en este caso desde nuestra óptica ganadera queremos
+              colaborar desde la mismísima originación, diseñando productos, asesorando,
+              investigando, divulgando tecnologías o participando en la cadena productiva. Teniendo
+              como objetivo fundamental colaborar con el productor en la generación de valor que le
+              permitan obtener un esquema de producción sustentable y nosotros transformarnos en una
+              cadena se suministro seguro
             </p>
 
             <p className="wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
-              Brindamos productos y tecnologías que posibilitan sistemas ganaderos más eficientes,
-              sustentables y confortables, ayudando al productor a generar valor en cada etapa.
+              Brindar productos, información y tecnologías que posibiliten a los sistemas ganaderos,
+              una mayor producción, ser más eficientes, más confortables para el ser humano y
+              absolutamente sustentables. Ayudar a lograr mejoras sensibles en la captura de valor
+              del producto final. Transformarnos en una cadena de suministros segura.
             </p>
 
             <div
@@ -35,7 +43,9 @@ export default function OurValuesSection() {
             >
               <img src="/img/icons/home-icon-01.svg" alt="" className="flex-shrink-0 icon-64" />
               <p className="mb-0">
-                Impulsamos un modelo sostenible basado en innovación, conocimiento y eficiencia.
+                Impulsamos un modelo sostenible basado en innovación y conocimiento, con foco en la
+                eficiencia, el valor agregado y el crecimiento colaborativo, generando retornos
+                sólidos sobre el capital invertido.
               </p>
             </div>
 
@@ -45,7 +55,9 @@ export default function OurValuesSection() {
             >
               <img src="/img/icons/home-icon-02.svg" alt="" className="flex-shrink-0 icon-64" />
               <p className="mb-0">
-                Nos consolidamos como plataforma de gestión que integra tecnología y saber técnico.
+                Aspiramos a consolidarnos como una plataforma de gestión de alto rendimiento, que
+                integra tecnología y saber técnico para ofrecer soluciones y productos que se
+                alineen con las demandas de la cadena de valor.
               </p>
             </div>
 
