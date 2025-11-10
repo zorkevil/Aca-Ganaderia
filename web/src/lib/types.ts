@@ -38,6 +38,28 @@ export type SubserviceItem = {
   title: string;
 };
 
+export type ProductItem = {
+  id: number;
+  sku: string;
+  name: string;
+  description: string;
+  generalCategory: string;
+  category: string;
+  secondCategory: string;
+  presentation: string;
+  administration: string;
+  dosage: string;
+  image: string;
+  price: number;
+  sales: number;
+  date: string;
+};
+
+export type ProductCategory = {
+  id: string;
+  name: string;
+};
+
 // =============================================================================
 // INTERFACES DE SECCIONES
 // =============================================================================

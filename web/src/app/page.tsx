@@ -4,14 +4,14 @@ import ServicesSection from '@/components/home/ServicesSection';
 import NewsSection from '@/components/misc/NewsSection';
 import ContactSection from '@/components/misc/ContactSection';
 
-import { heroSlides, news as mockNews } from '@/lib/mock';
+import { heroSlides, services, news as mockNews } from '@/lib/mock';
 
 export default function HomePage() {
   return (
     <main>
       <HeroSection slides={heroSlides} />
       <OurValuesSection />
-      <ServicesSection />
+      <ServicesSection services={services} />
       <NewsSection news={mockNews} />
       <ContactSection />
     </main>

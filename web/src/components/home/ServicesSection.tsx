@@ -1,8 +1,12 @@
 'use client';
 
-import { services } from '@/lib/mock';
+import type { ServicesItem } from '@/lib/types';
 
-export default function ServicesSection() {
+type Props = {
+  services: ServicesItem[];
+};
+
+export default function ServicesSection({ services }: Props) {
   return (
     <section id="servicios" className="py-7">
       <div className="container">
