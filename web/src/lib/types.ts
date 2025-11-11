@@ -55,6 +55,17 @@ export type ProductItem = {
   date: string;
 };
 
+export type CarouselItem = {
+  backgroundImage: string;
+  productImage: string;
+  productAlt: string;
+  title: string;
+  description: string;
+  showButton?: boolean;
+  buttonLabel?: string;
+  buttonUrl?: string;
+};
+
 export type ProductCategory = {
   id: string;
   name: string;

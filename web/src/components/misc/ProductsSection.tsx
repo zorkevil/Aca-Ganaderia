@@ -110,42 +110,38 @@ export default function ProductsSection({
             <div className="wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
               <h3 className="mb-3">Categorías</h3>
 
-              {/* Seleccionadas */}
-              {selectedCats.length > 0 && (
-                <div className="mb-3">
-                  {selectedCats.map((cat) => (
-                    <span
-                      key={cat}
-                      className="badge bg-color-3 text-white d-inline-flex align-items-center gap-2 mb-2"
-                    >
-                      {cat}
-                      <button
-                        type="button"
-                        className="btn-close btn-close-white"
-                        aria-label="Eliminar"
-                        onClick={() => clearCategory(cat)}
-                      ></button>
-                    </span>
-                  ))}
-                </div>
-              )}
-
               {/* Lista */}
               <ul className="list-unstyled">
-                {categories.map((cat) => (
-                  <li key={cat.id} className="mb-3">
-                    <a
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        toggleCategory(cat.name);
-                      }}
-                      className={`text-color-3 ${selectedCats.includes(cat.name) ? 'fw-bold' : ''}`}
-                    >
-                      {cat.name}
-                    </a>
-                  </li>
-                ))}
+                {categories.map((cat) => {
+                  const isSelected = selectedCats.includes(cat.name);
+
+                  return (
+                    <li key={cat.id} className="mb-3">
+                      {isSelected ? (
+                        <span className="badge bg-color-3 text-white d-inline-flex align-items-center gap-2">
+                          {cat.name}
+                          <button
+                            type="button"
+                            className="btn-close btn-close-white"
+                            aria-label="Eliminar"
+                            onClick={() => clearCategory(cat.name)}
+                          ></button>
+                        </span>
+                      ) : (
+                        <a
+                          href="#"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            toggleCategory(cat.name);
+                          }}
+                          className="text-color-3"
+                        >
+                          {cat.name}
+                        </a>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>

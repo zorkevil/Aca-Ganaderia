@@ -1,56 +1,63 @@
 'use client';
 
-export default function CarouselSection() {
+import type { CarouselItem } from '@/lib/types';
+
+type Props = {
+  id?: string;
+  items: CarouselItem[];
+};
+
+export default function CarouselSection({ id = 'carousel-secundario', items }: Props) {
   return (
-    <section id="carousel-secundario">
+    <section id={`${id}-section`}>
       <div className="container-fluid">
         <div className="row">
           <div className="col p-0">
-            <div id="nutricionCarousel" className="carousel slide" data-bs-ride="carousel">
+            <div id={id} className="carousel slide" data-bs-ride="carousel">
               <div className="carousel-inner">
-                {[1, 2, 3].map((_, i) => (
+                {items.map((item, i) => (
                   <div key={i} className={`carousel-item ${i === 0 ? 'active' : ''}`}>
-                    <img
-                      src="/img/sections/nutricion/nutricion-carousel-bg-01.jpg"
-                      className="d-block w-100"
-                      alt="Ganado en el campo"
-                    />
+                    <img src={item.backgroundImage} className="d-block w-100" alt={item.title} />
+
                     <div className="carousel-caption">
                       <div className="container">
                         <div className="row align-items-end">
                           <div className="col-lg-4 order-lg-1 order-2">
                             <img
-                              src="/img/sections/nutricion/nutricion-carousel-producto-01.png"
+                              src={item.productImage}
                               className="carousel-product-image img-fluid wow animate__animated animate__fadeInLeft"
-                              alt="Producto Nutrición"
+                              alt={item.productAlt}
                             />
                           </div>
+
                           <div className="col-lg-8 text-lg-end py-5 order-lg-2 order-1">
                             <img
                               src="/img/branding/aca-logo.svg"
                               alt="ACA Logo"
-                              className="carousel-logo mb-4 wow animate__animated animate__fadeIn"
+                              className="carousel-logo ms-lg-auto mb-4 wow animate__animated animate__fadeIn"
                             />
                             <h2
                               className="h1 text-white mb-3 wow animate__animated animate__fadeInUp"
                               data-wow-delay="0.2s"
                             >
-                              Mejorá tu ganado con la mejor nutrición.
+                              {item.title}
                             </h2>
                             <p
                               className="text-white mb-4 wow animate__animated animate__fadeInUp"
                               data-wow-delay="0.3s"
                             >
-                              Producción sustentable, resultados reales. Encontrá todos nuestros
-                              productos en nuestra web y dónde conseguirlos.
+                              {item.description}
                             </p>
-                            <a
-                              href="/contacto"
-                              className="btn btn-primary wow animate__animated animate__fadeInUp"
-                              data-wow-delay="0.4s"
-                            >
-                              Contacto
-                            </a>
+
+                            {item.showButton && item.buttonLabel && item.buttonUrl && (
+                              <a
+                                href={item.buttonUrl}
+                                className="btn btn-primary wow animate__animated animate__fadeInUp"
+                                data-wow-delay="0.4s"
+                              >
+                                {item.buttonLabel}
+                              </a>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -59,13 +66,14 @@ export default function CarouselSection() {
                 ))}
               </div>
 
+              {/* Indicadores */}
               <div className="bg-color-4 py-3 d-flex justify-content-center align-items-center">
                 <div className="carousel-indicators">
-                  {[0, 1, 2].map((i) => (
+                  {items.map((_, i) => (
                     <button
                       key={i}
                       type="button"
-                      data-bs-target="#nutricionCarousel"
+                      data-bs-target={`#${id}`}
                       data-bs-slide-to={i}
                       className={i === 0 ? 'active' : ''}
                     />

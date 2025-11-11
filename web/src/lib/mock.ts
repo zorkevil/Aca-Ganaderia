@@ -1,4 +1,11 @@
-import type { HeroSlide, ServicesItem, NewsItem, SubserviceItem, ProductItem } from './types';
+import type {
+  HeroSlide,
+  ServicesItem,
+  NewsItem,
+  SubserviceItem,
+  ProductItem,
+  CarouselItem,
+} from './types';
 
 export const heroSlides: HeroSlide[] = [
   {
@@ -542,5 +549,41 @@ export const productsNutricion: ProductItem[] = [
     price: 0,
     sales: 0,
     date: '2025-01-01',
+  },
+];
+
+export const carouselNutricion: CarouselItem[] = [
+  {
+    backgroundImage: '/img/sections/nutricion/nutricion-carousel-bg-01.jpg',
+    productImage: '/img/sections/nutricion/nutricion-carousel-producto-01.png',
+    productAlt: 'Producto Nutrición',
+    title: 'Mejorá tu ganado con la mejor nutrición.',
+    description:
+      'Producción sustentable, resultados reales. Encontrá todos nuestros productos en nuestra web y dónde conseguirlos.',
+    showButton: true,
+    buttonLabel: 'Contacto',
+    buttonUrl: '/contacto',
+  },
+  {
+    backgroundImage: '/img/sections/nutricion/nutricion-carousel-bg-01.jpg',
+    productImage: '/img/sections/nutricion/nutricion-carousel-producto-01.png',
+    productAlt: 'Producto Nutrición',
+    title: 'Mejorá tu ganado con la mejor nutrición.',
+    description:
+      'Producción sustentable, resultados reales. Encontrá todos nuestros productos en nuestra web y dónde conseguirlos.',
+    showButton: true,
+    buttonLabel: 'Contacto',
+    buttonUrl: '/contacto',
+  },
+  {
+    backgroundImage: '/img/sections/nutricion/nutricion-carousel-bg-01.jpg',
+    productImage: '/img/sections/nutricion/nutricion-carousel-producto-01.png',
+    productAlt: 'Producto Nutrición',
+    title: 'Mejorá tu ganado con la mejor nutrición.',
+    description:
+      'Producción sustentable, resultados reales. Encontrá todos nuestros productos en nuestra web y dónde conseguirlos.',
+    showButton: true,
+    buttonLabel: 'Contacto',
+    buttonUrl: '/contacto',
   },
 ];

@@ -5,9 +5,10 @@ import TomSelect from 'tom-select';
 
 type Props = React.SelectHTMLAttributes<HTMLSelectElement> & {
   tomOptions?: any;
+  onValueChange?: (value: string) => void;
 };
 
-export default function TomSelectControl({ tomOptions, children, ...rest }: Props) {
+export default function TomSelectControl({ tomOptions, children, onValueChange, ...rest }: Props) {
   const ref = useRef<HTMLSelectElement | null>(null);
 
   useEffect(() => {
@@ -15,7 +16,6 @@ export default function TomSelectControl({ tomOptions, children, ...rest }: Prop
 
     const instance = new TomSelect(ref.current, {
       allowEmptyOption: false,
-      plugins: { remove_button: { title: 'Quitar' } },
       dropdownParent: 'body',
       controlInput: null,
       ...(tomOptions || {}),
@@ -31,11 +31,18 @@ export default function TomSelectControl({ tomOptions, children, ...rest }: Prop
       };
 
       updateLabel(instance.getValue() as string | string[]);
-      instance.on('change', (value: string | string[]) => updateLabel(value));
+
+      instance.on('change', (value: string | string[]) => {
+        updateLabel(value);
+        if (onValueChange) {
+          // Esperar un tick para no interferir con el render del TomSelect
+          setTimeout(() => onValueChange(String(value)), 0);
+        }
+      });
     }
 
     return () => instance.destroy();
-  }, [tomOptions]);
+  }, []); // 👈 ojo: SIN dependencias, así no se destruye en cada render
 
   return (
     <select ref={ref} {...rest}>

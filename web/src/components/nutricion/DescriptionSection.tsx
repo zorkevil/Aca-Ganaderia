@@ -22,7 +22,7 @@ export default function DescriptionSection() {
               través de nuestros profesionales.
             </p>
             <a
-              href="#productos"
+              href="#productos-nutricion"
               className="btn btn-primary wow animate__animated animate__fadeInUp"
               data-wow-delay="0.3s"
             >
