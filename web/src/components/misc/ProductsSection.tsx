@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import type { ProductItem, ProductCategory } from '@/lib/types';
 
@@ -179,17 +180,27 @@ export default function ProductsSection({
                     className="col-md-6 col-xl-4 wow animate__animated animate__fadeInUp"
                     data-wow-delay={`${0.4 + i * 0.1}s`}
                   >
-                    <div className="border border-color-3 rounded-4 p-3 h-100 d-flex flex-column text-center">
-                      <img
-                        src={p.image}
-                        alt={p.name}
-                        className="img-fluid mb-3 wow animate__animated animate__fadeIn"
-                      />
-                      <h4 className="text-color-3 mb-3">{p.name}</h4>
-                      <p className="flex-grow-1">{p.description}</p>
-                      <div className="d-flex gap-2 justify-content-center">
+                    <div className="border border-color-3 rounded-4 h-100 d-flex flex-column text-center">
+                      <Link
+                        href={`/${p.generalCategory}/${p.category}`}
+                        className="text-decoration-none text-reset p-3"
+                      >
+                        <img
+                          src={p.image}
+                          alt={p.name}
+                          className="img-fluid mb-3 wow animate__animated animate__fadeIn"
+                        />
+                        <h4 className="text-color-3 mb-3">{p.name}</h4>
+                        <p className="flex-grow-1">{p.description}</p>
+                      </Link>
+                      <div className="d-flex gap-2 justify-content-center p-3">
                         <button className="btn btn-outline-primary">Contacto</button>
-                        <button className="btn btn-primary">Ver</button>
+                        <Link
+                          href={`/${p.generalCategory}/${p.category}`}
+                          className="btn btn-primary"
+                        >
+                          Ver
+                        </Link>
                       </div>
                     </div>
                   </div>
