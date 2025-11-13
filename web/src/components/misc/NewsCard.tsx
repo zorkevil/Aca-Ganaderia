@@ -27,7 +27,7 @@ export default function NewsCard({ n, index }: { n: any; index: number }) {
         <div className="p-3 d-flex flex-column text-center">
           <h4 className="text-color-3">{n.title}</h4>
           <Badge n={n} />
-          <p className="text-color-1 small flex-grow-1 mb-2">{n.excerpt}</p>
+          <p className="small flex-grow-1 mb-2">{n.excerpt}</p>
           <a href={n.href} className="btn btn-link mt-auto">
             Ver noticia
           </a>

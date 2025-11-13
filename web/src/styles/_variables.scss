@@ -6,23 +6,23 @@
 // =============================================================================
 // COLOR PALETTE
 // =============================================================================
-$color-1: #636363; // Text
-$color-2: #ffffff; // White
-$color-3: #586440; // Main Green
-$color-4: #b8cc7a; // Secondary Green
-$color-5: #ff9103; // Accent Orange
-$color-6: #c6923e; // Secondary Orange
-$color-7: #7e9150; // Nutrición
-$color-8: #cbdd92; // Secondary Nutrición
-$color-9: #372725; // Sanidad
-$color-10: #ece5cc; // Secondary Sanidad
-$color-11: #9faf5a; // Hacienda
-$color-12: #eef4ba; // Secondary Hacienda
-$color-13: #c47e3f; // Producción
-$color-14: #f2c688; // Secondary Producción
-$color-15: #fafafa; // Light Gray
-$color-16: #fff2e4; // Tabla BG 1
-$color-17: #fff8f1; // Tabla BG 2
+$color-1: #636363;   // Text
+$color-2: #ffffff;   // White
+$color-3: #586440;   // Main Green
+$color-4: #B8CC7A;   // Secondary Green
+$color-5: #FF9103;   // Accent Orange
+$color-6: #C6923E;   // Secondary Orange
+$color-7: #7E9150;   // Nutrición
+$color-8: #CBDD92;   // Secondary Nutrición
+$color-9: #372725;   // Sanidad
+$color-10: #ECE5CC;  // Secondary Sanidad
+$color-11: #9FAF5A;  // Hacienda
+$color-12: #EEF4BA;  // Secondary Hacienda
+$color-13: #C47E3F;  // Producción
+$color-14: #F2C688;  // Secondary Producción
+$color-15: #FAFAFA;  // Light Gray
+$color-16: #FFF2E4;  // Tabs / Accordion / Table 1
+$color-17: #FFF8F1;  // Table 2
 
 // =============================================================================
 // LAYOUT
@@ -32,8 +32,8 @@ $header-height: 97px;
 // =============================================================================
 // SPACING
 // =============================================================================
-$space-6: 4rem; // 64px
-$space-7: 5rem; // 80px
+$space-6: 4rem;  // 64px
+$space-7: 5rem;  // 80px
 
 // =============================================================================
 // BREAKPOINTS
@@ -44,5 +44,5 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1400px,
+  xxl: 1400px
 );

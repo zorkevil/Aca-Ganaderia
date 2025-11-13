@@ -10,7 +10,7 @@ export default function Header() {
       <nav className="navbar navbar-expand-lg navbar-dark">
         <div className="container">
           {/* Logo */}
-          <Link href="#" className="navbar-brand animate__animated animate__fadeInDown">
+          <Link href="/" className="navbar-brand animate__animated animate__fadeInDown">
             <Image
               src="/img/branding/aca-iso.svg"
               alt="ACA Ganadería Logo"

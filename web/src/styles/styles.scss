@@ -1,13 +1,21 @@
 /* Styles for ACA Ganadería */
 
-// Import variables and functions first
+// Import variables first
 @use 'variables' as *;
-@use 'functions' as *;
 
 // Import utilities and Sass modules
 @use 'bootstrap-custom';
 @use 'sass:color';
 @use 'sass:map';
+
+// Container custom max-width and padding
+.container {
+  padding-left: 24px;
+  padding-right: 24px;
+  @media (min-width: 1620px) {
+    max-width: 1620px;
+  }
+}
 
 // =============================================================================
 // COLOR UTILITIES
@@ -202,7 +210,7 @@ small,
 // BORDER RADIUS UTILITIES
 // =============================================================================
 
-$border-radius-sizes: (10, 40, 50);
+$border-radius-sizes: (10, 20, 40, 50);
 
 $border-radius-corners: (
   'top-left': border-top-left-radius,
@@ -223,7 +231,7 @@ $border-radius-corners: (
 // ICON SIZE UTILITIES
 // =============================================================================
 
-$icon-sizes: (16, 24, 32, 48, 64, 128, 168);
+$icon-sizes: (16, 24, 32, 48, 64, 96, 128, 168);
 
 @each $size in $icon-sizes {
   .icon-#{$size} {
@@ -271,6 +279,22 @@ ul.chevron-list li::before {
 
 ul.chevron-list-white li::before {
   color: $color-2;
+}
+
+// Larger padding for fs-24 lists
+
+ul.chevron-list.fs-24 li,
+ul.chevron-list-white.fs-24 li {
+  padding-left: 2rem;
+}
+
+// Adjust padding for mobile when fs-24 becomes smaller
+
+@media (max-width: 767.98px) {
+  ul.chevron-list.fs-24 li,
+  ul.chevron-list-white.fs-24 li {
+    padding-left: 1.5rem;
+  }
 }
 
 // =============================================================================
@@ -760,34 +784,43 @@ header {
   }
 }
 
-// =============================================================================
-// SERVICE BACKGROUNDS
-// =============================================================================
-// SVG pattern backgrounds for each service area using secondary colors
+// Swiper - Carousel custom styles
+.swiper {
+  .swiper-logo {
+    max-height: 120px;
+  }
+}
 
-.nutricion-bg {
+.swiper-button-prev,
+.swiper-button-next {
+  color: $color-5;
+
+  &:after {
+    font-size: 24px;
+
+    font-weight: bold;
+  }
+
+  &:hover {
+    color: $color-6;
+  }
+}
+
+.swiper-button-prev {
+  left: -24px; /* o lo que necesites */
+}
+
+.swiper-button-next {
+  right: -24px;
+}
+
+// =============================================================================
+// SERVICE BACKGROUND
+// =============================================================================
+// White SVG pattern background for all service area boxes
+.servicio-box {
+  background-image: url('/img/icons/servicio-pattern.svg');
   background-image: shape-svg($color-8);
-  background-repeat: repeat-y;
-  background-position: 5px 0px;
-  background-size: 65px;
-}
-
-.sanidad-bg {
-  background-image: shape-svg($color-10);
-  background-repeat: repeat-y;
-  background-position: 5px 0px;
-  background-size: 65px;
-}
-
-.hacienda-bg {
-  background-image: shape-svg($color-12);
-  background-repeat: repeat-y;
-  background-position: 5px 0px;
-  background-size: 65px;
-}
-
-.produccion-bg {
-  background-image: shape-svg($color-14);
   background-repeat: repeat-y;
   background-position: 5px 0px;
   background-size: 65px;
@@ -797,7 +830,7 @@ header {
 // CONTACT SECTION
 // =============================================================================
 .contacto-bg {
-  background-image: url('/img/sections/contacto/contacto-bg.jpg');
+  background-image: url('/img/sections/contacto/contacto-bg.webp');
   background-size: cover;
   background-position: center;
   min-height: 600px;
@@ -824,9 +857,240 @@ header {
 }
 
 // =============================================================================
+// TABS
+// =============================================================================
+.nav-tabs {
+  border-bottom: none;
+  gap: 0 !important;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+
+  .nav-item {
+    flex: 1 1 0% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+  }
+
+  .nav-link {
+    background-color: $color-5 !important;
+    color: $color-2 !important;
+    font-size: 24px;
+    border: none !important;
+    border-radius: 0 !important;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+    margin: 0 !important;
+    width: 100%;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    &:hover {
+      background-color: color.adjust($color-5, $lightness: -8%) !important;
+      color: $color-2 !important;
+    }
+
+    &.active {
+      background-color: color.adjust($color-5, $lightness: -8%) !important;
+      color: $color-2 !important;
+    }
+  }
+}
+
+.tab-content {
+  padding: 2rem;
+  background-color: $color-16;
+}
+
+// =============================================================================
+// ACCORDION
+// =============================================================================
+
+.accordion {
+  .accordion-item {
+    color: $color-1;
+    border: none !important;
+    margin-bottom: 0.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .accordion-header {
+    .accordion-button {
+      background-color: $color-5 !important;
+      color: $color-2 !important;
+      font-size: 20px;
+      border: none !important;
+      border-radius: 20px !important;
+
+      &:hover {
+        background-color: color.adjust($color-5, $lightness: -8%) !important;
+      }
+
+      &:not(.collapsed) {
+        background-color: color.adjust($color-5, $lightness: -8%) !important;
+        color: $color-2 !important;
+        box-shadow: none !important;
+        border-radius: 20px 20px 0 0 !important;
+      }
+
+      &:focus {
+        box-shadow: none !important;
+      }
+
+      &::after {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+
+  .accordion-body {
+    padding: 3em 2rem;
+    background-color: $color-16;
+    border-radius: 0 0 20px 20px !important;
+  }
+
+  .accordion-collapse {
+    border: none !important;
+  }
+}
+
+// =============================================================================
+// TABS AND ACCORDION RESPONSIVE
+// =============================================================================
+// Custom component that displays as tabs on desktop and accordion on mobile
+// Uses Bootstrap accordion markup with custom styling for responsive behavior
+
+.accordion-tabs {
+  // Desktop: tabs layout
+
+  @media (min-width: 992px) {
+    display: grid;
+
+    // Use CSS variable --tab-count (set by JavaScript) for flexible column count
+    grid-template-columns: repeat(var(--tab-count, 5), 1fr);
+    grid-auto-rows: auto;
+
+    .accordion-item {
+      margin-bottom: 0;
+      border: none !important;
+      display: contents;
+
+      .accordion-header {
+        // Headers stay in their respective columns (row 1)
+        grid-row: 1;
+
+        .accordion-button {
+          height: 100%;
+          border-radius: 20px 20px 0 0 !important;
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+          text-align: center;
+          &.collapsed {
+            border-radius: 20px 20px 0 0 !important;
+          }
+
+          &:not(.collapsed) {
+            border-radius: 20px 20px 0 0 !important;
+          }
+
+          // Hide arrow icon on desktop
+          &::after {
+            display: none;
+          }
+        }
+      }
+
+      // Content spans all columns in row 2
+      .accordion-collapse {
+        grid-column: 1 / -1;
+
+        grid-row: 2;
+
+        .accordion-body {
+          border-radius: 0 0 20px 20px !important;
+        }
+      }
+    }
+  }
+
+  // Mobile: standard accordion behavior
+  @media (max-width: 991px) {
+    .accordion-item {
+      .accordion-header {
+        .accordion-button {
+          // Show arrow icon on mobile
+
+          &::after {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+// =============================================================================
 // FOOTER
 // =============================================================================
 footer {
   background-color: $color-7;
   color: $color-2;
+}
+
+// =============================================================================
+// WHATSAPP FLOATING BUTTON
+// =============================================================================
+.btn-whatsapp {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 64px;
+  height: 64px;
+  line-height: 1;
+  padding: 0 !important;
+  background-color: #25d366 !important; // WhatsApp official green
+  border-color: #25d366 !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 1030; // Above most Bootstrap elements
+  text-decoration: none;
+
+  &:hover {
+    background-color: #20ba5a !important; // Darker WhatsApp green
+    color: white !important;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  &:focus,
+  &:focus-visible {
+    background-color: #25d366 !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5) !important;
+    outline: none;
+  }
+
+  i {
+    font-size: 2rem;
+  }
+
+  // Responsive positioning for mobile
+  @media (max-width: 576px) {
+    bottom: 1rem;
+    right: 1rem;
+    width: 56px;
+    height: 56px;
+
+    i {
+      font-size: 1.75rem;
+    }
+  }
 }

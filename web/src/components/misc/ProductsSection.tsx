@@ -182,7 +182,7 @@ export default function ProductsSection({
                   >
                     <div className="border border-color-3 rounded-4 h-100 d-flex flex-column text-center">
                       <Link
-                        href={`/${p.generalCategory}/${p.category}`}
+                        href={`/${p.generalCategory}/${p.slug}`}
                         className="text-decoration-none text-reset p-3"
                       >
                         <img
@@ -194,11 +194,10 @@ export default function ProductsSection({
                         <p className="flex-grow-1">{p.description}</p>
                       </Link>
                       <div className="d-flex gap-2 justify-content-center p-3">
-                        <button className="btn btn-outline-primary">Contacto</button>
-                        <Link
-                          href={`/${p.generalCategory}/${p.category}`}
-                          className="btn btn-primary"
-                        >
+                        <Link href="#contacto" className="btn btn-outline-primary">
+                          Contacto
+                        </Link>
+                        <Link href={`/${p.generalCategory}/${p.slug}`} className="btn btn-primary">
                           Ver
                         </Link>
                       </div>

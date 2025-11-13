@@ -1,5 +1,5 @@
 import HeroSection from '@/components/misc/HeroSection';
-import DescriptionSection from '@/components/nutricion/DescriptionSection';
+import DescriptionSection from '@/components/sanidad/DescriptionSection';
 import ServicesSection from '@/components/misc/SubservicesSection';
 import CarouselSection from '@/components/misc/CarouselSection';
 import RelatedServicesSection from '@/components/misc/RelatedServicesSection';
@@ -10,19 +10,19 @@ import ProductsSection from '@/components/misc/ProductsSection';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Nutrición',
+  title: 'Sanidad',
   description: '',
 };
 
-const SECTION_ID = 'nutricion';
-const SECTION_NAME = 'Nutrición';
+const SECTION_ID = 'sanidad';
+const SECTION_NAME = 'Sanidad';
 
 // Mock temporal
 import {
   services as servicesMock,
   news as mockNews,
   subservicesByArea,
-  heroImageNutricion,
+  heroImageSanidad,
   products,
   categoriesNutricion,
   carouselNutricion,
@@ -32,9 +32,9 @@ export default function NutricionPage() {
   const subServicesMock = subservicesByArea[SECTION_ID] || [];
   return (
     <main>
-      <HeroSection title={SECTION_NAME} backgroundImage={heroImageNutricion} />
+      <HeroSection title={SECTION_NAME} backgroundImage={heroImageSanidad} />
       <DescriptionSection />
-      <ServicesSection items={subServicesMock} />
+      <ServicesSection title="Nuestras propuestas" items={subServicesMock} />
       <ProductsSection
         products={products}
         categories={categoriesNutricion}

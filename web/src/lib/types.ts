@@ -41,7 +41,10 @@ export type SubserviceItem = {
 export type ProductItem = {
   id: number;
   sku: string;
+  slug: string;
   name: string;
+  title?: string;
+  subtitle?: string;
   description: string;
   generalCategory: string;
   category: string;

@@ -7,7 +7,7 @@ export default function OurValuesSection() {
         <div className="row align-items-center g-4">
           <div className="col-lg-5 me-auto">
             <img
-              src="/img/sections/home/home-nuestros-valores.png"
+              src="/img/sections/home/home-nuestros-valores.webp"
               alt="Imagen Nuestros Valores"
               title="Imagen Nuestros Valores"
               className="img-fluid w-100 wow animate__animated animate__fadeIn"
@@ -27,7 +27,7 @@ export default function OurValuesSection() {
               investigando, divulgando tecnologías o participando en la cadena productiva. Teniendo
               como objetivo fundamental colaborar con el productor en la generación de valor que le
               permitan obtener un esquema de producción sustentable y nosotros transformarnos en una
-              cadena se suministro seguro
+              cadena se suministro seguro.
             </p>
 
             <p className="wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">

@@ -23,7 +23,7 @@ export default function ServicesSection({ services }: Props) {
                   >
                     <a href={a.href} className="text-decoration-none d-block h-100">
                       <div
-                        className={`${a.bgClass} text-color-2 p-5 ps-7 h-100 border-top-right-radius-50 border-bottom-left-radius-50 box-hover`}
+                        className={`${a.bgClass} servicio-box text-color-2 p-5 ps-7 h-100 border-top-right-radius-50 border-bottom-left-radius-50 box-hover`}
                       >
                         <div className="row h-100 flex-column-reverse flex-md-row">
                           <div className="col-md-6">

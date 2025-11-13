@@ -6,7 +6,7 @@ export interface NavItem {
 export const mainNavigation: NavItem[] = [
   { label: 'Inicio', href: '/' },
   { label: 'Nutrición', href: '/nutricion' },
-  { label: 'Sanidad', href: '#sanidad' },
+  { label: 'Sanidad', href: '/sanidad' },
   { label: 'Hacienda', href: '#hacienda' },
   { label: 'Producción', href: '#produccion' },
   { label: 'Noticias', href: '#noticias' },
