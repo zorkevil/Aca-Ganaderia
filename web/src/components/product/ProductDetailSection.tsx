@@ -23,9 +23,9 @@ export default function ProductDetailSection({ product }: { product: ProductItem
           {/* Información derecha */}
           <div className="col-lg-6">
             {/* Título */}
-            <h2 className="mb-4 text-color-3 wow animate__animated animate__fadeInUp">
+            <h1 className="h2 mb-4 text-color-3 wow animate__animated animate__fadeInUp">
               {product.title ?? product.name}
-            </h2>
+            </h1>
 
             {/* Subtítulo (solo si existe) */}
             {product.subtitle && (
@@ -57,7 +57,7 @@ export default function ProductDetailSection({ product }: { product: ProductItem
                 data-wow-delay="0.4s"
               >
                 <h4 className="mb-0">Línea</h4>
-                <span>{product.generalCategory}</span>
+                <span>{product.generalCategoryName}</span>
               </div>
 
               {/* SKU */}

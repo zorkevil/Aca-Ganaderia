@@ -32,7 +32,7 @@ export default function DescriptionSection() {
 
           <div className="col-lg-6">
             <img
-              src="/img/sections/nutricion/nutricion-img.jpg"
+              src="/img/sections/nutricion/nutricion-img.webp"
               alt="Nutrición Ganadera"
               title="Nutrición Ganadera"
               className="img-fluid w-100 border-top-left-radius-50 border-bottom-right-radius-50 wow animate__animated animate__fadeIn"

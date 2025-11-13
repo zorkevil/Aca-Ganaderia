@@ -43,10 +43,12 @@ export type ProductItem = {
   sku: string;
   slug: string;
   name: string;
+  metaDescription?: string;
   title?: string;
   subtitle?: string;
   description: string;
   generalCategory: string;
+  generalCategoryName: string;
   category: string;
   secondCategory: string;
   presentation: string;
@@ -73,6 +75,17 @@ export type ProductCategory = {
   id: string;
   name: string;
 };
+
+export interface NavItem {
+  label: string;
+  href: string;
+}
+
+export interface SocialLink {
+  name: string;
+  href: string;
+  icon: string;
+}
 
 // =============================================================================
 // INTERFACES DE SECCIONES

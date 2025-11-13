@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import TomSelectControl from '@/components/misc/TomSelectControl';
 import type { ContactSectionProps } from '@/lib/types';
 
@@ -9,14 +10,17 @@ export default function ContactSection({
   description = 'Si querés recibir asesoramiento o conocer nuestras soluciones adaptadas a tu producción, completá este breve formulario.',
   submitTo,
 }: ContactSectionProps) {
+  const router = useRouter();
   const [showOtroRol, setShowOtroRol] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Determina si es el formulario completo (home) o reducido (página específica)
   const isFullForm = !submitTo;
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert(`Formulario enviado a: ${submitTo || '/api/contacto'}`);
+    setIsSubmitting(true);
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    router.push('/gracias');
   };
 
   return (
@@ -263,8 +267,16 @@ export default function ContactSection({
                 className="text-end wow animate__animated animate__fadeInUp"
                 data-wow-delay="1.1s"
               >
-                <button type="submit" className="btn btn-primary">
-                  Contacto
+                <button
+                  type="submit"
+                  className={`btn btn-primary 
+                    ${isSubmitting ? 'disabled animate__animated animate__pulse' : ''}`}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting && (
+                    <span className="spinner-border spinner-border-sm" role="status" />
+                  )}
+                  {isSubmitting ? 'Enviando...' : 'Enviar'}
                 </button>
               </div>
             </form>

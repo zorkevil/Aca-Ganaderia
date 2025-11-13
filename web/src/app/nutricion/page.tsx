@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 import HeroSection from '@/components/misc/HeroSection';
 import DescriptionSection from '@/components/nutricion/DescriptionSection';
 import ServicesSection from '@/components/misc/SubservicesSection';
@@ -6,8 +8,6 @@ import RelatedServicesSection from '@/components/misc/RelatedServicesSection';
 import NewsSection from '@/components/misc/NewsSection';
 import ContactSection from '@/components/misc/ContactSection';
 import ProductsSection from '@/components/misc/ProductsSection';
-
-import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Nutrición',

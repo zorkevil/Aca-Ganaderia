@@ -63,8 +63,10 @@ export default function Footer() {
                 <Link
                   key={social.name}
                   href={social.href}
-                  aria-label={social.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-light rounded-circle p-0 d-flex align-items-center justify-content-center icon-32"
+                  aria-label={social.name}
                 >
                   <i className={`bi ${social.icon} lh-0`} />
                 </Link>

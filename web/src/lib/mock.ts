@@ -176,6 +176,7 @@ export const subservicesByArea: Record<string, SubserviceItem[]> = {
 
 export const heroImageNutricion = '/img/sections/nutricion/nutricion-hero-bg.webp';
 export const heroImageSanidad = '/img/sections/sanidad/sanidad-hero-bg.webp';
+export const heroImageGracias = '/img/sections/contacto/contacto-hero-bg.webp';
 
 export const categoriesNutricion = [
   { id: '1', name: 'Porcinos' },
@@ -196,6 +197,7 @@ export const products: ProductItem[] = [
     description:
       'Permiten pasar rápidamente, y minimizando el stress, de dieta líquida en lactancia a alimento sólido. La presentación especial de este alimento permite mejorar las conversiones, evitar desperdicios en comederos y optimizar la ganancia de peso.',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Porcinos',
     secondCategory:
       'Lechones a partir de los 7-10 días de vida en comedores adecuados mientras están al pie de la madre, para luego continuar desde el destete hasta los 9 kg de peso vivo.',
@@ -217,6 +219,7 @@ export const products: ProductItem[] = [
     description:
       'Concentrado proteico y vitamínico mineral que permite el óptimo desarrollo de lechones en la etapa inicial y de recría. Para ser utilizado como ingrediente en la elaboración de raciones para lechones.',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Porcinos',
     secondCategory: 'A continuación del Concentrado Iniciador hasta los 70 días de vida.',
     presentation: 'Bolsa 25 kg',
@@ -237,6 +240,7 @@ export const products: ProductItem[] = [
     subtitle: 'Concentrado Iniciador',
     description: '',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Porcinos',
     secondCategory:
       'Formulado para la elaboración de raciones para lechones a partir de los 12 kg hasta los 20 kg de PV o de los 42 a los 55 días de vida.',
@@ -259,6 +263,7 @@ export const products: ProductItem[] = [
     description:
       'Concentrado proteico y vitamínico mineral que permite el óptimo desarrollo de lechones en la etapa inicial y de recría. Para ser utilizado como ingrediente en la elaboración de raciones para lechones.',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Porcinos',
     secondCategory: 'A continuacion del Concentrado Iniciador hasta los 70 dias de vida.',
     presentation: 'Bolsa 25 kg',
@@ -278,6 +283,7 @@ export const products: ProductItem[] = [
     description:
       'Es un alimento de alta tecnología, exstrusado, de alta concentracción de proteínas y grasas de máxima calidad, maximizando la degradación ruminal. Esto permite menores emisiones de dióxido de carbono y óxido nitroso generando un resultado productivo y sustentable, cuidando el medio ambiente, el bienestar animal y agregando un nuevo enfoque: la salud del ser humano.',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
     secondCategory:
       'Tambo: Terneros desde 1 a 45 días de Vida. Cría: Terneros de 30 a 60 días de Vida',
@@ -297,6 +303,7 @@ export const products: ProductItem[] = [
     description:
       'Es un complemento vitamínico, mineral y energético formulado para ser utilizado durante la crianza artificial o en el destete de los terneros, agregándolo a la dieta láctea que esté recibiendo el ternero/a, en tambo o en cría, que incluye una dieta líquida no proveniente de la leche. Energia Metabolizable: 3400 kcal/kg',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
     secondCategory:
       'Terneras/os de tambo o cría desde el primer día de vida en dos dosis diarias, con las dos tomas de leche (o entre tomas) durante los primeros 7 días de vida.',
@@ -318,6 +325,7 @@ export const products: ProductItem[] = [
     description:
       'Suplemento vitamínico mineral aniónico diseñado para lograr un correcto balance ácido-básico dentro del sistema homeostático de la vaca, corrigiendo los bajos niveles de Calcio sérico pre y post parto. Con la finalidad de prevenir problemas metabólicos como la hipocalcemia.',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Sistema de producción de leche',
     secondCategory: 'Vacas preparto, un mínimo de 15 días y un máximo de 21 días antes del parto',
     presentation: 'Bolsa 25 kg',
@@ -337,6 +345,7 @@ export const products: ProductItem[] = [
     description:
       'Suplemento vitamínico mineral para ser suministrado en vacas en producción desde el inicio de su lactancia.',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Sistema de producción de leche',
     secondCategory: 'Vacas lecheras en etapa de lactancia.',
     presentation: 'Bolsa 25 kg',
@@ -356,6 +365,7 @@ export const products: ProductItem[] = [
     description:
       'Núcleo vitamínico y mineral formulado para ser utilizado en la elaboración de alimentos balanceados y raciones para bovinos lecheros en producción.',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Sistema de producción de leche',
     secondCategory: 'Vacas lecheras en producción.',
     presentation: 'Bolsa 25 kg',
@@ -375,6 +385,7 @@ export const products: ProductItem[] = [
     description:
       'Suplemento vitamínico y mineral diseñado para su utilización en fábricas de alimentos para la formulación de productos destinados a bovinos en los diferentes sistemas de producción, incorporando ionóforo y micro minerales orgánicos e inorgánicos.',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Sistema de producción industrial',
     secondCategory: 'Desde recría hasta animales en producción',
     presentation: 'Bolsa 25 kg',
@@ -393,6 +404,7 @@ export const products: ProductItem[] = [
     description:
       'Producto formulado para ser utilizado como reemplazante de leche para alimentar a terneros durante la etapa de crianza artificial. Sustituto 100% lácteo. Libre de antibioticos y/o medicamentos. Contiene 23% de proteína y 15 % de grasa. Energía Metabolizable: 4000 kcal/kg.',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
     secondCategory: 'Terneros',
     presentation: 'Bolsa 25 kg',
@@ -413,6 +425,7 @@ export const products: ProductItem[] = [
     description:
       'Producto formulado para ser utilizado como reemplazante de leche para alimentar a terneros durante la etapa de crianza artificial. Libre de antibióticos. Contiene 21% de Proteína y 10% grasa.',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
     secondCategory: 'Terneros',
     presentation: 'Bolsa 25 kg',
@@ -432,6 +445,7 @@ export const products: ProductItem[] = [
     name: 'Rehidratante para terneros',
     description: 'Suplemento mineral con aporte de electrolitos para rehidratación de terneros.',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
     secondCategory: 'Bovinos hasta 6 meses de edad.',
     presentation: 'Frasco 1 kg',
@@ -452,6 +466,7 @@ export const products: ProductItem[] = [
     description:
       'Alimento balanceado completo con 18% de proteinas para ser utilizado en la alimentación durante la etapa de crianza artificial o Creep Feeding.',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
     secondCategory: 'Terneros en crianza artificial. Creep Feeding.',
     presentation: 'Bolsa 25 kg',
@@ -470,6 +485,7 @@ export const products: ProductItem[] = [
     description:
       'Suplemento alimenticio concentrado proteico con medicamento pelleteado, para ser utilizado en la preparación de raciones para la alimentación y engorde de bovinos y/o recrías.',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
     secondCategory:
       'Indicado para utilizar en animales de 60 a 110 kg de PV, tanto en terneros de cría como de tambo, respetando las dosis sugeridas.',
@@ -491,6 +507,7 @@ export const products: ProductItem[] = [
     description:
       'Concentrado proteico pelleteado desarrollado para balancear dietas en vacas lecheras y engordes de bovinos. Presenta macro - micro minerales y complejo vitamínicos.',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
     secondCategory:
       'Animales en engorde (novillos o vaquillonas) utilizar desde los 110 kg de peso vivo hasta la terminación. En vaca lechera durante toda la lactación. Desde que ingresa al tambo luego del parto hasta que sale al rodeo de vaca seca.',
@@ -512,6 +529,7 @@ export const products: ProductItem[] = [
     description:
       'Suplemento alimenticio concentrado proteico con medicamento pelleteado, para ser utilizado en la preparación de raciones para la alimentación y engorde de bovinos y/o recrías en tambos.',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
     secondCategory:
       'Indicado para utilizar en animales de 60 a 110 kg de peso vivo, tanto en terneros de cría como de tambo, respetando las dosis sugeridas.',
@@ -533,6 +551,7 @@ export const products: ProductItem[] = [
     description:
       'Concentrado proteico pelleteado desarrollado para balancear dietas en vacas lecheras y engordes de bovinos. Presenta macro - micro minerales y complejo vitamínicos.',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
     secondCategory:
       'Animales en engorde (novillos o vaquillonas) utilizar desde los 110 kg de peso vivo hasta la terminación. En vaca lechera durante toda la lactación. Desde que ingresa al tambo luego del parto hasta que sale al rodeo de vaca seca.',
@@ -554,6 +573,7 @@ export const products: ProductItem[] = [
     description:
       'Complemento vitamínico mineral para ser suministrado a bovinos que se encuentrean iniciando su etapa de ADAPTACIÓN en engorde a corral. Sastifaciendo sus requerimientos de minerales y vitaminas en cantidad y calidad. Incluye Monensina como ionóforo para mejorar la conversión y/o evitar cuadros de acidosis o timpanismo.',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Sistema de producción de carne',
     secondCategory:
       'Utilizado en animales que van desde el inicio de la recría (220 kg de peso Vivo) hasta fin de la terminación (340/460). Otras Categorías: Toros.',
@@ -575,6 +595,7 @@ export const products: ProductItem[] = [
     description:
       'Suplemento mineral indicado para ser suministrado a bovinos que se encuentran en su etapa de recría o terminación a corral. Puede usarse en animales que reciben altas suplementaciones a campo. Satisfaciendo sus requerimientos de minerales en cantidad y calidad. Incluye Monensina como ionóforo para mejorar la conversión y/o evitar problemas de acidosis.',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Sistema de producción de carne',
     secondCategory:
       'Utilizado en animales que van desde el inicio de la recría (220 kg de peso vivo) hasta fin de la terminación (340/460). Otras Categorías: Toros.',
@@ -596,6 +617,7 @@ export const products: ProductItem[] = [
     description:
       'Suplemento vitamínico mineral indicado para ser suministrado a bovinos que se encuentran en su etapa de recría o terminación a corral. Puede usarse en animales que reciben altas suplementaciones a campo. Satisfaciendo sus requerimientos de minerales y vitaminas en cantidad y calidad. Incluye Monensina como ionóforo para mejorar la conversión y/o evitar problemas de acidosis. Es el complemento ideal para animales en sistemas de produccion que buscan altos rendimientos en ganancia de peso y la eficiencia de conversión',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Sistema de producción de carne',
     secondCategory:
       'Utilizado en animales que van desde el inicio de la recría (220 kg de peso Vivo) hasta fin de la terminación (340/460). Otras Categorías: Toros.',
@@ -617,6 +639,7 @@ export const products: ProductItem[] = [
     description:
       'Suplemento mineral y vitamínico con monensina destinada a corregir deficiencias minerales, para ser utilizado en bovinos en producción bajo confinamiento a corral (Feed lots) o suplementación basada en granos y subproductos proteicos, sobre pasturas en porcentajes superiores al 1%.',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Sistema de producción de carne',
     secondCategory: 'Bovinos en recría o terminación.',
     presentation: 'Bolsa 25 kg',
@@ -636,6 +659,7 @@ export const products: ProductItem[] = [
     description:
       'Suplemento vitaminico mineral para ser utilizado en animales en producción (vacas lecheras).',
     generalCategory: 'nutricion',
+    generalCategoryName: 'Nutrición',
     category: 'Sistema de producción de leche',
     secondCategory: 'Suplemento para vacas lecheras en producción.',
     presentation: 'Bolsa 25 kg',
