@@ -498,7 +498,7 @@ export const products: ProductItem[] = [
     administration:
       'Para la preparación de la ración suministrar combinado con granos de cereal (maíz, sorgo, trigo, etc). De acuerdo a la categoría a suplementar las dosis sugeridas van desde el 10 al 30% de la ración o según criterio profesional. Puede ser utilizado en la preparación de raciones con Mixer. En cualquier sistema de alimentación respetar un tiempo de acostumbramiento a la dieta de 15 días como mínimo.',
     dosage:
-      'Engordes : 110 a 150 kg de peso vivo. Utilizar al 20 % en la ración. Engorde de 150 a 200 kg peso vivo: utilizar al 15 % de la ración. Engorde de a 200 kg a 300 kg peso vivo: utilizar al 10 % de la ración. Lechera 13%: Utilizar al 15% de la ración - Lechera 25% : Utilizar al 25% de la ración.',
+      'Engordes: 110 a 150 kg de peso vivo. Utilizar al 20 % en la ración. Engorde de 150 a 200 kg peso vivo: utilizar al 15 % de la ración. Engorde de a 200 kg a 300 kg peso vivo: utilizar al 10 % de la ración. Lechera 13%: Utilizar al 15% de la ración - Lechera 25% : Utilizar al 25% de la ración.',
     image: 'falta',
     price: 0,
     sales: 0,

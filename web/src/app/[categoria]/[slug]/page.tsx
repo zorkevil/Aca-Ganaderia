@@ -1,4 +1,8 @@
 import { notFound } from 'next/navigation';
+import ProductBreadcrumbs from '@/components/product/ProductBreadcrumbs';
+import ProductDetailSection from '@/components/product/ProductDetailSection';
+
+// Importás TODOS los productos (nutrición, sanidad, etc.)
 import { products } from '@/lib/mock';
 
 type Params = { categoria: string; slug: string };
@@ -6,23 +10,17 @@ type Params = { categoria: string; slug: string };
 export default async function ProductDetail({ params }: { params: Promise<Params> }) {
   const { categoria, slug } = await params;
 
-  const allProducts = products;
+  // Buscar el producto según categoría / slug
   const product =
-    allProducts.find((p) => p.generalCategory === categoria && p.slug === slug) ||
-    allProducts.find((p) => p.category === categoria && p.slug === slug);
+    products.find((p) => p.generalCategory === categoria && p.slug === slug) ||
+    products.find((p) => p.category === categoria && p.slug === slug);
 
   if (!product) return notFound();
 
   return (
-    <section className="py-7">
-      <div className="container">
-        <h1 className="text-color-3 mb-3">{product.name}</h1>
-        <img src={product.image} alt={product.name} className="img-fluid rounded-4 mb-4" />
-        <p className="mb-4">{product.description}</p>
-        <a href="#contacto" className="btn btn-primary">
-          Contacto
-        </a>
-      </div>
-    </section>
+    <main>
+      <ProductBreadcrumbs category={categoria} slug={slug} name={product.name} />
+      <ProductDetailSection product={product} />
+    </main>
   );
 }
