@@ -23,6 +23,7 @@ export interface ServicesItem {
 
 export interface NewsItem {
   id: number;
+  slug: string;
   title: string;
   category: string;
   colorBadge?: string;
@@ -30,7 +31,8 @@ export interface NewsItem {
   date: string; // formato ISO: "2025-10-31"
   image: string;
   excerpt: string;
-  href: string;
+  content: string;
+  metaDescription: string;
 }
 
 export type SubserviceItem = {
@@ -50,6 +52,7 @@ export type ProductItem = {
   generalCategory: string;
   generalCategoryName: string;
   category: string;
+  iconCategory: string;
   secondCategory: string;
   presentation: string;
   administration: string;
@@ -108,8 +111,25 @@ export interface RelatedServicesProps {
   title?: string;
 }
 
-export interface HeroSectionProps {
+export type HeroBreadcrumb = {
+  label: string;
+  href?: string;
+};
+
+export type HeroSectionProps = {
   title: string;
-  showBreadcrumb?: boolean;
   backgroundImage?: string;
+  showBreadcrumb?: boolean;
+  breadcrumbs?: HeroBreadcrumb[];
+};
+
+export interface BadgeProps {
+  n: any;
+  className?: string;
+}
+
+export interface NewsCardProps {
+  n: any;
+  index: number;
+  colClass?: string;
 }

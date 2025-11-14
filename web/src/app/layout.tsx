@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   description: 'ACA Ganadería — Soluciones y servicios para el sector ganadero.',
   icons: {
     icon: [
-      { url: 'img/branding/favicon/favicon.ico', type: 'image/x-icon' },
-      { url: 'img/branding/favicon/favicon.svg', type: 'image/svg+xml' },
-      { url: 'img/branding/favicon/favicon-96x96.png', type: 'image/png', sizes: '96x96' },
+      { url: '/img/branding/favicon/favicon.ico', type: 'image/x-icon' },
+      { url: '/img/branding/favicon/favicon.svg', type: 'image/svg+xml' },
+      { url: '/img/branding/favicon/favicon-96x96.png', type: 'image/png', sizes: '96x96' },
     ],
     apple: { url: '/img/favicon/apple-touch-icon.png', sizes: '180x180' },
   },

@@ -20,7 +20,11 @@ import { heroImageGracias } from '@/lib/mock';
 export default function ThankyouPage() {
   return (
     <main>
-      <HeroSection title={SECTION_NAME} backgroundImage={heroImageGracias} />
+      <HeroSection
+        title={SECTION_NAME}
+        backgroundImage={heroImageGracias}
+        breadcrumbs={[{ label: 'Home', href: '/' }, { label: SECTION_NAME }]}
+      />
       <ThankyouSection socialLinks={socialLinks} />
     </main>
   );

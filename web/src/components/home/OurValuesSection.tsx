@@ -1,5 +1,3 @@
-'use client';
-
 export default function OurValuesSection() {
   return (
     <section id="nuestros-valores" className="py-7">

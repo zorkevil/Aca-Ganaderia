@@ -6,6 +6,7 @@ export default function HeroSection({
   title,
   showBreadcrumb = true,
   backgroundImage = '/img/sections/nutricion/nutricion-hero-bg.jpg',
+  breadcrumbs = [],
 }: HeroSectionProps) {
   return (
     <section
@@ -18,15 +19,29 @@ export default function HeroSection({
           <div className="col text-center">
             <h1 className="text-white mb-4 wow animate__animated animate__fadeInUp">{title}</h1>
 
-            {showBreadcrumb && (
+            {showBreadcrumb && breadcrumbs.length > 0 && (
               <p
                 className="text-white mb-0 wow animate__animated animate__fadeInUp"
                 data-wow-delay="0.1s"
               >
-                <a href="/" className="text-white text-decoration-none">
-                  Home
-                </a>{' '}
-                &gt; {title}
+                {breadcrumbs.map((crumb, index) => {
+                  const isLast = index === breadcrumbs.length - 1;
+
+                  return (
+                    <span key={index}>
+                      {crumb.href && !isLast ? (
+                        <a href={crumb.href} className="text-white text-decoration-none">
+                          {crumb.label}
+                        </a>
+                      ) : (
+                        <span>{crumb.label}</span>
+                      )}
+
+                      {/* Separador excepto en el último */}
+                      {!isLast && <span> &gt; </span>}
+                    </span>
+                  );
+                })}
               </p>
             )}
           </div>

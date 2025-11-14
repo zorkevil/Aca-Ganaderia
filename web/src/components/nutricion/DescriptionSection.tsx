@@ -1,5 +1,3 @@
-'use client';
-
 export default function DescriptionSection() {
   return (
     <section id="descripcion" className="py-7">

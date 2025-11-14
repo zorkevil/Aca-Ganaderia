@@ -1,5 +1,7 @@
 import React from 'react';
 
+import type { BadgeProps } from '@/lib/types';
+
 // Utilidad para contraste
 function getContrastColor(hexColor: string): string {
   if (!hexColor) return '#fff';
@@ -11,7 +13,7 @@ function getContrastColor(hexColor: string): string {
   return luminance > 0.6 ? '#000' : '#fff';
 }
 
-export default function Badge({ n }: { n: any }) {
+export default function Badge({ n, className = '' }: BadgeProps) {
   const hasClass = !!n.badgeClass;
   const hasColor = !!n.colorBadge;
 
@@ -27,7 +29,7 @@ export default function Badge({ n }: { n: any }) {
       : undefined;
 
   return (
-    <span className={`badge small mb-2 align-self-center ${badgeClass}`} style={badgeStyle}>
+    <span className={`badge small align-self-center ${badgeClass} ${className}`} style={badgeStyle}>
       {n.category}
     </span>
   );

@@ -1,5 +1,3 @@
-'use client';
-
 import type { ServicesItem } from '@/lib/types';
 
 type Props = {

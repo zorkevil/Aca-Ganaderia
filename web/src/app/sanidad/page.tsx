@@ -32,7 +32,11 @@ export default function NutricionPage() {
   const subServicesMock = subservicesByArea[SECTION_ID] || [];
   return (
     <main>
-      <HeroSection title={SECTION_NAME} backgroundImage={heroImageSanidad} />
+      <HeroSection
+        title={SECTION_NAME}
+        backgroundImage={heroImageSanidad}
+        breadcrumbs={[{ label: 'Home', href: '/' }, { label: SECTION_NAME }]}
+      />
       <DescriptionSection />
       <ServicesSection title="Nuestras propuestas" items={subServicesMock} />
       <ProductsSection

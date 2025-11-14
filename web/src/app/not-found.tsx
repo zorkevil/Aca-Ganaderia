@@ -10,7 +10,7 @@ export default function NotFound() {
   return (
     <main>
       {/* Título oculto para SEO */}
-      <h1 className="visually-hidden">404 - Página no encontrada — ACA Ganadería</h1>
+      <h1 className="visually-hidden">404 - Página no encontrada | ACA Ganadería</h1>
 
       {/* Sección principal */}
       <section id="gracias" className="py-7">

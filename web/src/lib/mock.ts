@@ -73,49 +73,129 @@ export const services: ServicesItem[] = [
 export const news: NewsItem[] = [
   {
     id: 1,
-    title: 'ACA Ganadera impulsa la innovación en el sector',
-    category: 'Nutrición',
-    colorBadge: '',
-    badgeClass: 'bg-color-7',
-    date: '2025-08-19',
-    image: '',
+    slug: 'carne-vacuna-precios-firmes',
+    title: 'Carne vacuna: precios firmes y una demanda que no afloja',
     excerpt:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e',
-    href: '#',
+      'El escenario internacional sostiene valores históricamente altos y redefine el mapa de negocios con impacto en Argentina, Brasil, Australia y Uruguay.',
+    category: 'Hacienda',
+    colorBadge: '',
+    badgeClass: 'bg-color-11',
+    date: '2025-11-14',
+    image: '/img/sections/noticias/noticias-01.webp',
+    metaDescription:
+      'El escenario internacional sostiene valores históricamente altos y redefine el mapa de negocios con impacto en Argentina, Brasil, Australia y Uruguay.',
+    content: `
+    <p>La firmeza en los precios y continua demanda de la carne vacuna en el mercado internacional sigue traccionando en forma positiva en el negocio de ganados y carnes, estableciendo un piso de precios para las distintas categorías de la hacienda, lo cual lleva a valores históricamente altos en dólares y en pesos constantes.</p>
+
+    <p>Así lo sostienen los consultores ganaderos y médicos veterinarios Fernando Gil y Federico Santangelo, de Agroideas, en un detallado panorama internacional sobre la materia realizado para la Asociación de Cooperativas Argentinas (ACA) bajo el título “Informe de la Cadena Carne Vacuna. Agosto 2025”.</p>
+
+    <h2>Los aranceles de Estados Unidos</h2>
+
+    <p>Los aranceles de Estados Unidos impactaron en el mercado de la carne de Brasil. Tras la suba del gravamen para los productos brasileños, los operadores detuvieron las compras a ese mercado. Estos cambios en la política arancelaria dan la posibilidad de modificaciones estructurales en los flujos comerciales de Brasil, redireccionando su oferta a China y otros destinos.</p>
+
+    <highlight>
+      Los aranceles reconfiguran el comercio con Brasil, que redirige su oferta a China y otros destinos.
+    </highlight>
+
+    <p>Estados Unidos se encuentra con los precios de la carne más altos de la historia. Durante las últimas semanas, hubo un aumento de nueve centavos por kilo gancho, con lo que se logró superar al récord de mediados de junio, que había sido de 8,40.</p>
+
+    <h2>Motivo de los buenos precios</h2>
+
+    <p>La firmeza en los precios internacionales responde a la escasez de oferta mundial. Los volúmenes comercializados de muchos países exportadores de carne vacuna están hacia la baja.</p>
+
+    <h2>Excepciones a la regla</h2>
+
+    <p>Australia, en cambio, consolida su crecimiento con un notable dinamismo en varios destinos clave y una competitividad que se fortalece mes a mes, destacándose un salto en los embarques a Estados Unidos. En julio, las exportaciones totales de carne de res alcanzaron las 150.435 toneladas, lo que representa un aumento del 16 % con respecto a las cifras de julio de 2024 y del 12 % con respecto al récord anterior, establecido tan solo un mes antes, en junio. Eso fue logrado básicamente por el incremento en el peso de la canal, cuyo promedio en el primer trimestre de 2025 para el ganado adulto fue de 313 kg/cabeza.</p>
+
+    <p>Australia generalmente representa entre el 15 % y el 20 % de las exportaciones mundiales de carne vacuna. Eso significa que la suba de las exportaciones australianas, si bien significativa, no modifica por sí solo la situación de la oferta mundial. Por lo tanto, si bien las exportaciones australianas aumentaron, el efecto de la disminución de las exportaciones de otros países significa que la oferta mundial se mantiene limitada. Además, es muy difícil que Australia pueda incrementar sustancialmente su exportación a Estados Unidos porque tiene una oferta establecida.</p>
+
+    <p>Brasil es otra excepción en la reducción de las exportaciones. A pesar de que entraron en vigor los aranceles del 50% para las exportaciones de Brasil a Estados Unidos, logró los mayores volúmenes en el mes y en el acumulado a doce meses, mientras que el precio del novillo obtuvo fuertes subas de precios.</p>
+
+    <p>Tras varias postergaciones y acuerdos selectivos, el presidente del país norteamericano, Donald Trump, impuso un arancel del 50% adicional para la nación sudamericana, lo que, sumado a los tributos ya vigentes, marca un cierre virtual de sus exportaciones de carne al mercado estadounidense. Brasil, que pagaba 26,4% de derecho de importación por la carne vacuna, ahora debería pagar 76,4%, lo que supone que se acaba esa corriente comercial.</p>
+
+    <p>Estados Unidos era el segundo cliente por lo que deberá redirigir esa mercadería a otros, entre los que se destaca China como candidata. Los envíos a Estados Unidos, segundo mercado hasta junio, tuvieron un gran retroceso a causa del conflicto arancelario. La medida, en medio de un clima mundial incierto, podría presionar los precios en otros destinos.</p>
+
+    <p>Uruguay, con un volumen de 311 mil toneladas, refuerza en julio su crecimiento interanual en un 7% de exportaciones con un mercado del gordo con precios estables. En julio sus exportaciones se incrementaron un 26%, unas 42 mil toneladas, siendo China su principal destino, en tanto que el Reino Unido y Estados Unidos incrementaron sus compras en la misma comparación.</p>
+
+    <p>El mercado permanece expectante con lo que pueda pasar con el mapa de negocios: cómo van a repercutir los aranceles a Brasil, con un precio de la tonelada muy firme.</p>
+
+    <p>En el caso de Uruguay y la Argentina, con una cuota de apenas 20.000 toneladas, los volúmenes deberán pagar fuera de cuota un total de 36,4%, que corresponde a un 26,4% adicional que ya tenía, más el 10%.</p>
+
+    <img src="/img/sections/noticias/noticias-02.webp">
+    
+    <h2>Argentina: merma de exportaciones</h2>
+
+    <p>Con relación a los primeros seis meses de 2024, los volúmenes exportados de Argentina son un 16,4 % inferiores, mientras que el valor obtenido fue un 11,6% superior. En los primeros seis meses de este año, las ventas al exterior de carne bovina refrigerada y congelada resultaron cercanas a las 312,6 mil toneladas peso producto, por un valor de aproximadamente 1.587,9 millones de dólares.</p>
+
+    <h2>Caen las importaciones de China</h2>
+
+    <p>En el primer semestre de este año, las importaciones de carne vacuna de China acumulan 1,3 millones de toneladas, que resultan 9% inferiores a las del período comparable del año previo.</p>
+
+    <p>No obstante, en junio mostraron el primer aumento interanual del año. En ese mes, el gigante oriental importó 217 mil toneladas peso embarque, superando en 22 mil al registro de mayo y en 8 mil al de un año atrás (4%). Aunque los precios siguen estables, son más altos que el año pasado en casi un 10%.</p>
+
+    <highlight>
+      La firmeza en los precios internacionales responde a la escasez de oferta mundial.
+    </highlight>
+
+    <h2>La oportunidad de Argentina</h2>
+
+    <p>Entre los principales proveedores de China, la Argentina y Brasil ganan participación mientras que Estados Unidos prácticamente desaparece como consecuencia del fuerte conflicto comercial entre Trump y el presidente de China, Xi Jinping, por los aranceles.</p>
+  `,
   },
   {
     id: 2,
-    title: 'ACA Ganadera impulsa la innovación en el sector',
+    slug: 'desafios-sanitarios-de-la-ganaderia-argentina-en-el-contexto-actual',
+    title: 'Desafíos sanitarios de la ganadería argentina en el contexto actual',
+    excerpt:
+      'La ganadería argentina avanza con nuevas oportunidades, pero los desafíos sanitarios siguen marcando la agenda productiva y exportadora.',
     category: 'Sanidad',
     colorBadge: '',
     badgeClass: 'bg-color-9',
-    date: '2025-08-19',
-    image: '',
-    excerpt:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e',
-    href: '#',
-  },
-  {
-    id: 3,
-    title: 'ACA Ganadera impulsa la innovación en el sector',
-    category: 'Hacienda',
-    badgeClass: 'bg-color-11',
-    date: '2025-08-19',
-    image: '',
-    excerpt:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e',
-    href: '#',
-  },
-  {
-    id: 4,
-    title: 'ACA Ganadera impulsa la innovación en el sector',
-    category: 'Producción',
-    badgeClass: 'bg-color-13',
-    date: '2025-08-19',
-    image: '',
-    excerpt:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e',
-    href: '#',
+    date: '2025-11-15',
+    image: '/img/sections/noticias/noticias-03.webp',
+    metaDescription:
+      'La ganadería argentina avanza con nuevas oportunidades, pero los desafíos sanitarios siguen marcando la agenda productiva y exportadora.',
+    content: `
+    <p>La ganadería argentina atraviesa un escenario de grandes oportunidades. Con el precio del ternero por encima de los $4.000 por kilo vivo, un mercado de exportación firme y diversificado, que ya no depende exclusivamente de China o la Unión Europea, sino que comienza a incluir otros destinos como EE. UU., México e Israel. Sumada la reciente eliminación de retenciones a la carne, hacen que la ganadería bovina, se perfile como uno de los motores del sector agropecuario nacional.</p>
+
+    <p>En este contexto favorable, la sanidad animal se consolida como un factor estratégico, ya que, un rodeo sano no solo garantiza rentabilidad a los productores, sino también confianza en los mercados internacionales y seguridad para el consumidor en general.</p>
+
+    <p>En diálogo con ACAECER, Juan Ghirardi, Vet. PhD asesor ACA Sanidad Animal, explicó que a pesar de este escenario positivo, persisten desafíos sanitarios con repercusiones productivas que son muy relevantes.</p>
+
+    <p>• <strong>Fiebre aftosa:</strong> sigue siendo el eje central de las políticas oficiales. Mantener el estatus de país libre con vacunación requiere constancia en las campañas y vigilancia epidemiológica.</p>
+
+    <p>• <strong>Zoonosis obligatorias:</strong> brucelosis y tuberculosis continúan afectando tanto la productividad como la salud pública.</p>
+
+    <p>• <strong>Enfermedades reproductivas:</strong> IBR, DVB, Tricomoniasis y Campylobacteriosis generan pérdidas silenciosas en los porcentajes de preñez y destete, comprometiendo la eficiencia del rodeo nacional. Históricamente la tasa de destete se sitúa en 63%, y en 2024 fue del 65,2%. Si bien se observa una mejora, aún queda mucho por hacer.</p>
+
+    <p>• <strong>Patologías parasitarias:</strong> la resistencia a los tratamientos limita el control. Problemas como los nematodos en la región pampeana o la garrapata que se expande cada vez más en el NEA y NOA, requieren enfoques de manejo integrado, ya que se traducen en menores cantidades de terneros, menor ganancia de peso y mayores costos sanitarios.</p>
+
+    <h2>Prevención y capacitación: la base del éxito</h2>
+
+    <p>Por otro lado, Ghirardi especificó que la prevención es la herramienta más eficaz y accesible para seguir luchando contra estos desafíos sanitarios. “Las vacunaciones con calendarios planificados, el diagnóstico temprano y el uso responsable de antiparasitarios constituyen la primera línea de defensa. Sin embargo, el éxito depende tanto de la ciencia como del factor humano. Muchas pérdidas se originan en fallas de manejo: dosis mal aplicadas, registros incompletos o deficiencias en el control de información de ingresos y movimientos de ganado”, detalló.</p>
+
+    <p>Y explicó que, en este contexto, desde Sanidad Animal de ACA, no solo se asegura acceso confiable a medicamentos y vacunas de calidad, también se brinda soporte técnico a equipos de trabajo y entes sanitarios de cada región del país. “Su acompañamiento técnico facilita la implementación de planes sanitarios efectivos y convierte a las cooperativas en un engranaje indispensable para que las políticas nacionales se traduzcan en resultados concretos en el campo”, rescató el veterinario.</p>
+
+    <highlight>
+      La sanidad animal sigue siendo el factor clave para sostener la competitividad de la ganadería argentina.
+    </highlight>
+
+    <img src="/img/sections/noticias/noticias-04.webp">
+
+    <h2>La importancia de la trazabilidad</h2>
+
+    <p>Otro tema que destacó Ghirardi es la trazabilidad ganadera, que toma trascendencia por la reciente Resolución 530/25 del SENASA, la cual establece la identificación electrónica obligatoria en bovinos a partir de enero de 2026.</p>
+
+    <p>De esta forma, los animales deberán ser identificados individualmente al destete o primer movimiento mediante un binomio de dispositivos, es decir una caravana electrónica de tipo botón y una tarjeta visual. Ambas de color blanco y con un código de identificación que cumple los estándares internacionales ISO.</p>
+
+    <highlight>
+      Prevención, capacitación y trazabilidad: tres pilares para enfrentar los desafíos sanitarios actuales.
+    </highlight>
+
+    <p>“Con esta medida no solo se fortalece la confianza de los mercados internacionales, sino que también permite integrar información productiva, reproductiva y sanitaria en sistemas digitalizados, potenciando la eficiencia del manejo y la toma de decisiones, por ende, la eficiencia productiva”, indicó el veterinario. Y agregó que desde Sanidad Animal de ACA, acompañan esta transición en alianza con proveedores líderes en sistemas de identificación electrónica internacional, asegurando que los productores cuenten con dispositivos con la tecnología más eficiente como son las caravanas HDX, bastones lectores que incluyen GPS y el soporte técnico necesario para implementarlos con éxito.</p>
+
+    <p>“En definitiva, la sanidad animal es un pilar clave de la competitividad de la ganadería argentina. Los desafíos persisten, pero también lo hacen las oportunidades. Prevenir, capacitar, innovar y articular esfuerzos entre productores, veterinarios, cooperativas y Estado es el camino para consolidar un modelo ganadero eficiente, que crezca en stock, sea sustentable y mejore la proyección internacional”, concluyó Juan Ghirardi.</p>
+  `,
   },
 ];
 
@@ -177,6 +257,7 @@ export const subservicesByArea: Record<string, SubserviceItem[]> = {
 export const heroImageNutricion = '/img/sections/nutricion/nutricion-hero-bg.webp';
 export const heroImageSanidad = '/img/sections/sanidad/sanidad-hero-bg.webp';
 export const heroImageGracias = '/img/sections/contacto/contacto-hero-bg.webp';
+export const heroImageNoticias = '/img/sections/noticias/noticias-hero-bg.webp';
 
 export const categoriesNutricion = [
   { id: '1', name: 'Porcinos' },
@@ -199,12 +280,13 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Porcinos',
+    iconCategory: '/img/icons/icon_nutricion_porcino.svg',
     secondCategory:
       'Lechones a partir de los 7-10 días de vida en comedores adecuados mientras están al pie de la madre, para luego continuar desde el destete hasta los 9 kg de peso vivo.',
     presentation: 'Bolsa 25 kg',
     administration: 'Se debe controlar que la proporción utilizada sea la indicada.',
     dosage: '2 kg por lechon. A continuación de este alimento se suministrará STARTER ACA.',
-    image: 'falta',
+    image: '/img/products/nutricion/af-cerdos-intensivo-pre-starter.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -221,12 +303,13 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Porcinos',
+    iconCategory: '/img/icons/icon_nutricion_porcino.svg',
     secondCategory: 'A continuación del Concentrado Iniciador hasta los 70 días de vida.',
     presentation: 'Bolsa 25 kg',
     administration:
       'Moler adecuadamente pellets de soja y maíz de buena calidad y mezclar con AF Cerdos Concentrado Recría.',
     dosage: 'Incluir 5% de la ración.',
-    image: 'falta',
+    image: '/img/products/nutricion/af-cerdos-intensivos-starter.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -242,13 +325,14 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Porcinos',
+    iconCategory: '/img/icons/icon_nutricion_porcino.svg',
     secondCategory:
       'Formulado para la elaboración de raciones para lechones a partir de los 12 kg hasta los 20 kg de PV o de los 42 a los 55 días de vida.',
     presentation: 'Bolsa 25 kg',
     administration:
       'Moler adecuadamente pellets de soja y maíz de buena calidad y mezclar con AF Cerdos Concentrado Iniciador.',
     dosage: 'Incluir en un 10% en ración con pellets de soja y maíz molido.',
-    image: 'falta',
+    image: '/img/products/nutricion/af-cerdos-intesivos-concentrado-iniciador.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -265,12 +349,13 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Porcinos',
+    iconCategory: '/img/icons/icon_nutricion_porcino.svg',
     secondCategory: 'A continuacion del Concentrado Iniciador hasta los 70 dias de vida.',
     presentation: 'Bolsa 25 kg',
     administration:
       'Moler adecuadamente pellets de soja y maíz de buena calidad y mezclar con AF Cerdos Concentrado Recría.',
     dosage: 'Incluir 5% de la ración.',
-    image: 'falta',
+    image: '/img/products/nutricion/af-cerdos-intensivo-concentrado-recria.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -285,12 +370,13 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
+    iconCategory: '/img/icons/icon_nutricion_prod_terneros.svg',
     secondCategory:
       'Tambo: Terneros desde 1 a 45 días de Vida. Cría: Terneros de 30 a 60 días de Vida',
     presentation: 'Bolsa 15 kg',
     administration: 'Consultar al departamento técnico el plan de alimentación.',
     dosage: 'Consulte al departamento técnico el plan de alimentación acorde para su crianza.',
-    image: 'falta',
+    image: '/img/products/nutricion/ruter-15kg.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -305,6 +391,7 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
+    iconCategory: '/img/icons/icon_nutricion_prod_terneros.svg',
     secondCategory:
       'Terneras/os de tambo o cría desde el primer día de vida en dos dosis diarias, con las dos tomas de leche (o entre tomas) durante los primeros 7 días de vida.',
     presentation: '15 litros',
@@ -312,7 +399,7 @@ export const products: ProductItem[] = [
       'Disolver una dosis de 50 cm cúbicos en dos litros de leche o agua a 38 °C, según sistema. Se puede administrar directamente en balde, en mamadera o por medio de sondas nasoesofagica para los casos en que exista adinamia o falta de apetito.',
     dosage:
       'Tambo: Terneras/os desde el primer día de vida en dos dosis diarias, con las dos tomas de leche, o entre tomas, durante 7 días. Dosis: 50 cc c/u. Cría: desde el momento del destete Hiperprecoz, en dos dosis diarias por 7 días.Se pueden suministrar en el agua de bebida a razón de 50 cc por litro; calcular 1 litro de agua por ternero en cada dosis. Una vez consumida el agua ofertada dejar la misma a voluntad.',
-    image: 'falta',
+    image: '/img/products/nutricion/ruter-inicia.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -327,12 +414,13 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Sistema de producción de leche',
+    iconCategory: '/img/icons/icon_nutricion_prod_leche.svg',
     secondCategory: 'Vacas preparto, un mínimo de 15 días y un máximo de 21 días antes del parto',
     presentation: 'Bolsa 25 kg',
     administration:
       'Recomendamos ingresar las vacas al lote y dosificar en la ración 21 días antes del parto. Recomendado para hacer en balanceados o en raciones en mixer con el resto de los ingredientes.',
     dosage: '300 gramos por vaca por día.',
-    image: 'falta',
+    image: '/img/products/nutricion/af-mix-adq-preparto-anionica.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -347,12 +435,13 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Sistema de producción de leche',
+    iconCategory: '/img/icons/icon_nutricion_prod_leche.svg',
     secondCategory: 'Vacas lecheras en etapa de lactancia.',
     presentation: 'Bolsa 25 kg',
     administration:
       'Agregar en la ración con la que se alimentan las vacas. Recomendado para hacer raciones balanceadas en el mixer mezclándolo con el resto de los ingredientes.',
     dosage: '300 gramos por vaca por día.',
-    image: 'falta',
+    image: '/img/products/nutricion/af-mix-adq-terneros.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -367,12 +456,13 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Sistema de producción de leche',
+    iconCategory: '/img/icons/icon_nutricion_prod_leche.svg',
     secondCategory: 'Vacas lecheras en producción.',
     presentation: 'Bolsa 25 kg',
     administration:
       'Agregar como suplemento junto al resto de los ingredientes que se incluyen en la formulación del blanceado.',
     dosage: 'Vacas en lactancia: 0,5 kg por tonelada.',
-    image: 'falta',
+    image: '/img/products/nutricion/af-mix-produccion-de-leche-25kg.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -387,11 +477,12 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Sistema de producción industrial',
+    iconCategory: '/img/icons/icon_nutricion_prod_industrial.svg',
     secondCategory: 'Desde recría hasta animales en producción',
     presentation: 'Bolsa 25 kg',
     administration: 'Mezclar la dosis sugerida con el resto de los ingredientes.',
     dosage: '10 kg por tonelada de alimento.',
-    image: 'falta',
+    image: '/img/products/nutricion/af-mix-industrial-blend.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -406,13 +497,14 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
+    iconCategory: '/img/icons/icon_nutricion_prod_terneros.svg',
     secondCategory: 'Terneros',
     presentation: 'Bolsa 25 kg',
     administration:
       'Calentar agua hasta una temperatura de 45/50°C y mezclar con el producto. Dilución AL 12% o según criterio profesional. Para su preparación utilizar agua apta para consumo humano.',
     dosage:
       'Suministrar 2 tomas diarias de 2 litros cada una, a la misma hora y temperatura. Temperatura de suministro 37/38 °C. Se debe suministrar alimento balanceado con 18% de Proteína (materia tal cual) de excelente calidad.',
-    image: 'falta',
+    image: '/img/products/nutricion/cooperacion-af.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -427,13 +519,14 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
+    iconCategory: '/img/icons/icon_nutricion_prod_terneros.svg',
     secondCategory: 'Terneros',
     presentation: 'Bolsa 25 kg',
     administration:
       'Calentar agua hasta una temperatura de 45/50°C y mezclar con el producto. Dilución 9 partes de agua más 1 de producto (10%) o según criterio profesional. Para su preparación utilizar agua apta para consumo humano.',
     dosage:
       'Suministrar 2 tomas diarias de 2 litros cada una, a la misma hora y temperatura. Temperatura de suministro 37/38°C. Se debe suministrar alimento balanceado con 18% de Proteína (materia tal cual) de excelente calidad.',
-    image: 'falta',
+    image: '/img/products/nutricion/cooperacion cl-sustituto-lacteo.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -447,13 +540,14 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
+    iconCategory: '/img/icons/icon_nutricion_prod_terneros.svg',
     secondCategory: 'Bovinos hasta 6 meses de edad.',
     presentation: 'Frasco 1 kg',
     administration:
       'Disolver una (1) medida colmada (33g) en un (1) litro de agua a 38 °C. Se puede administrar directamente en balde, en mamadera o por medio de sondas nasoesofagica para los casos en que exista adinamia o falta de apetito.',
     dosage:
       'Suministrar el suplemento mineral en 4 tomas diarias de 1 litro cada 6 u 8hs, durante 2 días. De ser imposible este manejo, reducir a 2 tomas diarias de 2 lts cada 12hs durante dos días.',
-    image: 'falta',
+    image: '/img/products/nutricion/suplemento-mineral.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -468,11 +562,12 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
+    iconCategory: '/img/icons/icon_nutricion_prod_terneros.svg',
     secondCategory: 'Terneros en crianza artificial. Creep Feeding.',
     presentation: 'Bolsa 25 kg',
     administration: 'A partir de la primer semana de vida hasta los 90 kg de peso vivo',
     dosage: 'Suministración a discreción.',
-    image: 'falta',
+    image: '/img/products/nutricion/cooperacion-produccion-de-carne.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -487,6 +582,7 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
+    iconCategory: '/img/icons/icon_nutricion_prod_terneros.svg',
     secondCategory:
       'Indicado para utilizar en animales de 60 a 110 kg de PV, tanto en terneros de cría como de tambo, respetando las dosis sugeridas.',
     presentation: 'Bolsa 25 kg',
@@ -494,7 +590,7 @@ export const products: ProductItem[] = [
       'Para la preparación de la ración suministrar combinado con granos de cereal (maíz, sorgo, trigo, etc). De acuerdo a la categoría a suplementar las dosis sugeridas van desde el 10 al 30% de la ración o según criterio profesional. Puede ser utilizado en la preparación de raciones con Mixer. En cualquier sistema de alimentación respetar un tiempo de acostumbramiento a la dieta de 15 días como mínimo.',
     dosage:
       'Terneros de Cría a engorde: 60 a 80 kg de peso vivo. Utilizar al 30% en la ración. Terneros de 80 a 110 kg peso vivo: utilizar al 25% de la ración. Recría Tambo: Recría 1: Utilizar al 25% de la ración - Recría 2: Utilizar al 20% de la ración - Recría 3: utilizar al 15% de la ración.',
-    image: 'falta',
+    image: '/img/products/nutricion/cooperacion-produccion-de-carne.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -509,6 +605,7 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
+    iconCategory: '/img/icons/icon_nutricion_prod_terneros.svg',
     secondCategory:
       'Animales en engorde (novillos o vaquillonas) utilizar desde los 110 kg de peso vivo hasta la terminación. En vaca lechera durante toda la lactación. Desde que ingresa al tambo luego del parto hasta que sale al rodeo de vaca seca.',
     presentation: 'Bolsa 25 kg',
@@ -516,7 +613,7 @@ export const products: ProductItem[] = [
       'Para la preparación de la ración suministrar combinado con granos de cereal (maíz, sorgo, trigo, etc). De acuerdo a la categoría a suplementar las dosis sugeridas van desde el 10 al 30% de la ración o según criterio profesional. Puede ser utilizado en la preparación de raciones con Mixer. En cualquier sistema de alimentación respetar un tiempo de acostumbramiento a la dieta de 15 días como mínimo.',
     dosage:
       'Engordes: 110 a 150 kg de peso vivo. Utilizar al 20 % en la ración. Engorde de 150 a 200 kg peso vivo: utilizar al 15 % de la ración. Engorde de a 200 kg a 300 kg peso vivo: utilizar al 10 % de la ración. Lechera 13%: Utilizar al 15% de la ración - Lechera 25% : Utilizar al 25% de la ración.',
-    image: 'falta',
+    image: '/img/products/nutricion/cooperacion-produccion-de-carne.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -531,6 +628,7 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
+    iconCategory: '/img/icons/icon_nutricion_prod_terneros.svg',
     secondCategory:
       'Indicado para utilizar en animales de 60 a 110 kg de peso vivo, tanto en terneros de cría como de tambo, respetando las dosis sugeridas.',
     presentation: 'Bolsa 25 kg',
@@ -538,7 +636,7 @@ export const products: ProductItem[] = [
       'Para la preparación de la ración suministrar combinado con granos de cereal (maíz, sorgo, trigo, etc). De acuerdo a la categoría a suplementar las dosis sugeridas van desde el 10 al 30% de la ración o según criterio profesional. Puede ser utilizado en la preparación de raciones con Mixer. En cualquier sistema de alimentación respetar un tiempo de acostumbramiento a la dieta de 15 días como mínimo.',
     dosage:
       'Terneros de Cría a engorde: 60 a 80 kg de peso vivo. Utilizar al 20% en la ración. Terneros de 80 a 110 kg peso vivo: utilizar al 18% de la ración. Recría Tambo: Recría 1: Utilizar al 20% de la ración - Recría 2: Utilizar al 18% de la ración - Recría 3: Utilizar al 10% de la ración.',
-    image: 'falta',
+    image: '/img/products/nutricion/cooperacion-produccion-de-carne.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -553,6 +651,7 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Sistema de crianza de terneros',
+    iconCategory: '/img/icons/icon_nutricion_prod_terneros.svg',
     secondCategory:
       'Animales en engorde (novillos o vaquillonas) utilizar desde los 110 kg de peso vivo hasta la terminación. En vaca lechera durante toda la lactación. Desde que ingresa al tambo luego del parto hasta que sale al rodeo de vaca seca.',
     presentation: 'Bolsa 25 kg',
@@ -560,7 +659,7 @@ export const products: ProductItem[] = [
       'Para la preparación de la ración suministrar combinado con granos de cereal (maíz, sorgo, trigo, etc). De acuerdo a la categoría a suplementar las dosis sugeridas van desde el 10 al 30% de la ración o según criterio profesional. Puede ser utilizado en la preparación de raciones con Mixer. En cualquier sistema de alimentación respetar un tiempo de acostumbramiento a la dieta de 15 días como mínimo.',
     dosage:
       'Engordes: 110 a 150 kg de peso vivo. Utilizar al 15 % en la ración. Engorde de 150 a 200 kg peso vivo: utilizar al 10% de la ración. Engorde de a 200 kg a 300 kg peso vivo: utilizar al 8% de la ración. Lechera 13%: Utilizar al 15% de la ración - Lechera 16%: Utilizar al 22% de la ración.',
-    image: 'falta',
+    image: '/img/products/nutricion/cooperacion-produccion-de-carne.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -575,6 +674,7 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Sistema de producción de carne',
+    iconCategory: '/img/icons/icon_nutricion_prod_carne.svg',
     secondCategory:
       'Utilizado en animales que van desde el inicio de la recría (220 kg de peso Vivo) hasta fin de la terminación (340/460). Otras Categorías: Toros.',
     presentation: 'Bolsa 25 kg',
@@ -582,7 +682,7 @@ export const products: ProductItem[] = [
       'Permite ser utilizado como ingrediente de la ración o puede ser administrado ad libitum en bateias.',
     dosage:
       'Utilizar al 2% sobre la MS (materia seca) de la ración. Autoconsumo 100-150g. Diarios por animal. SE DEBE UTILIZAR EN LOS PRIMEROS 21 DÍAS DE ENCIERRE.',
-    image: 'falta',
+    image: '/img/products/nutricion/af-mix-abq-feed-lot.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -597,6 +697,7 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Sistema de producción de carne',
+    iconCategory: '/img/icons/icon_nutricion_prod_carne.svg',
     secondCategory:
       'Utilizado en animales que van desde el inicio de la recría (220 kg de peso vivo) hasta fin de la terminación (340/460). Otras Categorías: Toros.',
     presentation: 'Bolsa 25 kg',
@@ -604,7 +705,7 @@ export const products: ProductItem[] = [
       'Permite ser utilizado como ingrediente de la ración o puede ser administrado ad libitum en bateias.',
     dosage:
       'Utilizar al 2% sobre la MS (materia seca) de la ración. Autoconsumo 100-150g diarios por animal.',
-    image: 'falta',
+    image: '/img/products/nutricion/af-mix-abq-feed-lot.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -619,6 +720,7 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Sistema de producción de carne',
+    iconCategory: '/img/icons/icon_nutricion_prod_carne.svg',
     secondCategory:
       'Utilizado en animales que van desde el inicio de la recría (220 kg de peso Vivo) hasta fin de la terminación (340/460). Otras Categorías: Toros.',
     presentation: 'Bolsa 25 kg',
@@ -626,7 +728,7 @@ export const products: ProductItem[] = [
       'Permite ser utilizado como ingrediente de la ración o puede ser administrado ad libitum en bateas.',
     dosage:
       'Utilizar al 2% sobre la MS (materia seca) de la ración. Autoconsumo 100-150g diarios por animal.',
-    image: 'falta',
+    image: '/img/products/nutricion/af-mix-abq-feed-lot.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -641,12 +743,13 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Sistema de producción de carne',
+    iconCategory: '/img/icons/icon_nutricion_prod_carne.svg',
     secondCategory: 'Bovinos en recría o terminación.',
     presentation: 'Bolsa 25 kg',
     administration:
       'Mezclado con la ración. Período de carencia: no posee periodo de prefaena tanto en ganado de carne como de leche.',
     dosage: '100g por novillo por día, homogéneamente mezclado en la ración.',
-    image: 'falta',
+    image: '/img/products/nutricion/af-mix-produccion-de-carne.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',
@@ -661,11 +764,12 @@ export const products: ProductItem[] = [
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Sistema de producción de leche',
+    iconCategory: '/img/icons/icon_nutricion_prod_leche.svg',
     secondCategory: 'Suplemento para vacas lecheras en producción.',
     presentation: 'Bolsa 25 kg',
     administration: 'Junto a la ración balanceada o incorporada al Mixer.',
     dosage: '100g por vaca por día.',
-    image: 'falta',
+    image: '/img/products/nutricion/af-mix-produccion-de-leche-25kg.webp',
     price: 0,
     sales: 0,
     date: '2025-01-01',

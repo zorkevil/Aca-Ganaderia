@@ -6,7 +6,7 @@ export const mainNavigation: NavItem[] = [
   { label: 'Sanidad', href: '/sanidad' },
   { label: 'Hacienda', href: '#hacienda' },
   { label: 'Producción', href: '#produccion' },
-  { label: 'Noticias', href: '#noticias' },
+  { label: 'Noticias', href: '/noticias' },
 ];
 
 export const footerNavigation: NavItem[] = [...mainNavigation];

@@ -1,18 +1,31 @@
+import Link from 'next/link';
 import Badge from '@/components/misc/Badge';
+import type { NewsCardProps } from '@/lib/types';
 
-export default function NewsCard({ n, index }: { n: any; index: number }) {
+export default function NewsCard({ n, index, colClass = 'col-md-6 col-xl-3' }: NewsCardProps) {
   const delay = (0.2 + index * 0.1).toFixed(1);
   const date = new Date(n.date);
+
   const day = date.getDate().toString().padStart(2, '0');
   const month = date.toLocaleString('es-AR', { month: 'short' }).toUpperCase();
+
   const imageSrc = n.image?.trim() ? n.image : '/img/sections/noticias/news-placeholder.jpg';
+
+  const href = `/noticias/${n.slug}`; // 🎯 ruta correcta
 
   return (
     <div
-      className="col-md-6 col-xl-3 wow animate__animated animate__fadeInUp"
+      className={`${colClass} wow animate__animated animate__fadeInUp`}
       data-wow-delay={`${delay}s`}
     >
-      <div className="h-100 border border-color-3 overflow-hidden border-top-right-radius-50 border-bottom-left-radius-50 bg-white">
+      <div className="h-100 position-relative border border-color-3 overflow-hidden border-top-right-radius-50 border-bottom-left-radius-50 bg-white">
+        {/* 🎯 LINK QUE CUBRE TODA LA CARD */}
+        <Link
+          href={href}
+          className="stretched-link"
+          style={{ position: 'absolute', inset: 0, zIndex: 5 }}
+        />
+
         <div className="position-relative">
           <img
             src={imageSrc}
@@ -24,13 +37,15 @@ export default function NewsCard({ n, index }: { n: any; index: number }) {
             <div className="fs-24 fw-semibold lh-1">{month}</div>
           </div>
         </div>
+
         <div className="p-3 d-flex flex-column text-center">
           <h4 className="text-color-3">{n.title}</h4>
-          <Badge n={n} />
+          <Badge n={n} className="mb-2" />
           <p className="small flex-grow-1 mb-2">{n.excerpt}</p>
-          <a href={n.href} className="btn btn-link mt-auto">
+
+          <Link href={href} className="btn btn-link mt-auto">
             Ver noticia
-          </a>
+          </Link>
         </div>
       </div>
     </div>

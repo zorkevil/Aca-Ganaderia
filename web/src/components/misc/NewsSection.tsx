@@ -14,7 +14,9 @@ export default function NewsSection({
     ? news.filter((item) => item.category.toLowerCase() === category.toLowerCase())
     : news;
 
-  const limitedNews = filteredNews.slice(0, limit);
+  if (filteredNews.length === 0) {
+    return null;
+  }
 
   return (
     <section id="noticias" className="bg-color-15 py-7">

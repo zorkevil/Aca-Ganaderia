@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import type { ProductItem } from '@/lib/types';
 
@@ -49,6 +47,15 @@ export default function ProductDetailSection({ product }: { product: ProductItem
               >
                 <h4 className="mb-0">Categoría</h4>
                 <span>{product.category}</span>
+
+                {/* Icono solo si existe */}
+                {product.iconCategory && (
+                  <img
+                    src={product.iconCategory}
+                    alt={product.category}
+                    className="flex-shrink-0 icon-48"
+                  />
+                )}
               </div>
 
               {/* Línea */}
