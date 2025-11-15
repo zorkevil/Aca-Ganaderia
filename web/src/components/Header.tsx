@@ -1,8 +1,18 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { mainNavigation } from '@/lib/navigation';
 
 export default function Header() {
+  const pathname = usePathname();
+
+  // Normalizador para URLs (quita barra final)
+  const normalize = (path: string) => (path === '/' ? '/' : path.replace(/\/$/, ''));
+
+  const current = normalize(pathname);
+
   return (
     <header className="fixed-top">
       <nav className="navbar navbar-expand-lg navbar-dark">
@@ -34,24 +44,30 @@ export default function Header() {
           {/* Desktop Menu */}
           <div className="navbar-collapse justify-content-center d-none d-lg-flex">
             <ul className="navbar-nav">
-              {mainNavigation.map((item, i) => (
-                <li
-                  key={item.href}
-                  className="nav-item animate__animated animate__fadeInDown"
-                  style={{ animationDelay: `${0.1 * (i + 1)}s` }}
-                >
-                  <Link href={item.href} className="nav-link">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+              {mainNavigation.map((item, i) => {
+                const isActive =
+                  current === normalize(item.href) ||
+                  current.startsWith(normalize(item.href) + '/');
+
+                return (
+                  <li
+                    key={item.href}
+                    className="nav-item animate__animated animate__fadeInDown"
+                    style={{ animationDelay: `${0.1 * (i + 1)}s` }}
+                  >
+                    <Link href={item.href} className={`nav-link ${isActive ? 'active' : ''}`}>
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
           {/* Botón Contacto (Desktop) */}
           <Link
             href="/contacto"
-            className="btn btn-primary d-none d-xl-block animate__animated animate__fadeInDown"
+            className={`btn btn-primary d-none d-xl-block animate__animated animate__fadeInDown`}
             style={{ animationDelay: '0.7s' }}
           >
             Contacto
@@ -81,17 +97,25 @@ export default function Header() {
                 aria-label="Close"
               ></button>
             </div>
+
             <div className="offcanvas-body">
               <ul className="navbar-nav">
-                {mainNavigation.map((item) => (
-                  <li key={item.href} className="nav-item">
-                    <Link href={item.href} className="nav-link">
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
+                {mainNavigation.map((item) => {
+                  const isActive =
+                    current === normalize(item.href) ||
+                    current.startsWith(normalize(item.href) + '/');
+
+                  return (
+                    <li key={item.href} className="nav-item">
+                      <Link href={item.href} className={`nav-link ${isActive ? 'active' : ''}`}>
+                        {item.label}
+                      </Link>
+                    </li>
+                  );
+                })}
+
                 <li className="nav-item d-lg-none mt-4">
-                  <Link href="#contacto" className="btn btn-primary w-100">
+                  <Link href="/contacto" className="btn btn-primary w-100">
                     Contacto
                   </Link>
                 </li>
