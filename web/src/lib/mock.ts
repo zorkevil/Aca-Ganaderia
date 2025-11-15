@@ -256,8 +256,9 @@ export const subservicesByArea: Record<string, SubserviceItem[]> = {
 
 export const heroImageNutricion = '/img/sections/nutricion/nutricion-hero-bg.webp';
 export const heroImageSanidad = '/img/sections/sanidad/sanidad-hero-bg.webp';
-export const heroImageGracias = '/img/sections/contacto/contacto-hero-bg.webp';
 export const heroImageNoticias = '/img/sections/noticias/noticias-hero-bg.webp';
+export const heroImageContacto = '/img/sections/contacto/contacto-hero-bg.webp';
+export const heroImageGracias = '/img/sections/contacto/contacto-hero-bg.webp';
 
 export const categoriesNutricion = [
   { id: '1', name: 'Porcinos' },

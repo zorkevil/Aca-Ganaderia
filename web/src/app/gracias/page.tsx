@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 
 import HeroSection from '@/components/misc/HeroSection';
 import ThankyouSection from '@/components/gracias/ThankyouSection';

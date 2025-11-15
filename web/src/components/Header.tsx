@@ -50,7 +50,7 @@ export default function Header() {
 
           {/* Botón Contacto (Desktop) */}
           <Link
-            href="#contacto"
+            href="/contacto"
             className="btn btn-primary d-none d-xl-block animate__animated animate__fadeInDown"
             style={{ animationDelay: '0.7s' }}
           >

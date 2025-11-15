@@ -9,7 +9,8 @@ export default function ContactSection({
   title = 'Contacto',
   description = 'Si querés recibir asesoramiento o conocer nuestras soluciones adaptadas a tu producción, completá este breve formulario.',
   submitTo,
-}: ContactSectionProps) {
+  noImage = false,
+}: ContactSectionProps & { noImage?: boolean }) {
   const router = useRouter();
   const [showOtroRol, setShowOtroRol] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -24,21 +25,28 @@ export default function ContactSection({
   };
 
   return (
-    <section id="contacto" className="bg-color-4">
-      <div className="container-fluid">
-        <div className="row">
-          {/* Imagen lateral */}
-          <div className="col-lg-6 contacto-bg border-top-right-radius-40 wow animate__animated animate__fadeIn"></div>
+    <section id="contacto" className={`bg-color-4 ${noImage ? 'contacto-content-bg py-7' : ''}`}>
+      <div className={`${noImage ? 'container' : 'container-fluid'}`}>
+        <div className="row justify-content-center">
+          {/* Imagen lateral (solo si noImage = false) */}
+          {!noImage && (
+            <div className="col-lg-6 contacto-bg border-top-right-radius-40 wow animate__animated animate__fadeIn"></div>
+          )}
 
-          {/* Formulario */}
-          <div className="col-lg-6 contacto-form-pe contacto-content-bg py-7 ps-lg-5">
+          {/* Formulario — si no hay imagen → ancho mayor */}
+          <div
+            className={`col-lg-6 ${
+              noImage ? '' : 'contacto-form-pe contacto-content-bg py-7 ps-lg-5'
+            }`}
+          >
             <hr className="heading-hr mb-4 wow animate__animated animate__fadeInUp" />
+
             <h2 className="mb-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
               {title}
             </h2>
 
             {isFullForm && (
-              <p className="mb-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+              <p className={`${noImage ? 'mb-5' : 'mb-4'}`} data-wow-delay="0.2s">
                 {description}
               </p>
             )}
@@ -114,7 +122,7 @@ export default function ContactSection({
                 </div>
               </div>
 
-              {/* Campo 'Área de negocio' solo si es el formulario completo */}
+              {/* Área de negocio (solo en full form) */}
               {isFullForm && (
                 <div className="row">
                   <div
@@ -156,7 +164,7 @@ export default function ContactSection({
                 </div>
               )}
 
-              {/* Campo 'Rol' */}
+              {/* Rol (en versión corta) */}
               {!isFullForm && (
                 <div className="row">
                   <div
@@ -200,7 +208,7 @@ export default function ContactSection({
                 </div>
               )}
 
-              {/* Campo 'Rol' largo (solo para formulario completo) */}
+              {/* Rol (full form, ancho completo) */}
               {isFullForm && (
                 <div className="row">
                   <div
@@ -228,7 +236,7 @@ export default function ContactSection({
                 </div>
               )}
 
-              {/* Campo “Otro rol” */}
+              {/* Campo Otro Rol */}
               {showOtroRol && (
                 <div className="row" id="otro-rol-container">
                   <div
@@ -269,8 +277,7 @@ export default function ContactSection({
               >
                 <button
                   type="submit"
-                  className={`btn btn-primary 
-                    ${isSubmitting ? 'disabled animate__animated animate__pulse' : ''}`}
+                  className={`btn btn-primary ${isSubmitting ? 'disabled animate__animated animate__pulse' : ''}`}
                   disabled={isSubmitting}
                 >
                   {isSubmitting && (

@@ -97,6 +97,7 @@ export interface ContactSectionProps {
   title?: string;
   description?: string;
   submitTo?: string; // endpoint a donde se envían los datos
+  noImage?: boolean;
 }
 
 export interface NewsSectionProps {
