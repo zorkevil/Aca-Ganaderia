@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'animate.css';
 import 'tom-select/dist/css/tom-select.bootstrap5.min.css';
-import './globals.css';
 import '@/styles/styles.css';
 
 import Header from '@/components/Header';
