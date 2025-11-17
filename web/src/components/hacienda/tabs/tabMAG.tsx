@@ -19,7 +19,7 @@ export default function TabMAG() {
       <div className="row flex-column-reverse flex-lg-row mb-5">
         <div className="col-lg-8">
           <h3 className="text-color-3 mb-3">
-            Mercado Agroganadero S.A. - Lunes 11 de Noviembre de 2025
+            Mercado Agroganadero S.A. - Lunes 17 de Noviembre de 2025
           </h3>
           <p>Resumen estadístico de precios del día Jueves 11/11/2025</p>
           <p className="mb-0">Hacienda vacuna tipo faena</p>
