@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { mainNavigation } from '@/lib/navigation';
+import Offcanvas from 'bootstrap/js/dist/offcanvas';
 
 export default function Header() {
   const pathname = usePathname();
@@ -12,6 +13,15 @@ export default function Header() {
   const normalize = (path: string) => (path === '/' ? '/' : path.replace(/\/$/, ''));
 
   const current = normalize(pathname);
+
+  // ---- Cerrar offcanvas al hacer clic en un link ----
+  const closeOffcanvas = () => {
+    const el = document.getElementById('offcanvasNavbar');
+    if (!el) return;
+
+    const offcanvas = Offcanvas.getInstance(el) || new Offcanvas(el);
+    offcanvas.hide();
+  };
 
   return (
     <header className="fixed-top">
@@ -107,7 +117,11 @@ export default function Header() {
 
                   return (
                     <li key={item.href} className="nav-item">
-                      <Link href={item.href} className={`nav-link ${isActive ? 'active' : ''}`}>
+                      <Link
+                        href={item.href}
+                        className={`nav-link ${isActive ? 'active' : ''}`}
+                        onClick={closeOffcanvas}
+                      >
                         {item.label}
                       </Link>
                     </li>
@@ -115,7 +129,7 @@ export default function Header() {
                 })}
 
                 <li className="nav-item d-lg-none mt-4">
-                  <Link href="/contacto" className="btn btn-primary w-100">
+                  <Link href="/contacto" className="btn btn-primary w-100" onClick={closeOffcanvas}>
                     Contacto
                   </Link>
                 </li>
