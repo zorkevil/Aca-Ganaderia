@@ -18,25 +18,29 @@ export default function DescriptionSection() {
               className="text-color-3 fs-24 wow animate__animated animate__fadeInUp"
               data-wow-delay="0.2s"
             >
-              La producción nacional de carne está estancada desde 1970. Por diversos motivos no se
-              han modificado los principales parámetros productivos. Desde aquí nuestro propósito es
-              colaborar en mejorarlos. En la convicción de contar con productos, servicios y el
-              asesoramiento correspondiente.
+              La producción lechera nacional se encuentra transitando su propio cambio de modelo,
+              hacia un horizonte de mayor productividad y eficiencia individual. Independiente de si
+              lo hacen con pasturas o TMR, estabulados o a campo.
+            </p>
+
+            <p className="wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+              Persuadidos de que es el camino necesario y correcto, nuestra propuesta es acompañar
+              al productor con productos y el asesoramiento necesario que les permitan a sus vacas
+              expresar su potencial.
             </p>
 
             <ul
               className="chevron-list wow animate__animated animate__fadeInUp"
-              data-wow-delay="0.3s"
+              data-wow-delay="0.4s"
             >
               <li>
-                Es uno de los pilares en que podemos colaborar en francas mejorías de los
-                porcentajes de preñez y destete. A través de herramientas como el destete
-                hiperprecoz y el precoz. La posibilidad de realizar suplementaciones estratégicas
-                sobre la madre o en períodos del año (invierno).
+                <strong>Foco Crianza:</strong> Nutrir a las terneras desde el primer día para que
+                alcancen el máximo de su potencial.
               </li>
               <li>
-                No hay ninguna posibilidad de mejorar los parámetros productivos, sino mejoramos los
-                porcentajes de preñez y destete.
+                <strong>Foco Transición:</strong> Nuestra misión es acompañar y preparar en un
+                momento definitorio a nuestras atletas productivas. Poniendo el foco, en su salud,
+                su bienestar y su productividad.
               </li>
             </ul>
           </div>

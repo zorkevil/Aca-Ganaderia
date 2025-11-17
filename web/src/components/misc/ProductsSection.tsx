@@ -193,7 +193,7 @@ export default function ProductsSection({
                         <h4 className="text-color-3 mb-3">{p.name}</h4>
                         <p className="flex-grow-1">{p.description}</p>
                       </Link>
-                      <div className="d-flex gap-2 justify-content-center p-3">
+                      <div className="d-flex gap-2 justify-content-center p-3 mt-auto">
                         <Link href="#contacto" className="btn btn-outline-primary">
                           Contacto
                         </Link>

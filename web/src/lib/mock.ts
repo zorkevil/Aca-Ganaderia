@@ -6,6 +6,12 @@ import type {
   SubserviceItem,
   ProductItem,
   CarouselItem,
+  AlianzaItem,
+  IdentificacionItem,
+  RemateCategory,
+  RemateItem,
+  MagRow,
+  WhatsAppContact,
 } from './types';
 
 export const heroSlides: HeroSlide[] = [
@@ -257,6 +263,7 @@ export const subservicesByArea: Record<string, SubserviceItem[]> = {
 
 export const heroImageNutricion = '/img/sections/nutricion/nutricion-hero-bg.webp';
 export const heroImageSanidad = '/img/sections/sanidad/sanidad-hero-bg.webp';
+export const heroImageHacienda = '/img/sections/hacienda/hacienda-hero-bg.webp';
 export const heroImageProduccion = '/img/sections/produccion/produccion-hero-bg.webp';
 export const heroImageProduccionCarne =
   '/img/sections/produccion/carne/produccion-carne-hero-bg.webp';
@@ -833,7 +840,7 @@ export const carouselSanidad: CarouselItem[] = [
     buttonUrl: '/contacto',
   },
   {
-    backgroundImage: '/img/sections/sanidad/sanidad-carousel-bg-01.webp',
+    backgroundImage: '/img/sections/sanidad/sanidad-carousel-bg-02.webp',
     productImage: '/img/sections/sanidad/sanidad-carousel-producto-02.webp',
     productAlt: 'Producto Sanidad',
     title: 'Invertí en sanidad, multiplicá en productividad.',
@@ -862,5 +869,211 @@ export const servicesProduccion: ServicesProduccionItem[] = [
     title: 'Proyecto Campo Ganadero',
     img: '/img/sections/produccion/produccion-03.webp',
     href: '/produccion/proyecto-campo-ganadero',
+  },
+];
+
+export const alianzas: AlianzaItem[] = [
+  {
+    title: 'Frigorífico Los Aromos',
+    img: '/img/sections/hacienda/alianza/logo-los-aromos.webp',
+  },
+  {
+    title: 'Frigorífico Arrebeef',
+    img: '/img/sections/hacienda/alianza/logo-arrebeef.svg',
+  },
+  {
+    title: 'Frigorífico Friar',
+    img: '/img/sections/hacienda/alianza/logo-friar.svg',
+  },
+  {
+    title: 'Agroideas',
+    img: '/img/sections/hacienda/alianza/logo-agroideas.webp',
+  },
+  {
+    title: 'Frigorífico Fridevi',
+    img: '/img/sections/hacienda/alianza/logo-fridevi.svg',
+  },
+  {
+    title: 'Frigorífico Magret',
+    img: '/img/sections/hacienda/alianza/logo-magret.svg',
+  },
+];
+
+export const identificacionItems: IdentificacionItem[] = [
+  {
+    id: 'invernada',
+    title: 'Invernada',
+    img: '/img/icons/icon-invernada.svg',
+    text: 'Ofrecemos alternativas de producción y comercialización de recría con seguimiento técnico y trazabilidad desde el origen, impulsando animales de calidad para su terminación.',
+  },
+  {
+    id: 'gordo',
+    title: 'Gordo',
+    img: '/img/icons/icon-gordo.svg',
+    text: 'Producimos animales gordos de feedlot bajo protocolo ACA, con alto estándar sanitario, nutricional y de bienestar animal. Garantizando calidad y rinde al Mercado.',
+  },
+  {
+    id: 'cria',
+    title: 'Cría',
+    img: '/img/icons/icon-cria.svg',
+    text: 'Entendiendo que son la base estructural de la producción actual y futura. Consideramos que la obtención de datos y su comparación, les permitirá a los productores, técnicos y propietarios poder tomar decisiones con mucha mayor certeza y precisión. La puerta de entrada a un largo camino en la gestión del individuo y sus datos productivos.',
+  },
+  {
+    id: 'carne',
+    title: 'Carne',
+    img: '/img/icons/icon-carne.svg',
+    text: 'Nuestro sistema permite seguir cada lote en tiempo real y garantizar transparencia en toda la cadena. Trazabilidad completa, desde el origen hasta el consumidor.',
+  },
+];
+
+export const remateTipos: RemateCategory[] = [
+  { id: 'propios', name: 'Propios' },
+  { id: 'terceros', name: 'De terceros' },
+];
+
+export const remateModalidades: RemateCategory[] = [
+  { id: 'virtual', name: 'Virtual' },
+  { id: 'presencial', name: 'Presencial' },
+];
+
+export const remates: RemateItem[] = [];
+
+export const magData: MagRow[] = [
+  {
+    categoria: 'NOVILLOS Esp.Joven + 430',
+    maximo: 3420.0,
+    minimo: 2750.0,
+    promedio: 3228.102,
+    promedioKgs: 489,
+  },
+  {
+    categoria: 'NOVILLOS Regular h 430',
+    maximo: 2700.0,
+    minimo: 2300.0,
+    promedio: 2407.852,
+    promedioKgs: 472,
+  },
+  {
+    categoria: 'NOVILLOS Regular + 430',
+    maximo: 2800.0,
+    minimo: 2800.0,
+    promedio: 2753.304,
+    promedioKgs: 454,
+  },
+  {
+    categoria: 'NOVILLITOS Esp. h 390',
+    maximo: 3450.0,
+    minimo: 2700.0,
+    promedio: 3289.397,
+    promedioKgs: 350,
+  },
+  {
+    categoria: 'NOVILLITOS Esp. + 390',
+    maximo: 3300.0,
+    minimo: 2400.0,
+    promedio: 2815.149,
+    promedioKgs: 436,
+  },
+  {
+    categoria: 'NOVILLITOS Regular',
+    maximo: 3300.0,
+    minimo: 2700.0,
+    promedio: 3031.399,
+    promedioKgs: 356,
+  },
+  {
+    categoria: 'VAQUILLONAS Esp. h 390',
+    maximo: 3400.0,
+    minimo: 1500.0,
+    promedio: 3056.526,
+    promedioKgs: 329,
+  },
+  {
+    categoria: 'VAQUILLONAS Esp. + 390',
+    maximo: 3120.0,
+    minimo: 2050.0,
+    promedio: 2852.394,
+    promedioKgs: 437,
+  },
+  {
+    categoria: 'VAQUILLONAS Regular',
+    maximo: 2950.0,
+    minimo: 2400.0,
+    promedio: 2600.457,
+    promedioKgs: 369,
+  },
+  {
+    categoria: 'VACAS Esp.Joven h 430',
+    maximo: 2500.0,
+    minimo: 1800.0,
+    promedio: 2040.789,
+    promedioKgs: 406,
+  },
+  {
+    categoria: 'VACAS Esp.Joven + 430',
+    maximo: 2850.0,
+    minimo: 1800.0,
+    promedio: 2286.163,
+    promedioKgs: 505,
+  },
+  {
+    categoria: 'VACAS Regular',
+    maximo: 2540.0,
+    minimo: 1300.0,
+    promedio: 2017.331,
+    promedioKgs: 471,
+  },
+  {
+    categoria: 'VACAS Conserva Buena',
+    maximo: 2000.0,
+    minimo: 1300.0,
+    promedio: 1729.269,
+    promedioKgs: 427,
+  },
+  {
+    categoria: 'VACAS Conserva Inferior',
+    maximo: 1700.0,
+    minimo: 1700.0,
+    promedio: 1690.981,
+    promedioKgs: 355,
+  },
+  { categoria: 'TOROS Esp.', maximo: 2500.0, minimo: 1800.0, promedio: 2146.911, promedioKgs: 691 },
+  {
+    categoria: 'TOROS Regular',
+    maximo: 2000.0,
+    minimo: 1200.0,
+    promedio: 1554.545,
+    promedioKgs: 565,
+  },
+  {
+    categoria: 'MEJ Esp. h 430',
+    maximo: 3300.0,
+    minimo: 2000.0,
+    promedio: 2929.104,
+    promedioKgs: 414,
+  },
+  { categoria: 'MEJ Regular', maximo: 2000.0, minimo: 2000.0, promedio: 2000.0, promedioKgs: 380 },
+];
+
+export const whatsappContacts: WhatsAppContact[] = [
+  {
+    section: 'hacienda',
+    phone: '5491137987619',
+    label: 'Rodrigo Miguez',
+  },
+  {
+    section: 'nutricion',
+    phone: '5493401418484',
+    label: 'Alejandro Aghemo',
+  },
+  {
+    section: 'produccion',
+    phone: '5493401418484',
+    label: 'Alejandro Aghemo',
+  },
+  {
+    section: 'sanidad',
+    phone: '5491166170733',
+    label: 'Juan Ghirardi',
   },
 ];

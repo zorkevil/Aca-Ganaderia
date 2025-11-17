@@ -98,6 +98,49 @@ export interface SocialLink {
   icon: string;
 }
 
+export interface IdentificacionItem {
+  id: string;
+  title: string;
+  img: string;
+  text: string;
+}
+
+export interface AlianzaItem {
+  title: string;
+  img: string;
+}
+
+export interface RemateCategory {
+  id: string;
+  name: string;
+}
+
+export interface RemateItem {
+  id: string;
+  title: string;
+  modalidad: string;
+  tipo: string;
+  date: string;
+  time: string;
+  description: string;
+  image: string;
+  href: string;
+}
+
+export interface MagRow {
+  categoria: string;
+  maximo: number;
+  minimo: number;
+  promedio: number;
+  promedioKgs: number;
+}
+
+export interface WhatsAppContact {
+  section: string;
+  phone: string;
+  label?: string;
+}
+
 // =============================================================================
 // INTERFACES DE SECCIONES
 // =============================================================================

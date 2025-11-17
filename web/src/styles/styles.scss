@@ -820,7 +820,6 @@ header {
 // White SVG pattern background for all service area boxes
 .servicio-box {
   background-image: url('/img/icons/servicio-pattern.svg');
-  background-image: shape-svg($color-8);
   background-repeat: repeat-y;
   background-position: 5px 0px;
   background-size: 65px;
@@ -854,6 +853,77 @@ header {
 // =============================================================================
 .aca-logo {
   max-height: 80px;
+}
+
+// =============================================================================
+// TABLES
+// =============================================================================
+
+.table {
+  margin-bottom: 0;
+
+  thead {
+    background-color: $color-11 !important;
+    color: $color-2 !important;
+
+    th {
+      background-color: $color-11 !important;
+      color: $color-2 !important;
+    }
+  }
+
+  tbody {
+    // Alternating row colors using :nth-child
+    tr:nth-child(odd) {
+      background-color: $color-16 !important;
+      td,
+      th {
+        background-color: $color-16 !important;
+      }
+    }
+
+    tr:nth-child(even) {
+      background-color: $color-17 !important;
+      td,
+      th {
+        background-color: $color-17 !important;
+      }
+    }
+
+    // Additional specificity for cells to override Bootstrap defaults
+    td,
+    th {
+      background-color: inherit !important;
+    }
+  }
+}
+
+// Tables inside accordion use white and color-17 alternating rows
+.accordion {
+  .table {
+    tbody {
+      tr:nth-child(odd) {
+        background-color: $color-2 !important;
+
+        td,
+        th {
+          background-color: $color-2 !important;
+        }
+      }
+
+      tr:nth-child(even) {
+        background-color: $color-17 !important;
+        td,
+        th {
+          background-color: $color-17 !important;
+        }
+      }
+      td,
+      th {
+        background-color: inherit !important;
+      }
+    }
+  }
 }
 
 // =============================================================================

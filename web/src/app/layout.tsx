@@ -4,10 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'animate.css';
 import 'tom-select/dist/css/tom-select.bootstrap5.min.css';
+import 'swiper/css';
+import 'swiper/css/navigation';
 import '@/styles/styles.css';
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import WhatsAppButton from '@/components/misc/WhatsAppButton';
 import Script from 'next/script';
 
 const heebo = Heebo({
@@ -44,6 +47,7 @@ export default function RootLayout({
       <body data-bs-theme="light" className={`${heebo.variable} font-sans antialiased`}>
         <Header />
         <main>{children}</main>
+        <WhatsAppButton />
         <Footer />
 
         {/* Script de Bootstrap */}
