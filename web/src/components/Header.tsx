@@ -1,27 +1,41 @@
 'use client';
 
+import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { mainNavigation } from '@/lib/navigation';
-import Offcanvas from 'bootstrap/js/dist/offcanvas';
 
 export default function Header() {
   const pathname = usePathname();
 
-  // Normalizador para URLs (quita barra final)
   const normalize = (path: string) => (path === '/' ? '/' : path.replace(/\/$/, ''));
-
   const current = normalize(pathname);
 
-  // ---- Cerrar offcanvas al hacer clic en un link ----
-  const closeOffcanvas = () => {
-    const el = document.getElementById('offcanvasNavbar');
-    if (!el) return;
+  useEffect(() => {
+    const init = async () => {
+      // Import dinámico de Bootstrap Offcanvas (solo en cliente)
+      const Offcanvas = (await import('bootstrap/js/dist/offcanvas')).default;
 
-    const offcanvas = Offcanvas.getInstance(el) || new Offcanvas(el);
-    offcanvas.hide();
-  };
+      const offcanvasEl = document.getElementById('offcanvasNavbar');
+      if (!offcanvasEl) return;
+
+      const instance = Offcanvas.getOrCreateInstance(offcanvasEl);
+
+      const closeBtn = offcanvasEl.querySelector(
+        '[data-bs-dismiss="offcanvas"]',
+      ) as HTMLElement | null;
+
+      // Cerrar Offcanvas cuando hago clic en cualquier item o el botón Contacto
+      offcanvasEl.querySelectorAll('a.nav-link, .btn.w-100').forEach((el) => {
+        el.addEventListener('click', () => {
+          closeBtn?.click();
+        });
+      });
+    };
+
+    init();
+  }, []);
 
   return (
     <header className="fixed-top">
@@ -74,16 +88,16 @@ export default function Header() {
             </ul>
           </div>
 
-          {/* Botón Contacto (Desktop) */}
+          {/* Botón Contacto Desktop */}
           <Link
             href="/contacto"
-            className={`btn btn-primary d-none d-xl-block animate__animated animate__fadeInDown`}
+            className="btn btn-primary d-none d-xl-block animate__animated animate__fadeInDown"
             style={{ animationDelay: '0.7s' }}
           >
             Contacto
           </Link>
 
-          {/* Menú móvil (offcanvas) */}
+          {/* Menú móvil (Offcanvas) */}
           <div
             className="offcanvas offcanvas-end d-lg-none"
             tabIndex={-1}
@@ -94,7 +108,7 @@ export default function Header() {
               <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
                 <Image
                   src="/img/branding/aca-iso.svg"
-                  alt="Aca Ganadería Logo"
+                  alt="ACA Ganadería Logo"
                   width={100}
                   height={35}
                   className="navbar-logo"
@@ -117,19 +131,16 @@ export default function Header() {
 
                   return (
                     <li key={item.href} className="nav-item">
-                      <Link
-                        href={item.href}
-                        className={`nav-link ${isActive ? 'active' : ''}`}
-                        onClick={closeOffcanvas}
-                      >
+                      <Link href={item.href} className={`nav-link ${isActive ? 'active' : ''}`}>
                         {item.label}
                       </Link>
                     </li>
                   );
                 })}
 
+                {/* Contacto en móvil también cierra el offcanvas */}
                 <li className="nav-item d-lg-none mt-4">
-                  <Link href="/contacto" className="btn btn-primary w-100" onClick={closeOffcanvas}>
+                  <Link href="/contacto" className="btn btn-primary w-100">
                     Contacto
                   </Link>
                 </li>
