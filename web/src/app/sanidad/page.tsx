@@ -23,9 +23,10 @@ import {
   news as mockNews,
   subservicesByArea,
   heroImageSanidad,
-  products,
-  categoriesNutricion,
+  productsSanidad,
+  categoriesSanidad,
   carouselSanidad,
+  subcategoriesSanidad,
 } from '@/lib/mock';
 
 export default function NutricionPage() {
@@ -40,8 +41,9 @@ export default function NutricionPage() {
       <DescriptionSection />
       <ServicesSection title="Nuestras propuestas" items={subServicesMock} />
       <ProductsSection
-        products={products}
-        categories={categoriesNutricion}
+        products={productsSanidad}
+        categories={categoriesSanidad}
+        subcategories={subcategoriesSanidad}
         sectionId={`productos-${SECTION_ID}`}
       />
       <CarouselSection items={carouselSanidad} />

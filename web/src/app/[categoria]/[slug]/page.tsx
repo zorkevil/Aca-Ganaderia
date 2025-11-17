@@ -4,7 +4,12 @@ import { notFound } from 'next/navigation';
 import ProductBreadcrumbs from '@/components/product/ProductBreadcrumbs';
 import ProductDetailSection from '@/components/product/ProductDetailSection';
 
-import { products } from '@/lib/mock';
+import { products, productsSanidad } from '@/lib/mock';
+
+// -------------------------------------------
+// UNIFICAMOS LOS PRODUCTOS
+// -------------------------------------------
+const allProducts = [...products, ...productsSanidad];
 
 // -------------------------------------------
 // TIPADO DE RUTAS
@@ -18,8 +23,8 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { categoria, slug } = await params;
 
   const product =
-    products.find((p) => p.generalCategory === categoria && p.slug === slug) ||
-    products.find((p) => p.category === categoria && p.slug === slug);
+    allProducts.find((p) => p.generalCategory === categoria && p.slug === slug) ||
+    allProducts.find((p) => p.category === categoria && p.slug === slug);
 
   if (!product) return notFound();
 
@@ -43,8 +48,8 @@ export default async function ProductDetailPage({ params }: { params: Promise<Pa
   const { categoria, slug } = await params;
 
   const product =
-    products.find((p) => p.generalCategory === categoria && p.slug === slug) ||
-    products.find((p) => p.category === categoria && p.slug === slug);
+    allProducts.find((p) => p.generalCategory === categoria && p.slug === slug) ||
+    allProducts.find((p) => p.category === categoria && p.slug === slug);
 
   if (!product) return notFound();
 

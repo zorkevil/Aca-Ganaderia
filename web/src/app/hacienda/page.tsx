@@ -1,5 +1,6 @@
 import HeroSection from '@/components/misc/HeroSection';
 import DescriptionSection from '@/components/hacienda/DescriptionSection';
+import ServicesSection from '@/components/hacienda/ServicesSection';
 import HaciendaTabsSection from '@/components/hacienda/HaciendaTabsSection';
 import CarouselSection from '@/components/misc/CarouselSection';
 import RelatedServicesSection from '@/components/misc/RelatedServicesSection';
@@ -36,6 +37,21 @@ export default function NutricionPage() {
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: SECTION_NAME }]}
       />
       <DescriptionSection />
+      <ServicesSection
+        title="Servicios"
+        leftItems={[
+          'Compra y venta de hacienda',
+          'Exportación',
+          'Recría y servicios de nutrición ganadera',
+          'Feedlot',
+        ]}
+        rightItems={[
+          'Remates físicos y virtuales',
+          'Comercialización en el MAG y Directas',
+          'Programa de Trazabilidad ACA',
+          'Identificación y Gestión electrónica',
+        ]}
+      />
       <HaciendaTabsSection />
       <CarouselSection items={[...carouselNutricion, ...carouselSanidad]} />
       <NewsSection category={SECTION_NAME} news={mockNews} />

@@ -58,6 +58,26 @@ export default function ProductDetailSection({ product }: { product: ProductItem
                 )}
               </div>
 
+              {/* Subcategoría comercial */}
+              {product.subcategory && (
+                <div
+                  className="min-height-48 d-flex align-items-center gap-3 wow animate__animated animate__fadeInUp"
+                  data-wow-delay="0.35s"
+                >
+                  <h4 className="mb-0">Subcategoría</h4>
+                  <span>{product.subcategory}</span>
+
+                  {/* Icono solo si existe */}
+                  {product.iconSubcategory && (
+                    <img
+                      src={product.iconSubcategory}
+                      alt={product.subcategory}
+                      className="flex-shrink-0 icon-48"
+                    />
+                  )}
+                </div>
+              )}
+
               {/* Línea */}
               <div
                 className="min-height-48 mb-3 d-flex align-items-center gap-3 wow animate__animated animate__fadeInUp"
@@ -117,16 +137,25 @@ export default function ProductDetailSection({ product }: { product: ProductItem
               </div>
             </div>
 
-            {/* Categoría técnica */}
+            {/* Categoría técnica o Fórmula */}
             <div
               className="row py-4 px-3 bg-color-16 wow animate__animated animate__fadeInUp"
               data-wow-delay="0.9s"
             >
               <div className="col-md-3">
-                <h4 className="text-color-1 mb-md-0">Categoría</h4>
+                <h4 className="text-color-1 mb-md-0">
+                  {product.secondCategory && product.secondCategory.trim() !== ''
+                    ? 'Categoría'
+                    : 'Fórmula'}
+                </h4>
               </div>
+
               <div className="col-md-9">
-                <p className="mb-0">{product.secondCategory}</p>
+                <p className="mb-0">
+                  {product.secondCategory && product.secondCategory.trim() !== ''
+                    ? product.secondCategory
+                    : product.formula}
+                </p>
               </div>
             </div>
 
@@ -142,6 +171,36 @@ export default function ProductDetailSection({ product }: { product: ProductItem
                 <p className="mb-0">{product.dosage}</p>
               </div>
             </div>
+
+            {/* SENASA (opcional) */}
+            {product.senasa && (
+              <div
+                className="row py-4 px-3 bg-color-16 wow animate__animated animate__fadeInUp"
+                data-wow-delay="1.1s"
+              >
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Número de registro de SENASA</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.senasa}</p>
+                </div>
+              </div>
+            )}
+
+            {/* Especie Animal (opcional) */}
+            {product.especieAnimal && (
+              <div
+                className="row py-4 px-3 bg-color-17 wow animate__animated animate__fadeInUp"
+                data-wow-delay="1.2s"
+              >
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Especie Animal</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.especieAnimal}</p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

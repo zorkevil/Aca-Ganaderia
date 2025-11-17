@@ -60,11 +60,16 @@ export type ProductItem = {
   generalCategory: string;
   generalCategoryName: string;
   category: string;
-  iconCategory: string;
+  subcategory?: string;
+  iconCategory?: string;
+  iconSubcategory?: string;
   secondCategory: string;
   presentation: string;
   administration: string;
   dosage: string;
+  formula?: string;
+  senasa?: string;
+  especieAnimal?: string;
   image: string;
   price: number;
   sales: number;

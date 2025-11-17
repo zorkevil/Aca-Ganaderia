@@ -8,18 +8,21 @@ type Props = {
   title?: string;
   products: ProductItem[];
   categories: ProductCategory[];
-  sectionId?: string; // ej: 'nutricion', 'sanidad', etc.
+  subcategories?: ProductCategory[];
+  sectionId?: string;
 };
 
 export default function ProductsSection({
   title = 'Productos',
   products,
   categories,
+  subcategories,
   sectionId = 'productos',
 }: Props) {
   // ---- Estados
   const [search, setSearch] = useState('');
   const [selectedCats, setSelectedCats] = useState<string[]>([]);
+  const [selectedSubcats, setSelectedSubcats] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState('ventas');
   const [page, setPage] = useState(1);
   const perPage = 6;
@@ -31,6 +34,11 @@ export default function ProductsSection({
     // Filtrar por categoría
     if (selectedCats.length > 0) {
       result = result.filter((p) => selectedCats.includes(p.category));
+    }
+
+    // Filtrar por subcategoría
+    if (selectedSubcats.length > 0) {
+      result = result.filter((p) => selectedSubcats.includes(p.subcategory ?? ''));
     }
 
     // Filtro por texto
@@ -57,7 +65,7 @@ export default function ProductsSection({
     }
 
     return result;
-  }, [products, selectedCats, search, sortBy]);
+  }, [products, selectedCats, selectedSubcats, search, sortBy]);
 
   // ---- Paginación
   const totalPages = Math.ceil(filteredProducts.length / perPage);
@@ -73,6 +81,16 @@ export default function ProductsSection({
     setSelectedCats((prev) =>
       prev.includes(cat) ? prev.filter((c) => c !== cat) : [...prev, cat],
     );
+  };
+
+  const toggleSubcategory = (sub: string) => {
+    setSelectedSubcats((prev) =>
+      prev.includes(sub) ? prev.filter((s) => s !== sub) : [...prev, sub],
+    );
+  };
+
+  const clearSubcategory = (sub: string) => {
+    setSelectedSubcats((prev) => prev.filter((s) => s !== sub));
   };
 
   const clearCategory = (cat: string) => {
@@ -145,6 +163,46 @@ export default function ProductsSection({
                 })}
               </ul>
             </div>
+
+            {/* Subcategorías (opcional) */}
+            {subcategories && (
+              <div className="wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                <h3 className="mb-3">Subcategorías</h3>
+
+                <ul className="list-unstyled mt-2">
+                  {subcategories.map((sub) => {
+                    const isSelected = selectedSubcats.includes(sub.name);
+
+                    return (
+                      <li key={sub.id} className="mb-3">
+                        {isSelected ? (
+                          <span className="badge bg-color-3 text-white d-inline-flex align-items-center gap-2">
+                            {sub.name}
+                            <button
+                              type="button"
+                              className="btn-close btn-close-white"
+                              aria-label="Eliminar"
+                              onClick={() => clearSubcategory(sub.name)}
+                            />
+                          </span>
+                        ) : (
+                          <a
+                            href="#"
+                            className="text-color-3"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              toggleSubcategory(sub.name);
+                            }}
+                          >
+                            {sub.name}
+                          </a>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            )}
           </div>
 
           {/* Productos */}
@@ -220,6 +278,7 @@ export default function ProductsSection({
                       onClick={() => {
                         setSearch('');
                         setSelectedCats([]);
+                        setSelectedSubcats([]);
                         setSortBy('ventas');
                         setPage(1);
                       }}
