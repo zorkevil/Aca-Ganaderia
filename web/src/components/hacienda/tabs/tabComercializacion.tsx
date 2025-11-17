@@ -52,7 +52,7 @@ export default function TabComercializacion() {
           {/* Botón */}
           <div className="row">
             <div className="col-12 text-center">
-              <a href="#" className="btn btn-outline-primary">
+              <a href="#contacto" className="btn btn-outline-primary">
                 Comercializá tu hacienda con ACA
               </a>
             </div>
