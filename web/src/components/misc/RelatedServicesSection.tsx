@@ -42,7 +42,7 @@ export default function RelatedServicesSection({
                     >
                       <a href={s.href} className="text-decoration-none d-block h-100">
                         <div
-                          className={`${s.bgClass} text-color-2 p-4 h-100 border-top-right-radius-50 border-bottom-left-radius-50 text-center box-hover`}
+                          className={`${s.bgClass} servicio-box text-color-2 p-4 h-100 border-top-right-radius-50 border-bottom-left-radius-50 text-center box-hover`}
                         >
                           <img
                             src={s.icon}

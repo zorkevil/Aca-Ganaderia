@@ -5,7 +5,7 @@ export const mainNavigation: NavItem[] = [
   { label: 'Nutrición', href: '/nutricion' },
   { label: 'Sanidad', href: '/sanidad' },
   { label: 'Hacienda', href: '#hacienda' },
-  { label: 'Producción', href: '#produccion' },
+  { label: 'Producción', href: '/produccion' },
   { label: 'Noticias', href: '/noticias' },
 ];
 

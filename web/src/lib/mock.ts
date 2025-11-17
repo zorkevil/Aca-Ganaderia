@@ -1,6 +1,7 @@
 import type {
   HeroSlide,
   ServicesItem,
+  ServicesProduccionItem,
   NewsItem,
   SubserviceItem,
   ProductItem,
@@ -256,6 +257,13 @@ export const subservicesByArea: Record<string, SubserviceItem[]> = {
 
 export const heroImageNutricion = '/img/sections/nutricion/nutricion-hero-bg.webp';
 export const heroImageSanidad = '/img/sections/sanidad/sanidad-hero-bg.webp';
+export const heroImageProduccion = '/img/sections/produccion/produccion-hero-bg.webp';
+export const heroImageProduccionCarne =
+  '/img/sections/produccion/carne/produccion-carne-hero-bg.webp';
+export const heroImageProduccionTambo =
+  '/img/sections/produccion/tambo/produccion-tambo-hero-bg.webp';
+export const heroImageProduccionProyectoCampoGanadero =
+  '/img/sections/produccion/proyecto-campo-ganadero/produccion-proyecto-campo-ganadero-hero-bg.webp';
 export const heroImageNoticias = '/img/sections/noticias/noticias-hero-bg.webp';
 export const heroImageContacto = '/img/sections/contacto/contacto-hero-bg.webp';
 export const heroImageGracias = '/img/sections/contacto/contacto-hero-bg.webp';
@@ -779,8 +787,8 @@ export const products: ProductItem[] = [
 
 export const carouselNutricion: CarouselItem[] = [
   {
-    backgroundImage: '/img/sections/nutricion/nutricion-carousel-bg-01.jpg',
-    productImage: '/img/sections/nutricion/nutricion-carousel-producto-01.png',
+    backgroundImage: '/img/sections/nutricion/nutricion-carousel-bg-01.webp',
+    productImage: '/img/products/nutricion/af-mix-adq-preparto-anionica.webp',
     productAlt: 'Producto Nutrición',
     title: 'Mejorá tu ganado con la mejor nutrición.',
     description:
@@ -790,8 +798,8 @@ export const carouselNutricion: CarouselItem[] = [
     buttonUrl: '/contacto',
   },
   {
-    backgroundImage: '/img/sections/nutricion/nutricion-carousel-bg-01.jpg',
-    productImage: '/img/sections/nutricion/nutricion-carousel-producto-01.png',
+    backgroundImage: '/img/sections/nutricion/nutricion-carousel-bg-01.webp',
+    productImage: '/img/products/nutricion/ruter-15kg.webp',
     productAlt: 'Producto Nutrición',
     title: 'Mejorá tu ganado con la mejor nutrición.',
     description:
@@ -801,8 +809,8 @@ export const carouselNutricion: CarouselItem[] = [
     buttonUrl: '/contacto',
   },
   {
-    backgroundImage: '/img/sections/nutricion/nutricion-carousel-bg-01.jpg',
-    productImage: '/img/sections/nutricion/nutricion-carousel-producto-01.png',
+    backgroundImage: '/img/sections/nutricion/nutricion-carousel-bg-01.webp',
+    productImage: '/img/products/nutricion/cooperacion-af.webp',
     productAlt: 'Producto Nutrición',
     title: 'Mejorá tu ganado con la mejor nutrición.',
     description:
@@ -810,5 +818,49 @@ export const carouselNutricion: CarouselItem[] = [
     showButton: true,
     buttonLabel: 'Contacto',
     buttonUrl: '/contacto',
+  },
+];
+
+export const carouselSanidad: CarouselItem[] = [
+  {
+    backgroundImage: '/img/sections/sanidad/sanidad-carousel-bg-01.webp',
+    productImage: '/img/sections/sanidad/sanidad-carousel-producto-01.webp',
+    productAlt: 'Producto Sanidad',
+    title: 'Invertí en sanidad, multiplicá en productividad.',
+    description: 'Sanidad integral para un ganado más sano, fuerte y rentable.',
+    showButton: true,
+    buttonLabel: 'Contacto',
+    buttonUrl: '/contacto',
+  },
+  {
+    backgroundImage: '/img/sections/sanidad/sanidad-carousel-bg-01.webp',
+    productImage: '/img/sections/sanidad/sanidad-carousel-producto-02.webp',
+    productAlt: 'Producto Sanidad',
+    title: 'Invertí en sanidad, multiplicá en productividad.',
+    description: 'Sanidad integral para un ganado más sano, fuerte y rentable.',
+    showButton: true,
+    buttonLabel: 'Contacto',
+    buttonUrl: '/contacto',
+  },
+];
+
+export const servicesProduccion: ServicesProduccionItem[] = [
+  {
+    id: 'carne',
+    title: 'Carne',
+    img: '/img/sections/produccion/produccion-01.webp',
+    href: '/produccion/carne',
+  },
+  {
+    id: 'tambo',
+    title: 'Tambo',
+    img: '/img/sections/produccion/produccion-02.webp',
+    href: '/produccion/tambo',
+  },
+  {
+    id: 'proyecto-campo-ganadero',
+    title: 'Proyecto Campo Ganadero',
+    img: '/img/sections/produccion/produccion-03.webp',
+    href: '/produccion/proyecto-campo-ganadero',
   },
 ];

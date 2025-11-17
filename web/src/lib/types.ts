@@ -21,6 +21,14 @@ export interface ServicesItem {
   order?: number;
 }
 
+export interface ServicesProduccionItem {
+  id: string;
+  title: string;
+  img: string;
+  href: string;
+  order?: number;
+}
+
 export interface NewsItem {
   id: number;
   slug: string;

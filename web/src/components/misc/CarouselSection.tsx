@@ -30,7 +30,7 @@ export default function CarouselSection({ id = 'carousel-secundario', items }: P
                             />
                           </div>
 
-                          <div className="col-lg-8 text-lg-end py-5 order-lg-2 order-1">
+                          <div className="col-lg-7 ms-auto text-lg-end py-5 order-lg-2 order-1">
                             <img
                               src="/img/branding/aca-logo.svg"
                               alt="ACA Logo"

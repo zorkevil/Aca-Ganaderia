@@ -25,7 +25,7 @@ import {
   heroImageSanidad,
   products,
   categoriesNutricion,
-  carouselNutricion,
+  carouselSanidad,
 } from '@/lib/mock';
 
 export default function NutricionPage() {
@@ -44,7 +44,7 @@ export default function NutricionPage() {
         categories={categoriesNutricion}
         sectionId={`productos-${SECTION_ID}`}
       />
-      <CarouselSection items={carouselNutricion} />
+      <CarouselSection items={carouselSanidad} />
       <NewsSection category={SECTION_NAME} news={mockNews} />
       <RelatedServicesSection excludeId={SECTION_ID} items={servicesMock} />
       <ContactSection description="" submitTo={`/api/contacto-${SECTION_ID}`} />
