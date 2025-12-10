@@ -6,6 +6,7 @@ import CarouselSection from '@/components/misc/CarouselSection';
 import RelatedServicesSection from '@/components/misc/RelatedServicesSection';
 import NewsSection from '@/components/misc/NewsSection';
 import ContactSection from '@/components/misc/ContactSection';
+import ShortGrid from '@/components/misc/ShortGrid';
 
 import type { Metadata } from 'next';
 
@@ -26,6 +27,8 @@ import {
   carouselNutricion,
   carouselSanidad,
 } from '@/lib/mock';
+
+import { mockShorts } from '@/lib/youtube';
 
 export default function NutricionPage() {
   const subServicesMock = subservicesByArea[SECTION_ID] || [];
@@ -55,6 +58,7 @@ export default function NutricionPage() {
       <HaciendaTabsSection />
       <CarouselSection items={[...carouselNutricion, ...carouselSanidad]} />
       <NewsSection category={SECTION_NAME} news={mockNews} />
+      <ShortGrid urls={mockShorts} />
       <RelatedServicesSection excludeId={SECTION_ID} items={servicesMock} />
       <ContactSection description="" submitTo={`/api/contacto-${SECTION_ID}`} />
     </main>
