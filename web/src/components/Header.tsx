@@ -1,27 +1,30 @@
 'use client';
 
-import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useEffect } from 'react';
 import { mainNavigation } from '@/lib/navigation';
 
 export default function Header() {
   const pathname = usePathname();
 
+  // Normalizar URLs
   const normalize = (path: string) => (path === '/' ? '/' : path.replace(/\/$/, ''));
+
   const current = normalize(pathname);
 
   useEffect(() => {
     const init = async () => {
-      // Import dinámico de Bootstrap Offcanvas (solo en cliente)
       const Offcanvas = (await import('bootstrap/js/dist/offcanvas')).default;
 
       const offcanvasEl = document.getElementById('offcanvasNavbar');
       if (!offcanvasEl) return;
 
+      // Instancia Bootstrap
       const instance = Offcanvas.getOrCreateInstance(offcanvasEl);
 
+      // Botón real que Bootstrap escucha
       const closeBtn = offcanvasEl.querySelector(
         '[data-bs-dismiss="offcanvas"]',
       ) as HTMLElement | null;
@@ -69,26 +72,65 @@ export default function Header() {
           <div className="navbar-collapse justify-content-center d-none d-lg-flex">
             <ul className="navbar-nav">
               {mainNavigation.map((item, i) => {
+                const delay = `${0.1 * (i + 1)}s`;
+                const hasChildren = item.children?.length;
+
                 const isActive =
-                  current === normalize(item.href) ||
-                  current.startsWith(normalize(item.href) + '/');
+                  (item.href && current === normalize(item.href)) ||
+                  (item.href && current.startsWith(normalize(item.href) + '/'));
 
                 return (
                   <li
-                    key={item.href}
-                    className="nav-item animate__animated animate__fadeInDown"
-                    style={{ animationDelay: `${0.1 * (i + 1)}s` }}
+                    key={item.label}
+                    className={`nav-item ${hasChildren ? 'dropdown' : ''} animate__animated animate__fadeInDown`}
+                    style={{ animationDelay: delay }}
                   >
-                    <Link href={item.href} className={`nav-link ${isActive ? 'active' : ''}`}>
+                    {/* Link del ítem */}
+                    <Link
+                      href={item.href ?? '#'}
+                      className={`nav-link ${hasChildren ? 'dropdown-toggle' : ''} ${
+                        isActive ? 'active' : ''
+                      }`}
+                      {...(hasChildren
+                        ? { role: 'button', 'data-bs-toggle': 'dropdown', 'aria-expanded': false }
+                        : {})}
+                    >
                       {item.label}
                     </Link>
+
+                    {/* Dropdown si tiene hijos */}
+                    {hasChildren && (
+                      <ul className="dropdown-menu">
+                        {/* Opción padre (opcional) */}
+                        {item.href && (
+                          <>
+                            <li>
+                              <Link className="dropdown-item" href={item.href}>
+                                {item.label}
+                              </Link>
+                            </li>
+                            <li>
+                              <hr className="dropdown-divider" />
+                            </li>
+                          </>
+                        )}
+
+                        {item.children!.map((sub, j) => (
+                          <li key={j}>
+                            <Link className="dropdown-item" href={sub.href!}>
+                              {sub.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 );
               })}
             </ul>
           </div>
 
-          {/* Botón Contacto Desktop */}
+          {/* Botón Contacto (Desktop) */}
           <Link
             href="/contacto"
             className="btn btn-primary d-none d-xl-block animate__animated animate__fadeInDown"
@@ -97,7 +139,7 @@ export default function Header() {
             Contacto
           </Link>
 
-          {/* Menú móvil (Offcanvas) */}
+          {/* Menú móvil (offcanvas) */}
           <div
             className="offcanvas offcanvas-end d-lg-none"
             tabIndex={-1}
@@ -138,7 +180,6 @@ export default function Header() {
                   );
                 })}
 
-                {/* Contacto en móvil también cierra el offcanvas */}
                 <li className="nav-item d-lg-none mt-4">
                   <Link href="/contacto" className="btn btn-primary w-100">
                     Contacto

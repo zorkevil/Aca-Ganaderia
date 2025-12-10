@@ -14,6 +14,20 @@ import type {
   WhatsAppContact,
 } from './types';
 
+export const heroImageNutricion = '/img/sections/nutricion/nutricion-hero-bg.webp';
+export const heroImageSanidad = '/img/sections/sanidad/sanidad-hero-bg.webp';
+export const heroImageHacienda = '/img/sections/hacienda/hacienda-hero-bg.webp';
+export const heroImageProduccion = '/img/sections/produccion/produccion-hero-bg.webp';
+export const heroImageProduccionCarne =
+  '/img/sections/produccion/carne/produccion-carne-hero-bg.webp';
+export const heroImageProduccionTambo =
+  '/img/sections/produccion/tambo/produccion-tambo-hero-bg.webp';
+export const heroImageProduccionProyectoCampoGanadero =
+  '/img/sections/produccion/proyecto-campo-ganadero/produccion-proyecto-campo-ganadero-hero-bg.webp';
+export const heroImageNoticias = '/img/sections/noticias/noticias-hero-bg.webp';
+export const heroImageContacto = '/img/sections/contacto/contacto-hero-bg.webp';
+export const heroImageGracias = '/img/sections/contacto/contacto-hero-bg.webp';
+
 export const heroSlides: HeroSlide[] = [
   {
     id: 1,
@@ -260,20 +274,6 @@ export const subservicesByArea: Record<string, SubserviceItem[]> = {
     },
   ],
 };
-
-export const heroImageNutricion = '/img/sections/nutricion/nutricion-hero-bg.webp';
-export const heroImageSanidad = '/img/sections/sanidad/sanidad-hero-bg.webp';
-export const heroImageHacienda = '/img/sections/hacienda/hacienda-hero-bg.webp';
-export const heroImageProduccion = '/img/sections/produccion/produccion-hero-bg.webp';
-export const heroImageProduccionCarne =
-  '/img/sections/produccion/carne/produccion-carne-hero-bg.webp';
-export const heroImageProduccionTambo =
-  '/img/sections/produccion/tambo/produccion-tambo-hero-bg.webp';
-export const heroImageProduccionProyectoCampoGanadero =
-  '/img/sections/produccion/proyecto-campo-ganadero/produccion-proyecto-campo-ganadero-hero-bg.webp';
-export const heroImageNoticias = '/img/sections/noticias/noticias-hero-bg.webp';
-export const heroImageContacto = '/img/sections/contacto/contacto-hero-bg.webp';
-export const heroImageGracias = '/img/sections/contacto/contacto-hero-bg.webp';
 
 export const categoriesNutricion = [
   { id: '1', name: 'Porcinos' },

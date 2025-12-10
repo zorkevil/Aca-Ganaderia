@@ -22,7 +22,7 @@ export default function CarouselSection({ id = 'carousel-secundario', items }: P
                     <div className="carousel-caption">
                       <div className="container">
                         <div className="row align-items-end">
-                          <div className="col-lg-4 order-lg-1 order-2">
+                          <div className="col-lg-5 order-lg-1 order-2">
                             <img
                               src={item.productImage}
                               className="carousel-product-image img-fluid wow animate__animated animate__fadeInLeft"

@@ -22,7 +22,6 @@
 // =============================================================================
 
 // Dynamic color utility classes for text, background, and border colors
-
 $colors: (
   1: $color-1,
   2: $color-2,
@@ -63,7 +62,6 @@ $colors: (
 // =============================================================================
 // BASE STYLES
 // =============================================================================
-
 html {
   // Compensate for fixed header when scrolling to anchors
   scroll-padding-top: $header-height;
@@ -628,6 +626,96 @@ header {
       }
     }
   }
+
+  // Remove margin for nav-items inside offcanvas (mobile menu)
+  .offcanvas .navbar-nav .nav-item {
+    margin-right: 0;
+  }
+}
+
+// =============================================================================
+
+// DROPDOWN MENU STYLES
+
+// =============================================================================
+
+// Custom dropdown menu styling to remove padding and match design
+
+.dropdown-menu {
+  background-color: $color-4;
+
+  padding: 0 !important; // Remove padding from dropdown container
+
+  border: none !important;
+
+  box-shadow: 0 4px 12px rgba($color-1, 0.15) !important;
+
+  margin-top: 0 !important;
+
+  overflow: hidden;
+
+  .dropdown-item {
+    padding: 12px 20px !important; // Compact padding for items
+
+    color: $color-1 !important;
+
+    &:hover {
+      background-color: $color-7 !important;
+
+      color: $color-2 !important;
+    }
+
+    &:active {
+      background-color: $color-7 !important;
+
+      color: $color-2 !important;
+    }
+  }
+
+  .dropdown-divider {
+    margin: 0 !important; // Compact divider
+
+    border-color: $color-7 !important;
+  }
+}
+
+// Dropdown toggle arrow styling
+
+.dropdown-toggle {
+  &::after {
+    margin-left: 0.5em !important;
+
+    vertical-align: middle !important;
+  }
+}
+
+// Mobile dropdown adjustments
+
+@media (max-width: 991.98px) {
+  .offcanvas .dropdown-menu {
+    box-shadow: none !important;
+  }
+}
+
+// =============================================================================
+// DROPDOWN HOVER EFFECTS
+// =============================================================================
+
+// Make dropdown open on hover for all navbar dropdowns
+.navbar-nav .dropdown:hover .dropdown-menu {
+  display: block;
+
+  margin-top: 0;
+}
+
+.navbar-nav .dropdown:hover .dropdown-toggle::after {
+  transform: rotate(180deg);
+
+  transition: transform 0.3s ease;
+}
+
+.navbar-nav .dropdown .dropdown-toggle::after {
+  transition: transform 0.3s ease;
 }
 
 // =============================================================================
@@ -733,6 +821,12 @@ header {
     .carousel-logo {
       height: 108px;
       width: auto;
+    }
+
+    .carousel-product-image {
+      max-height: 600px;
+      width: 100%;
+      object-fit: contain;
     }
 
     @media (max-width: 991.98px) {

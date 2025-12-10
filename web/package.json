@@ -26,7 +26,7 @@
     "domhandler": "^5.0.3",
     "domutils": "^3.2.2",
     "htmlparser2": "^10.0.0",
-    "next": "16.0.1",
+    "next": "16.0.7",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "swiper": "^12.0.3",

@@ -95,6 +95,7 @@ export type ProductCategory = {
 export interface NavItem {
   label: string;
   href: string;
+  children?: NavItem[]; // subitems
 }
 
 export interface SocialLink {
