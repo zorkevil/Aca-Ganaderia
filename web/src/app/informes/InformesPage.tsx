@@ -11,7 +11,7 @@ import { heroImageInformes, informes } from '@/lib/mock';
 const SECTION_NAME = 'Informes';
 
 export default function InformesPage() {
-  const categories = [...new Set(informes.map((i) => i.category))];
+  //const categories = [...new Set(informes.map((i) => i.category))];
   const [selectedCats, setSelectedCats] = useState<string[]>([]);
   const [page, setPage] = useState(1);
   const perPage = 9;
@@ -19,7 +19,7 @@ export default function InformesPage() {
   const filteredInformes = useMemo(() => {
     let result = informes;
     if (selectedCats.length > 0) {
-      result = result.filter((i) => selectedCats.includes(i.category));
+      //result = result.filter((i) => selectedCats.includes(i.category));
     }
     return result;
   }, [selectedCats]);
