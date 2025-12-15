@@ -1938,28 +1938,28 @@ República Argentina
 export const informes: InformesItem[] = [
   {
     id: 1,
-    title: 'Informe ACA Ganadería 26 de noviembre',
+    title: 'Informe ACA Ganadería',
     date: '2025-11-26',
     image: '/img/sections/informes/informes-imagen-bg.jpg',
     href: 'https://youtube.com/shorts/7z_y6CeI8t4',
   },
   {
     id: 2,
-    title: 'Informe ACA Ganadería 28 de noviembre',
+    title: 'Informe ACA Ganadería',
     date: '2025-11-28',
     image: '/img/sections/informes/informes-imagen-bg.jpg',
     href: 'https://www.youtube.com/shorts/D_x0QP1junA',
   },
   {
     id: 3,
-    title: 'Informe ACA Ganadería 3 de diciembre',
+    title: 'Informe ACA Ganadería',
     date: '2025-12-03',
     image: '/img/sections/informes/informes-imagen-bg.jpg',
     href: 'https://www.youtube.com/shorts/7enUjgwGXbY',
   },
   {
     id: 4,
-    title: 'Informe ACA Ganadería 11 de diciembre',
+    title: 'Informe ACA Ganadería',
     date: '2025-12-11',
     image: '/img/sections/informes/informes-imagen-bg.jpg',
     href: 'https://youtu.be/idnLIM0HpQM',
