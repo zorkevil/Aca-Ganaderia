@@ -270,10 +270,6 @@ export const subservicesByArea: Record<string, SubserviceItem[]> = {
       icon: '/img/icons/icon-identificacion-animal.svg',
       title: 'Identificación Animal',
     },
-    {
-      icon: '/img/icons/icon-vacuna-antiaftosa.svg',
-      title: 'Vacuna Antiaftosa',
-    },
   ],
 };
 
@@ -285,10 +281,7 @@ export const categoriesNutricion = [
   { id: '5', name: 'Sistema de producción industrial' },
 ];
 
-export const categoriesSanidad = [
-  { id: 'vacunas', name: 'Vacunas' },
-  { id: 'farmacos', name: 'Fármacos' },
-];
+export const categoriesSanidad = [{ id: 'farmacos', name: 'Fármacos' }];
 
 export const subcategoriesSanidad = [
   { id: 'mineral', name: 'Mineral' },

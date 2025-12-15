@@ -130,46 +130,48 @@ export default function ProductsSection({
             </div>
 
             {/* Categorías */}
-            <div className="wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
-              <h3 className="mb-3">Categorías</h3>
+            {categories && categories.length > 1 && (
+              <div className="wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                <h3 className="mb-3">Categorías</h3>
 
-              {/* Lista */}
-              <ul className="list-unstyled">
-                {categories.map((cat) => {
-                  const isSelected = selectedCats.includes(cat.name);
+                {/* Lista */}
+                <ul className="list-unstyled">
+                  {categories.map((cat) => {
+                    const isSelected = selectedCats.includes(cat.name);
 
-                  return (
-                    <li key={cat.id} className="mb-3">
-                      {isSelected ? (
-                        <span className="badge bg-color-3 text-white d-inline-flex align-items-center gap-2">
-                          {cat.name}
-                          <button
-                            type="button"
-                            className="btn-close btn-close-white"
-                            aria-label="Eliminar"
-                            onClick={() => clearCategory(cat.name)}
-                          ></button>
-                        </span>
-                      ) : (
-                        <a
-                          href="#"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            toggleCategory(cat.name);
-                          }}
-                          className="text-color-3"
-                        >
-                          {cat.name}
-                        </a>
-                      )}
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
+                    return (
+                      <li key={cat.id} className="mb-3">
+                        {isSelected ? (
+                          <span className="badge bg-color-3 text-white d-inline-flex align-items-center gap-2">
+                            {cat.name}
+                            <button
+                              type="button"
+                              className="btn-close btn-close-white"
+                              aria-label="Eliminar"
+                              onClick={() => clearCategory(cat.name)}
+                            />
+                          </span>
+                        ) : (
+                          <a
+                            href="#"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              toggleCategory(cat.name);
+                            }}
+                            className="text-color-3"
+                          >
+                            {cat.name}
+                          </a>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            )}
 
             {/* Subcategorías (opcional) */}
-            {subcategories && (
+            {subcategories && subcategories.length > 1 && (
               <div className="wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
                 <h3 className="mb-3">Subcategorías</h3>
 

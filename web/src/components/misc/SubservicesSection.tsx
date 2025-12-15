@@ -16,7 +16,7 @@ export default function SubservicesSection({ title = 'Servicios', items }: Props
           {title}
         </h2>
 
-        <div className="row g-4 mt-4">
+        <div className="row g-4 mt-4 justify-content-center">
           {items.map((s, i) => {
             const delay = (0.1 + i * 0.1).toFixed(1);
             return (
