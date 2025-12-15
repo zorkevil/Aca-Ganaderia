@@ -1562,7 +1562,7 @@ export const remates: RemateItem[] = [
   },
   {
     id: 2,
-    title: 'Remate del grupo Cooperativo',
+    title: 'Remate del Grupo de Hacienda Cooperativo',
     modalidad: 'Virtual',
     tipo: 'De terceros',
     date: '2025-12-05',
