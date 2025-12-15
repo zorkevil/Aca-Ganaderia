@@ -1,4 +1,5 @@
 import type { InformesCardProps } from '@/lib/types';
+import { parseLocalDate } from '@/lib/date';
 
 export default function InformesCard({
   n,
@@ -6,7 +7,7 @@ export default function InformesCard({
   colClass = 'col-md-6 col-xl-3',
 }: InformesCardProps) {
   const delay = (0.2 + index * 0.1).toFixed(1);
-  const date = new Date(n.date);
+  const date = parseLocalDate(n.date);
 
   const day = date.getDate().toString().padStart(2, '0');
   const month = date.toLocaleString('es-AR', { month: 'short' }).toUpperCase();

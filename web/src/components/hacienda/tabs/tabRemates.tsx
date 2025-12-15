@@ -181,8 +181,9 @@ export default function TabRemates({ remates, tipos, modalidades }: Props) {
                           <span className="d-flex align-items-center gap-1">
                             <i className="bi bi-calendar text-color-4"></i>
                             {date.toLocaleDateString('es-AR', {
-                              day: 'numeric',
-                              month: 'long',
+                              day: '2-digit',
+                              month: '2-digit',
+                              year: '2-digit',
                             })}
                           </span>
 
