@@ -220,7 +220,7 @@ $border-radius-corners: (
 // ICON SIZE UTILITIES
 // =============================================================================
 
-$icon-sizes: (16, 24, 32, 48, 64, 96, 128, 168);
+$icon-sizes: (16, 24, 32, 48, 64, 96, 128, 144, 168);
 
 @each $size in $icon-sizes {
   .icon-#{$size} {

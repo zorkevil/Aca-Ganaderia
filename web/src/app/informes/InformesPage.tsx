@@ -5,8 +5,9 @@ import { useState, useMemo } from 'react';
 import HeroSection from '@/components/misc/HeroSection';
 import InformesGrid from '@/components/informes/InformesGrid';
 import InformesPagination from '@/components/informes/InformesPagination';
+import MarketPresenter from '@/components/informes/MarketPresenter';
 
-import { heroImageInformes, informes } from '@/lib/mock';
+import { heroImageInformes, informes, marketPresenterMock } from '@/lib/mock';
 
 const SECTION_NAME = 'Informes';
 
@@ -56,6 +57,8 @@ export default function InformesPage() {
               </h2>
             </div>
           </div>
+
+          <MarketPresenter {...marketPresenterMock} />
 
           <div className="row">
             {/* Contenido principal */}

@@ -1502,11 +1502,11 @@ export const alianzas: AlianzaItem[] = [
   },
   {
     title: 'MAG',
-    img: '/img/sections/hacienda/alianza/logo-mag.png',
+    img: '/img/sections/hacienda/alianza/logo-mag.webp',
   },
   {
     title: 'Alimentos Magros',
-    img: '/img/sections/hacienda/alianza/logo-alimentos-magros.svg',
+    img: '/img/sections/hacienda/alianza/logo-alimentos-magros.webp',
   },
 ];
 
@@ -1965,3 +1965,9 @@ export const informes: InformesItem[] = [
     href: 'https://youtu.be/idnLIM0HpQM',
   },
 ];
+
+export const marketPresenterMock = {
+  image: '/img/sections/informes/javier-lauria.webp',
+  imageAlt: 'Javier Lauria - Periodista Agropecuario',
+  text: 'Los días de mercado el periodista agropecuario, Javier Lauria, presenta la información y tendencias del Mercado Agroganadero de Cañuelas, analizando los precios, la cantidad de oferta, el comportamiento de la demanda de los compradores y las tendencias del mercado.',
+};
