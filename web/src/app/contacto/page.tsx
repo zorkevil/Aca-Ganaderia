@@ -23,7 +23,7 @@ export default function ContactoPage() {
       />
 
       <ContactSection
-        title="Escribínos!"
+        title="Escribinos!"
         description="Si querés recibir asesoramiento o conocer nuestras soluciones adaptadas a tu producción, completá este breve formulario."
         noImage={true}
       />

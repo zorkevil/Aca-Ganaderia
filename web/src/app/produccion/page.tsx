@@ -16,7 +16,6 @@ const SECTION_NAME = 'Producción';
 // Mock temporal
 import {
   services as servicesMock,
-  news as mockNews,
   subservicesByArea,
   heroImageProduccion,
   servicesProduccion,

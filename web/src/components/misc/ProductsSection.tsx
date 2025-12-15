@@ -19,6 +19,10 @@ export default function ProductsSection({
   subcategories,
   sectionId = 'productos',
 }: Props) {
+  // ---- Helpers
+  const truncate = (text: string, max = 90) =>
+    text.length > max ? text.slice(0, max).trim() + '…' : text;
+
   // ---- Estados
   const [search, setSearch] = useState('');
   const [selectedCats, setSelectedCats] = useState<string[]>([]);
@@ -249,7 +253,7 @@ export default function ProductsSection({
                           className="img-fluid mb-3 wow animate__animated animate__fadeIn"
                         />
                         <h4 className="text-color-3 mb-3">{p.name}</h4>
-                        <p className="flex-grow-1">{p.description}</p>
+                        <p className="flex-grow-1">{truncate(p.description, 90)}</p>
                       </Link>
                       <div className="d-flex gap-2 justify-content-center p-3 mt-auto">
                         <Link href="#contacto" className="btn btn-outline-primary">

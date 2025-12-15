@@ -6,7 +6,7 @@ import type { MagRow } from '@/lib/types';
 export default function TabMAG() {
   return (
     <>
-      <div className="row justify-content-center  mb-5">
+      <div className="row justify-content-center mb-5">
         <div className="col-lg-7">
           <p className="text-center mb-0">
             El Mercado Agroganadero de Cañuelas es el mercado concentrador de hacienda más

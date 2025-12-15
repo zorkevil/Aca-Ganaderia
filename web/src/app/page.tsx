@@ -1,7 +1,6 @@
 import HeroSection from '@/components/home/HeroSection';
 import OurValuesSection from '@/components/home/OurValuesSection';
 import ServicesSection from '@/components/home/ServicesSection';
-import NewsSection from '@/components/misc/NewsSection';
 import ContactSection from '@/components/misc/ContactSection';
 
 import { heroSlides, services, news as mockNews } from '@/lib/mock';
@@ -12,7 +11,6 @@ export default function HomePage() {
       <HeroSection slides={heroSlides} />
       <OurValuesSection />
       <ServicesSection services={services} />
-      <NewsSection news={mockNews} />
       <ContactSection />
     </main>
   );

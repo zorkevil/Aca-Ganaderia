@@ -47,7 +47,7 @@ export default function RelatedServicesSection({
                           <img
                             src={s.icon}
                             alt={s.title}
-                            className="icon-128 img-fluid mb-3 m-auto"
+                            className="icon-128 img-fluid mb-3 m-auto opacity-75"
                           />
                           <h3 className="text-color-2">{s.title}</h3>
                         </div>

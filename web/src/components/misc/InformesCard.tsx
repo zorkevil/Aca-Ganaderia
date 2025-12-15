@@ -1,17 +1,17 @@
-import Link from 'next/link';
-import Badge from '@/components/misc/Badge';
-import type { NewsCardProps } from '@/lib/types';
+import type { InformesCardProps } from '@/lib/types';
 
-export default function NewsCard({ n, index, colClass = 'col-md-6 col-xl-3' }: NewsCardProps) {
+export default function InformesCard({
+  n,
+  index,
+  colClass = 'col-md-6 col-xl-3',
+}: InformesCardProps) {
   const delay = (0.2 + index * 0.1).toFixed(1);
   const date = new Date(n.date);
 
   const day = date.getDate().toString().padStart(2, '0');
   const month = date.toLocaleString('es-AR', { month: 'short' }).toUpperCase();
 
-  const imageSrc = n.image?.trim() ? n.image : '/img/sections/noticias/news-placeholder.jpg';
-
-  const href = `/noticias/${n.slug}`; // 🎯 ruta correcta
+  const imageSrc = n.image?.trim() ? n.image : '/img/sections/informes/informes-imagen-bg.jpg';
 
   return (
     <div
@@ -19,12 +19,7 @@ export default function NewsCard({ n, index, colClass = 'col-md-6 col-xl-3' }: N
       data-wow-delay={`${delay}s`}
     >
       <div className="h-100 position-relative border border-color-3 overflow-hidden border-top-right-radius-50 border-bottom-left-radius-50 bg-white">
-        {/* 🎯 LINK QUE CUBRE TODA LA CARD */}
-        <Link
-          href={href}
-          className="stretched-link"
-          style={{ position: 'absolute', inset: 0, zIndex: 5 }}
-        />
+        <a href={n.href} target="_blank" rel="noopener noreferrer" className="stretched-link" />
 
         <div className="position-relative">
           <img
@@ -40,12 +35,16 @@ export default function NewsCard({ n, index, colClass = 'col-md-6 col-xl-3' }: N
 
         <div className="p-3 d-flex flex-column text-center">
           <h4 className="text-color-3">{n.title}</h4>
-          <Badge n={n} className="mb-2" />
           <p className="small flex-grow-1 mb-2">{n.excerpt}</p>
 
-          <Link href={href} className="btn btn-link mt-auto">
-            Ver noticia
-          </Link>
+          <a
+            href={n.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-link mt-auto"
+          >
+            Ver Informe
+          </a>
         </div>
       </div>
     </div>

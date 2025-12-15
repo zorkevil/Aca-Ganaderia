@@ -43,6 +43,15 @@ export interface NewsItem {
   metaDescription: string;
 }
 
+export interface InformesItem {
+  id: number;
+  title: string;
+  date: string; // formato ISO: "2025-10-31"
+  image: string;
+  href: string;
+  excerpt?: string;
+}
+
 export type SubserviceItem = {
   icon: string;
   title: string;
@@ -73,7 +82,7 @@ export type ProductItem = {
   image: string;
   price: number;
   sales: number;
-  date: string;
+  date: string; // formato ISO: "2025-10-31"
 };
 
 export type CarouselItem = {
@@ -122,11 +131,11 @@ export interface RemateCategory {
 }
 
 export interface RemateItem {
-  id: string;
+  id: number;
   title: string;
   modalidad: string;
   tipo: string;
-  date: string;
+  date: string; // formato ISO: "2025-10-31"
   time: string;
   description: string;
   image: string;
@@ -187,6 +196,12 @@ export interface BadgeProps {
 }
 
 export interface NewsCardProps {
+  n: any;
+  index: number;
+  colClass?: string;
+}
+
+export interface InformesCardProps {
   n: any;
   index: number;
   colClass?: string;

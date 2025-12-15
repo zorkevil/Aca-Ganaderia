@@ -53,7 +53,6 @@ export default function TabAlianzas({ alianzas }: Props) {
                     title={item.title}
                     className="swiper-logo img-fluid mb-3"
                   />
-                  <h4>{item.title}</h4>
                 </div>
               </SwiperSlide>
             ))}

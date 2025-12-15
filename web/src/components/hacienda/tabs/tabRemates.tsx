@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import type { RemateItem, RemateCategory } from '@/lib/types';
+import { parseLocalDate } from '@/lib/date';
 
 type Props = {
   remates: RemateItem[];
@@ -34,6 +35,8 @@ export default function TabRemates({ remates, tipos, modalidades }: Props) {
     if (selectedModalidades.length > 0) {
       result = result.filter((r) => selectedModalidades.includes(r.modalidad));
     }
+
+    result = [...result].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
     return result;
   }, [remates, selectedTipos, selectedModalidades]);
@@ -153,48 +156,59 @@ export default function TabRemates({ remates, tipos, modalidades }: Props) {
           {/* Cards o vacío */}
           {items.length > 0 ? (
             <div className="row g-4 mb-4">
-              {items.map((r) => (
-                <div key={r.id} className="col-md-6 col-xl-4">
-                  <div className="bg-white border border-color-3 rounded-4 h-100 d-flex flex-column text-center overflow-hidden">
-                    <div className="position-relative">
-                      <img src={r.image} alt="" className="img-fluid" />
+              {items.map((r) => {
+                const date = parseLocalDate(r.date);
 
-                      <div
-                        className={`position-absolute top-0 start-10 ${
-                          r.modalidad === 'Virtual' ? 'bg-color-6' : 'bg-color-4'
-                        } text-white px-3 py-2 border-bottom-left-radius-20 border-bottom-right-radius-20`}
-                      >
-                        {r.modalidad}
-                      </div>
-                    </div>
+                return (
+                  <div key={r.id} className="col-md-6 col-xl-4">
+                    <div className="bg-white border border-color-3 rounded-4 h-100 d-flex flex-column text-center overflow-hidden">
+                      <div className="position-relative">
+                        <img src={r.image} alt="" className="img-fluid" />
 
-                    <div className="p-3 d-flex flex-column flex-grow-1">
-                      <h4 className="text-color-3 mb-3">{r.title}</h4>
-
-                      <div className="d-flex gap-3 justify-content-center mb-3 small text-color-3">
-                        <span className="d-flex align-items-center gap-1">
-                          <i className="bi bi-calendar text-color-4"></i>
-                          {new Date(r.date).toLocaleDateString('es-AR', {
-                            day: 'numeric',
-                            month: 'long',
-                          })}
-                        </span>
-
-                        <span className="d-flex align-items-center gap-1">
-                          <i className="bi bi-clock text-color-4"></i>
-                          {r.time}hs
-                        </span>
+                        <div
+                          className={`position-absolute top-0 start-10 ${
+                            r.modalidad === 'Virtual' ? 'bg-color-6' : 'bg-color-4'
+                          } text-white px-3 py-2 border-bottom-left-radius-20 border-bottom-right-radius-20`}
+                        >
+                          {r.modalidad}
+                        </div>
                       </div>
 
-                      <p className="small flex-grow-1 mb-2">{r.description}</p>
+                      <div className="p-3 d-flex flex-column flex-grow-1">
+                        <h4 className="text-color-3 mb-3">{r.title}</h4>
 
-                      <a href={r.href} className="btn btn-link mt-auto">
-                        Ver remate
-                      </a>
+                        <div className="d-flex gap-3 justify-content-center mb-3 small text-color-3">
+                          <span className="d-flex align-items-center gap-1">
+                            <i className="bi bi-calendar text-color-4"></i>
+                            {date.toLocaleDateString('es-AR', {
+                              day: 'numeric',
+                              month: 'long',
+                            })}
+                          </span>
+
+                          <span className="d-flex align-items-center gap-1">
+                            <i className="bi bi-clock text-color-4"></i>
+                            {r.time}hs
+                          </span>
+                        </div>
+
+                        <p className="small flex-grow-1 mb-2">{r.description}</p>
+
+                        {r.href && (
+                          <a
+                            href={r.href}
+                            className="btn btn-link mt-auto"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Ver remate
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           ) : (
             <div className="row g-4 mb-4">
@@ -210,7 +224,6 @@ export default function TabRemates({ remates, tipos, modalidades }: Props) {
                   <button
                     className="btn btn-link text-color-3"
                     onClick={() => {
-                      // reset general
                       setSelectedTipos([]);
                       setSelectedModalidades([]);
                       setPage(1);

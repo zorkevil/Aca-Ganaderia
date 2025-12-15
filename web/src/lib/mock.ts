@@ -3,6 +3,7 @@ import type {
   ServicesItem,
   ServicesProduccionItem,
   NewsItem,
+  InformesItem,
   SubserviceItem,
   ProductItem,
   CarouselItem,
@@ -25,6 +26,7 @@ export const heroImageProduccionTambo =
 export const heroImageProduccionProyectoCampoGanadero =
   '/img/sections/produccion/proyecto-campo-ganadero/produccion-proyecto-campo-ganadero-hero-bg.webp';
 export const heroImageNoticias = '/img/sections/noticias/noticias-hero-bg.webp';
+export const heroImageInformes = '/img/sections/noticias/noticias-hero-bg.webp';
 export const heroImageContacto = '/img/sections/contacto/contacto-hero-bg.webp';
 export const heroImageGracias = '/img/sections/contacto/contacto-hero-bg.webp';
 
@@ -350,7 +352,8 @@ export const products: ProductItem[] = [
     name: 'Starter - Concentrado Iniciador',
     title: 'Starter',
     subtitle: 'Concentrado Iniciador',
-    description: '',
+    description:
+      'Formulado con los aditivos necesarios para balancear los nutrientes aportados por el maíz y harina de soja molidos en las granjas. Indicado para ser utilizado como ingredientes en la elaboración de alimento para lechones desde 12 hasta los 18kg de peso vivo. Consumo estimado por lechón para alcanzar los 18kg de peso vivo: 7kg.',
     generalCategory: 'nutricion',
     generalCategoryName: 'Nutrición',
     category: 'Porcinos',
@@ -807,30 +810,6 @@ export const products: ProductItem[] = [
 
 export const productsSanidad: ProductItem[] = [
   {
-    id: 24,
-    sku: '14-08008-0',
-    slug: 'vacuna-antiaftosa-aca',
-    name: 'Vacuna Antiaftosa ACA',
-    description: 'Vacuna Antiaftosa.',
-    generalCategory: 'sanidad',
-    generalCategoryName: 'Sanidad',
-    category: 'Vacunas',
-    secondCategory: '',
-    presentation: '250 ml',
-    formula:
-      'Contiene los tipos O, A24 y A2001 del virus de la Fiebre Aftosa en células BHK, inactivados con BEI, con adyuvante oleoso.',
-    administration:
-      'Bovinos: 2 ml. Ovinos y porcinos: 1 ml. Vía intramuscular profunda o subcutánea.',
-    dosage:
-      'Inmunidad activa 6 meses en primovacunados y animales < 6 meses. 12 meses en revacunados.',
-    senasa: '11990/01',
-    image: '/img/products/sanidad/vacuna-antiaftosa.webp',
-    price: 0,
-    sales: 0,
-    date: '2025-01-01',
-    especieAnimal: 'Aves, Bovinos, Ovinos',
-  },
-  {
     id: 25,
     sku: '15-07616-0',
     slug: 'derribante-sm',
@@ -1060,7 +1039,7 @@ export const productsSanidad: ProductItem[] = [
     iconSubcategory: '/img/icons/icon_sanidad_antiparasitarios_interno.svg',
     secondCategory: '',
     presentation: '5 Litros',
-    formula: '',
+    formula: 'Oxfendazol 9,06%',
     administration: 'Oral e intrarruminal.',
     dosage: '1 ml/36 kg p.v.',
     senasa: '88024',
@@ -1294,7 +1273,7 @@ export const productsSanidad: ProductItem[] = [
     subcategory: 'Antibiótico',
     iconSubcategory: '/img/icons/icon_sanidad_antibioticos.svg',
     secondCategory: '',
-    presentation: '',
+    presentation: '100 ml',
     formula: 'Flunixin meglumine 50 mg',
     administration: 'Inyectable.',
     dosage:
@@ -1364,7 +1343,7 @@ export const productsSanidad: ProductItem[] = [
     subcategory: 'Antiparasitario interno',
     iconSubcategory: '/img/icons/icon_sanidad_antiparasitarios_internos.svg',
     secondCategory: '',
-    presentation: '',
+    presentation: '10 g',
     formula: 'Ivermectina 12 mg – Praziquantel 150 mg',
     administration: 'Aplicación oral.',
     dosage: '1 g cada 60 kg p.v. Jeringa 10 g = 600 kg.',
@@ -1388,7 +1367,7 @@ export const productsSanidad: ProductItem[] = [
     subcategory: 'Antiparasitario interno',
     iconSubcategory: '/img/icons/icon_sanidad_antiparasitarios_internos.svg',
     secondCategory: '',
-    presentation: '',
+    presentation: '30 g',
     formula: 'Ivermectina 12 mg – Praziquantel 150 mg',
     administration: 'Aplicación oral.',
     dosage: '1 g cada 60 kg p.v. Jeringa 10 g = 1800 kg.',
@@ -1428,7 +1407,7 @@ export const productsSanidad: ProductItem[] = [
 
 export const carouselNutricion: CarouselItem[] = [
   {
-    backgroundImage: '/img/sections/nutricion/nutricion-carousel-bg-01.webp',
+    backgroundImage: '/img/sections/nutricion/nutricion-carousel-bg-01.jpg',
     productImage: '/img/products/nutricion/af-mix-adq-preparto-anionica.webp',
     productAlt: 'Producto Nutrición',
     title: 'Potenciá tu producción con la mejor nutrición.',
@@ -1438,7 +1417,7 @@ export const carouselNutricion: CarouselItem[] = [
     buttonUrl: '/contacto',
   },
   {
-    backgroundImage: '/img/sections/nutricion/nutricion-carousel-bg-01.webp',
+    backgroundImage: '/img/sections/nutricion/nutricion-carousel-bg-01.jpg',
     productImage: '/img/products/nutricion/ruter-15kg.webp',
     productAlt: 'Producto Nutrición',
     title: 'Potenciá tu producción con la mejor nutrición.',
@@ -1448,7 +1427,7 @@ export const carouselNutricion: CarouselItem[] = [
     buttonUrl: '/contacto',
   },
   {
-    backgroundImage: '/img/sections/nutricion/nutricion-carousel-bg-01.webp',
+    backgroundImage: '/img/sections/nutricion/nutricion-carousel-bg-01.jpg',
     productImage: '/img/products/nutricion/cooperacion-af.webp',
     productAlt: 'Producto Nutrición',
     title: 'Potenciá tu producción con la mejor nutrición.',
@@ -1461,7 +1440,7 @@ export const carouselNutricion: CarouselItem[] = [
 
 export const carouselSanidad: CarouselItem[] = [
   {
-    backgroundImage: '/img/sections/sanidad/sanidad-carousel-bg-01.webp',
+    backgroundImage: '/img/sections/sanidad/sanidad-carousel-bg-01.jpg',
     productImage: '/img/sections/sanidad/sanidad-carousel-producto-01.webp',
     productAlt: 'Producto Sanidad',
     title: 'Invertí en Sanidad, para un ganado más fuerte y rentable.',
@@ -1471,7 +1450,7 @@ export const carouselSanidad: CarouselItem[] = [
     buttonUrl: '/contacto',
   },
   {
-    backgroundImage: '/img/sections/sanidad/sanidad-carousel-bg-02.webp',
+    backgroundImage: '/img/sections/sanidad/sanidad-carousel-bg-01.jpg',
     productImage: '/img/sections/sanidad/sanidad-carousel-producto-02.webp',
     productAlt: 'Producto Sanidad',
     title: 'Invertí en Sanidad, para un ganado más fuerte y rentable.',
@@ -1528,6 +1507,14 @@ export const alianzas: AlianzaItem[] = [
     title: 'Frigorífico Magret',
     img: '/img/sections/hacienda/alianza/logo-magret.svg',
   },
+  {
+    title: 'MAG',
+    img: '/img/sections/hacienda/alianza/logo-mag.png',
+  },
+  {
+    title: 'Alimentos Magros',
+    img: '/img/sections/hacienda/alianza/logo-alimentos-magros.svg',
+  },
 ];
 
 export const identificacionItems: IdentificacionItem[] = [
@@ -1567,7 +1554,43 @@ export const remateModalidades: RemateCategory[] = [
   { id: 'presencial', name: 'Presencial' },
 ];
 
-export const remates: RemateItem[] = [];
+export const remates: RemateItem[] = [
+  {
+    id: 1,
+    title: 'Remate Cooperativa la Ganadera de Ramirez',
+    modalidad: 'Presencial',
+    tipo: 'De terceros',
+    date: '2025-11-20',
+    time: '09.30 / 15:00',
+    description:
+      'Remate General de Hacienda en la Feria de Gral. Ramirez, Entre Ríos. Con destino a faena a partir de las 09:30 hs, Cría e Invernada a partir de las 15:00 hs. Invita La Ganadera.',
+    image: 'img/sections/hacienda/remates/remate-gralramirez.webp',
+    href: '',
+  },
+  {
+    id: 2,
+    title: 'Remate del grupo Cooperativo',
+    modalidad: 'Virtual',
+    tipo: 'De terceros',
+    date: '2025-12-05',
+    time: '08:45',
+    description:
+      '51º remate por internet. 800 cabezas de invernada & cría. Invitan Cooperativa Espartillar, Cooperativa Puan, Cooperativa La Alianza y Cooperativa Agro Darregueira.',
+    image: 'img/sections/hacienda/remates/remate-ghc.webp',
+    href: 'https://www.ghc.com.ar',
+  },
+  {
+    id: 3,
+    title: 'Remate Televisado',
+    modalidad: 'Virtual',
+    tipo: 'De terceros',
+    date: '2025-12-12',
+    time: '10:00',
+    description: 'Remate Televisado desde General Ramirez. Invita La Ganadera.',
+    image: 'img/sections/hacienda/remates/remate-chacratv.webp',
+    href: 'https://www.youtube.com/watch?v=6HpY1ta4bsk',
+  },
+];
 
 export const magData: MagRow[] = [
   {
@@ -1706,5 +1729,246 @@ export const whatsappContacts: WhatsAppContact[] = [
     section: 'sanidad',
     phone: '5491166170733',
     label: 'Juan Ghirardi',
+  },
+];
+
+export const terminosCondiciones = `
+<h2>1. ALCANCE DEL SERVICIO</h2>
+
+<p><strong>1.1</strong> ACA Ganadería proporciona servicios de asesoramiento y apoyo técnico en las áreas de nutrición animal, sanidad, hacienda y producción ganadera, facilitando el acceso de los usuarios a información, productos y servicios relacionados con la actividad ganadera.</p>
+
+<p><strong>1.2</strong> Los servicios están dirigidos a productores ganaderos, cooperativas agropecuarias y sus asociados, promoviendo el desarrollo de la actividad ganadera y facilitando el contacto entre usuarios interesados en servicios y productos del sector.</p>
+
+<p>La plataforma no garantiza la veracidad de la información publicada por terceros, conforme Ley 24.240 (Defensa del Consumidor). Se establece expresamente que la comunicación o el contacto facilitado debe ajustarse a las regulaciones de spam y comunicaciones comerciales no solicitadas, y que ACA Ganadería no es responsable de la veracidad de la comunicación e intercambio de información entre el usuario y terceros.</p>
+
+<p><strong>1.3</strong> ACA Ganadería actúa como proveedor de servicios técnicos y asesoramiento, sin intervenir directamente en las operaciones comerciales que pudieran concretarse entre usuarios, excepto cuando actúe a través de sus Centros de Desarrollo Cooperativo.</p>
+
+<p><strong>1.4</strong> Los servicios se rigen por la ley argentina.</p>
+
+<p><strong>1.5</strong> ACA Ganadería realiza sus mejores esfuerzos, pero no garantiza resultados específicos de comercialización o idoneidad para propósitos particulares.</p>
+
+<h2>2. DE LOS USUARIOS</h2>
+
+<h3>2.1 Requisitos</h3>
+
+<p>Los usuarios que realicen consultas por los formularios que presente el sitio en las diferentes secciones de la página deben ser mayores de edad con capacidad para contratar. Deben poseer los permisos, licencias o autorizaciones requeridas para la actividad ganadera que desarrollen. Los usuarios suspendidos o inhabilitados no pueden utilizar los servicios.</p>
+
+<p>ACA Ganadería podrá requerir acreditación documental de identidad, de la capacidad y habilitaciones, conforme Ley 25.326 (Protección de Datos). El usuario asegura indemnidad por cualquier reclamo que surja de la falta de sus permisos o licencias, en el marco de la responsabilidad que asume en el entorno digital.</p>
+
+<h3>2.2 Registro</h3>
+
+<p>Los usuarios deben completar el registro con información personal o corporativa precisa y veraz. Los usuarios declaran que poseen autoridad suficiente y se comprometen a actualizar la información cuando sea necesario.</p>
+
+<p>ACA Ganadería se reserva los derechos de solicitar documentación adicional, rechazar solicitudes de registro, cancelar registros previos sin explicación e informar datos de usuarios a autoridades competentes mediante solicitud apropiada. La falsedad en la información suministrada podrá acarrear consecuencias penales y/o civiles.</p>
+
+<h3>2.3 Baja y/o suspensión</h3>
+
+<p>ACA Ganadería se reserva la discreción de suspender o cancelar usuarios cuyos datos no puedan confirmarse, eliminando todas las consultas o publicaciones sin compensación.</p>
+
+<p>ACA Ganadería puede cancelar registros, eliminar o editar publicaciones si infringen estos términos, la ley, la moralidad, el orden público, las buenas costumbres, los derechos de propiedad intelectual, protección de datos, derechos de privacidad, o si se detecta actividad fraudulenta o engañosa. La suspensión no genera derecho a indemnización.</p>
+
+<h2>3. PRIVACIDAD DE LA INFORMACIÓN Y DATOS</h2>
+
+<p>Los usuarios consienten al procesamiento y almacenamiento de datos personales en servidores seguros que cumplen con altos estándares de protección física y tecnológica. Consulte las Políticas de Privacidad para más detalles.</p>
+
+<p>Bajo la Ley 25.326, ACA Ganadería actúa como Responsable de Base de Datos inscripto ante la AAIP, indicando los derechos ARCO (Acceso, Rectificación, Cancelación y Oposición). En caso de un incidente de seguridad o data breach, ACA Ganadería notificará a los usuarios afectados según el protocolo establecido en la Política de Privacidad y la Ley 25.326.</p>
+
+<h2>4. USO DEL SITIO</h2>
+
+<p>Los usuarios se comprometen a usar el sitio según estos términos, la ley, la moralidad, las costumbres y el orden público. Los usuarios no deben realizar actividades ilícitas, fraude, infringir derechos de terceros o violar regulaciones de propiedad intelectual.</p>
+
+<p>Los infractores enfrentan suspensión o cancelación de publicaciones o registros sin recurso o indemnización, además de acciones legales.</p>
+
+<p>Cualquier uso indebido podrá ser denunciado penalmente conforme al Código Penal (fraude informático) y la Ley 11.723 (Propiedad Intelectual) para acciones asociadas a actividad ilícita o fraude en el entorno digital, tales como phishing, scraping no autorizado o inyección de código malicioso.</p>
+
+<h2>5. SANCIONES</h2>
+
+<p>ACA Ganadería puede desestimar consultas de usuarios que incumplan leyes o términos, fallen en compromisos, participen en conductas fraudulentas o engañosas, proporcionen información falsa, contraria a la moral y a las buenas costumbres, o si las publicaciones pudieran crear responsabilidad. Estas acciones podrían acarrear consecuencias civiles y penales de corresponder.</p>
+
+<h2>6. CONSULTAS</h2>
+
+<p>Los usuarios que realicen consultas de información sobre sus necesidades ganaderas deben proporcionar descripciones completas y suficientes de sus requerimientos. Las consultas pueden incluir textos, gráficos y fotografías que no violen estos términos. ACA Ganadería se reserva el derecho de editar o modificar el formato de la consulta.</p>
+
+<h2>7. PROTECCIÓN DE PROPIEDAD INTELECTUAL</h2>
+
+<p>ACA Ganadería respeta los derechos de propiedad intelectual de terceros y se reserva el derecho de tomar medidas necesarias para su protección, incluyendo la suspensión de consultas. Los usuarios aceptan que todos los elementos y servicios del sitio, incluyendo diseño, estructura, información, plataforma y materiales, están legalmente protegidos como propiedad intelectual o derechos industriales de ACA Ganadería o terceros.</p>
+
+<h2>8. OBLIGACIONES DE LOS USUARIOS</h2>
+
+<p>Los usuarios deben tener capacidad legal para solicitar servicios ganaderos y acceder a la información publicada.</p>
+
+<h2>9. PROHIBICIONES</h2>
+
+<p>Los usuarios no pueden realizar conductas de mala fe perjudicando a otros usuarios o a ACA Ganadería.</p>
+
+<p>Al realizar consultas en los foros del sitio, queda expresamente prohibida la publicación de datos personales de terceros sin consentimiento, así como el uso de bots, crawlers o sistemas automatizados para acceder, recopilar o interactuar con el sitio.</p>
+
+<h2>11. ALCANCE DE LA RESPONSABILIDAD DE ACA GANADERÍA</h2>
+
+<h3>11.1 General</h3>
+
+<p>Los usuarios aceptan que el uso del sitio es exclusivamente su responsabilidad. ACA Ganadería no asume responsabilidad por daños o pérdidas derivadas de fallas del sistema, servidor, errores de contenido, daños personales o materiales, interrupciones de transmisión, virus, errores o pérdidas de contenido, ni por la seguridad o privacidad del sitio.</p>
+
+<p>ACA Ganadería no es responsable por daños directos, indirectos o imprevistos. Los usuarios asumen responsabilidad por el uso apropiado del sitio, evitando acciones que dañen sistemas o servicios, y se obligan a indemnizar a ACA Ganadería frente a reclamos de terceros.</p>
+
+<h3>11.2 Del contenido</h3>
+
+<p>ACA Ganadería no controla ni es responsable por artículos, mensajes o materiales enviados por los usuarios, ni garantiza su precisión, confiabilidad, autenticidad, legalidad o cumplimiento de derechos de propiedad intelectual.</p>
+
+<h3>11.3 De los conflictos entre usuarios</h3>
+
+<p>Los usuarios involucrados en reclamos o acciones legales contra otros usuarios eximen a ACA Ganadería y a sus asociados, entidades, directivos, empleados, agentes y representantes de toda responsabilidad.</p>
+
+<p>ACA Ganadería podrá colaborar con autoridades judiciales proporcionando datos y promover el uso de mecanismos de resolución de conflictos en línea (ODR) o arbitraje digital como vía preferente antes de recurrir a la vía judicial ordinaria.</p>
+
+<h3>11.4 De la relación entre ACA Ganadería y los usuarios</h3>
+
+<p>Este acuerdo no crea asociación, mandato, franquicia ni relación laboral. La relación entre el usuario y el sitio es estrictamente de prestación de servicios digitales y no otorga al usuario ningún derecho sobre el software ni sobre la propiedad intelectual de la plataforma.</p>
+`;
+
+export const politicasPrivacidad = `
+<h2>Información del Operador</h2>
+
+<p>El sitio web de ACA Ganadería es operado por <strong>ASOCIACIÓN DE COOPERATIVAS ARGENTINAS COOP. LTDA.</strong>, ubicada en Av. Eduardo Madero 942, 7º Piso, Ciudad Autónoma de Buenos Aires (CABA).</p>
+
+<p>La organización está registrada en el Registro de Bases de Datos bajo el número RL-2019-15178591-APN-DNPDP//AAIP. La inscripción ante la AAIP se encuentra vigente y se cumple con la Ley 25.326 sobre la obligación de informar domicilio y responsable.</p>
+
+<h2>Recopilación de Datos y Consentimiento</h2>
+
+<p>Los usuarios autorizan a ACA Ganadería a obtener y utilizar la información proporcionada para acceder al sitio web. El registro requiere que los usuarios proporcionen datos personales a fin de verificar que pueden realizar consultas y acceder a servicios ganaderos.</p>
+
+<p>Los datos ingresados serán procesados, almacenados y utilizados, en primer lugar, para proporcionar servicios ganaderos a través del sitio web, facilitar la comunicación entre productores y especialistas y mejorar nuestros servicios.</p>
+
+<h2>Uso de la Información</h2>
+
+<p>Los datos personales respaldan las operaciones de servicios ganaderos, facilitan las conexiones entre usuarios, mejoran los servicios y permiten comunicaciones de marketing relacionadas con la actividad ganadera.</p>
+
+<p>La plataforma utiliza cookies para rastrear el comportamiento de navegación y compilar estadísticas de uso. Esto permite mejorar la experiencia del usuario y personalizar los servicios ofrecidos.</p>
+
+<h2>Cookies</h2>
+
+<p>El sitio web utiliza cookies para mejorar la experiencia del usuario. Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita nuestro sitio.</p>
+
+<p>Utilizamos cookies para:</p>
+
+<ul>
+  <li>Mantener su sesión activa y recordar sus preferencias.</li>
+  <li>Analizar el tráfico del sitio y comprender cómo los usuarios interactúan con el contenido.</li>
+  <li>Mejorar el rendimiento y la funcionalidad del sitio.</li>
+  <li>Personalizar el contenido según los intereses del usuario.</li>
+</ul>
+
+<p>Los usuarios pueden configurar su navegador para rechazar cookies, aunque esto puede afectar la funcionalidad del sitio.</p>
+
+<p>El uso de cookies se ajusta a la normativa de la AAIP y se ofrece un banner de aceptación conforme a buenas prácticas internacionales.</p>
+
+<h2>Compartir Datos</h2>
+
+<p>ACA Ganadería no informará datos personales a terceros, salvo que el usuario haya otorgado su consentimiento expreso. No obstante, los datos podrán transferirse entre entidades afiliadas con el fin de mejorar los servicios prestados.</p>
+
+<p>Nos reservamos el derecho de compartir información con autoridades competentes cuando sea requerido por ley o cuando resulte necesario para proteger nuestros derechos legales.</p>
+
+<h2>Derechos de los Usuarios</h2>
+
+<p>Bajo la Ley 25.326 de Protección de Datos Personales, los usuarios pueden:</p>
+
+<ul>
+  <li>Corregir información inexacta o desactualizada.</li>
+  <li>Eliminar sus datos personales cuando ya no sean necesarios para los fines para los que fueron recopilados.</li>
+  <li>Revocar el consentimiento otorgado para el tratamiento de datos.</li>
+</ul>
+
+<p>Para ejercer estos derechos, los usuarios deberán contactar a ACA Ganadería por escrito, adjuntando documentación que acredite su identidad. Las solicitudes deberán incluir una copia firmada del Documento Nacional de Identidad.</p>
+
+<h2>Seguridad de los Datos</h2>
+
+<p>ACA Ganadería emplea medidas de seguridad técnicas, administrativas y físicas para proteger los datos personales contra accesos no autorizados, alteración, divulgación o destrucción.</p>
+
+<p>Estas medidas incluyen:</p>
+
+<ul>
+  <li>Servidores seguros con altos estándares de protección física y tecnológica.</li>
+  <li>Encriptación de datos sensibles durante la transmisión.</li>
+  <li>Controles de acceso estrictos limitados a personal autorizado.</li>
+  <li>Monitoreo regular de los sistemas para detectar vulnerabilidades.</li>
+  <li>Políticas internas de confidencialidad para todos los empleados.</li>
+</ul>
+
+<p>Sin embargo, ningún sistema de transmisión por Internet o método de almacenamiento electrónico es completamente seguro. Si bien se realizan los máximos esfuerzos para proteger los datos personales, no se puede garantizar una seguridad absoluta.</p>
+
+<h2>Retención de Datos</h2>
+
+<p>ACA Ganadería conservará los datos personales durante el tiempo necesario para cumplir con los fines para los que fueron recopilados, incluyendo el cumplimiento de obligaciones legales, contables o de reporte.</p>
+
+<p>Cuando los datos ya no sean necesarios, serán eliminados de forma segura o anonimizados para evitar su asociación con usuarios específicos.</p>
+
+<h2>Transferencias Internacionales</h2>
+
+<p>En caso de que sea necesario transferir datos personales a países fuera de la República Argentina, ACA Ganadería garantizará que dichas transferencias cumplan con la legislación vigente y cuenten con garantías adecuadas para la protección de la privacidad de los usuarios.</p>
+
+<h2>Menores de Edad</h2>
+
+<p>Los servicios están dirigidos exclusivamente a personas mayores de 18 años. ACA Ganadería no recopila intencionalmente información personal de menores de edad.</p>
+
+<p>Si se detectara la recopilación inadvertida de datos de un menor, se procederá a su eliminación inmediata y se realizará la denuncia correspondiente conforme a la Ley 26.061 de Protección Integral de los Derechos de Niños, Niñas y Adolescentes.</p>
+
+<h2>Enlaces a Sitios de Terceros</h2>
+
+<p>El sitio web puede contener enlaces a sitios de terceros. ACA Ganadería no es responsable de las prácticas de privacidad de dichos sitios externos.</p>
+
+<p>Se recomienda a los usuarios revisar las políticas de privacidad de cualquier sitio de terceros que visiten. ACA Ganadería no asume responsabilidad por daños derivados del uso de sitios externos, conforme al Código Civil y Comercial.</p>
+
+<h2>Modificaciones a la Política de Privacidad</h2>
+
+<p>ACA Ganadería se reserva el derecho de modificar esta Política de Privacidad en cualquier momento y sin previo aviso. Las modificaciones serán efectivas desde su publicación en el sitio web.</p>
+
+<p>Se recomienda a los usuarios revisar periódicamente esta política para mantenerse informados. El uso continuado del sitio tras la publicación de cambios implica la aceptación de los mismos. Las modificaciones sustanciales serán notificadas conforme a la Ley 25.326.</p>
+
+<h2>Notificación de Cambios</h2>
+
+<p>Ante cambios significativos en las prácticas de privacidad, los usuarios serán notificados mediante un aviso destacado en el sitio web o por correo electrónico, cuando corresponda.</p>
+
+<h2>Contacto</h2>
+
+<p>Si tiene preguntas, comentarios o inquietudes sobre esta Política de Privacidad o sobre el tratamiento de sus datos personales, puede contactarse con:</p>
+
+<p>
+<strong>ASOCIACIÓN DE COOPERATIVAS ARGENTINAS COOP. LTDA.</strong><br />
+Av. Eduardo Madero 942, 7º Piso<br />
+Ciudad Autónoma de Buenos Aires (CABA)<br />
+República Argentina
+</p>
+
+<p>Se pondrá a disposición un correo electrónico específico para el ejercicio de los derechos ARCO y se referencia a la Agencia de Acceso a la Información Pública (AAIP) como autoridad de control: <a href="https://www.argentina.gob.ar/aaip" target="_blank" rel="noopener noreferrer">www.argentina.gob.ar/aaip</a>.</p>
+`;
+
+export const informes: InformesItem[] = [
+  {
+    id: 1,
+    title: 'Informe ACA Ganadería 26 de noviembre',
+    date: '2025-11-26',
+    image: '/img/sections/informes/informes-imagen-bg.jpg',
+    href: 'https://youtube.com/shorts/7z_y6CeI8t4',
+  },
+  {
+    id: 2,
+    title: 'Informe ACA Ganadería 28 de noviembre',
+    date: '2025-11-28',
+    image: '/img/sections/informes/informes-imagen-bg.jpg',
+    href: 'https://www.youtube.com/shorts/D_x0QP1junA',
+  },
+  {
+    id: 3,
+    title: 'Informe ACA Ganadería 3 de diciembre',
+    date: '2025-12-03',
+    image: '/img/sections/informes/informes-imagen-bg.jpg',
+    href: 'https://www.youtube.com/shorts/7enUjgwGXbY',
+  },
+  {
+    id: 4,
+    title: 'Informe ACA Ganadería 11 de diciembre',
+    date: '2025-12-11',
+    image: '/img/sections/informes/informes-imagen-bg.jpg',
+    href: 'https://youtu.be/idnLIM0HpQM',
   },
 ];

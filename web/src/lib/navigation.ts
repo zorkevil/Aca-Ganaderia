@@ -14,7 +14,7 @@ export const mainNavigation: NavItem[] = [
       { label: 'Proyecto Campo Ganadero', href: '/produccion/proyecto-campo-ganadero' },
     ],
   },
-  { label: 'Noticias', href: '/noticias' },
+  { label: 'Informes', href: '/informes' },
 ];
 
 export const footerNavigation: NavItem[] = [...mainNavigation];

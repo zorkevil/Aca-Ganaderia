@@ -32,7 +32,7 @@ export default function ServicesSection({ services }: Props) {
                             <img
                               src={a.icon}
                               alt={a.title}
-                              className="icon-168 img-fluid mb-4 mb-md-0"
+                              className="icon-168 img-fluid mb-4 mb-md-0 opacity-75"
                             />
                           </div>
                         </div>

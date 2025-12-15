@@ -157,22 +157,13 @@ $font-sizes: (
   18: 18px,
   20: 20px,
   24: 24px,
+  32: 32px,
   40: 40px,
 );
 
 @each $size, $value in $font-sizes {
   .fs-#{$size} {
     font-size: $value;
-  }
-}
-
-// Responsive font sizes for mobile
-@media (max-width: 767.98px) {
-  .fs-24 {
-    font-size: 18px;
-  }
-  .fs-40 {
-    font-size: 28px;
   }
 }
 
