@@ -3,9 +3,13 @@ import OurValuesSection from '@/components/home/OurValuesSection';
 import ServicesSection from '@/components/home/ServicesSection';
 import ContactSection from '@/components/misc/ContactSection';
 
-import { heroSlides, services, news as mockNews } from '@/lib/mock';
+import { getHomeSliders } from '@/lib/api/home';
 
-export default function HomePage() {
+import { services } from '@/lib/mock';
+
+export default async function HomePage() {
+  const heroSlides = await getHomeSliders();
+
   return (
     <main>
       <HeroSection slides={heroSlides} />
@@ -15,12 +19,3 @@ export default function HomePage() {
     </main>
   );
 }
-
-/*
-// Futuro:
-import { getHeroSlides, getServices, getLatestNews } from "@/lib/api";
-
-const heroSlides = await getHeroSlides();
-const services = await getServices();
-const news = await getLatestNews();
-*/
