@@ -1581,7 +1581,7 @@ export const remates: RemateItem[] = [
     time: '10:00',
     description: 'Remate Televisado desde General Ramirez. Invita La Ganadera.',
     image: 'img/sections/hacienda/remates/remate-chacratv.webp',
-    href: 'https://www.youtube.com/watch?v=6HpY1ta4bsk',
+    href: '',
   },
 ];
 
