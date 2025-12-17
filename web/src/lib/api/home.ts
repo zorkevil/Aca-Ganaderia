@@ -15,7 +15,7 @@ type HomeSlidersApiResponse = {
 
 export async function getHomeSliders(): Promise<HeroSlide[]> {
   try {
-    const response = await apiFetch<HomeSlidersApiResponse>('/home/sliders');
+    const response = await apiFetch<HomeSlidersApiResponse>('/home/sliders', { cache: 'no-store' });
 
     return response.data
       .sort((a, b) => a.sortOrder - b.sortOrder)
