@@ -1,16 +1,26 @@
 const API_URL = process.env.LARAVEL_API_URL!;
 const API_TOKEN = process.env.LARAVEL_API_TOKEN!;
 
-export async function apiFetch<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
+type ApiFetchOptions = RequestInit & {
+  auth?: boolean;
+};
+
+export async function apiFetch<T>(
+  endpoint: string,
+  { auth = true, ...options }: ApiFetchOptions = {},
+): Promise<T> {
+  const headers: Record<string, string> = {
+    Accept: 'application/json',
+    ...(options.headers as Record<string, string>),
+  };
+
+  if (auth) {
+    headers.Authorization = `Bearer ${API_TOKEN}`;
+  }
+
   const res = await fetch(`${API_URL}${endpoint}`, {
     ...options,
-    headers: {
-      Accept: 'application/json',
-      Authorization: `Bearer ${API_TOKEN}`,
-      ...options.headers,
-    },
-    // importante para SSR
-    cache: 'no-store', // o 'force-cache' si querés cachear
+    headers,
   });
 
   if (!res.ok) {

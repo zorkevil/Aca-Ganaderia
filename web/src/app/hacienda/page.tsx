@@ -1,7 +1,7 @@
 import HeroSection from '@/components/misc/HeroSection';
 import DescriptionSection from '@/components/hacienda/DescriptionSection';
 import ServicesSection from '@/components/hacienda/ServicesSection';
-import HaciendaTabsSection from '@/components/hacienda/HaciendaTabsSection';
+import HaciendaTabsSectionServer from '@/components/hacienda/HaciendaTabsSection.server';
 import CarouselSection from '@/components/misc/CarouselSection';
 import RelatedServicesSection from '@/components/misc/RelatedServicesSection';
 import ContactSection from '@/components/misc/ContactSection';
@@ -48,7 +48,7 @@ export default function NutricionPage() {
           'Identificación y Gestión electrónica',
         ]}
       />
-      <HaciendaTabsSection />
+      <HaciendaTabsSectionServer />
       <CarouselSection items={[...carouselNutricion, ...carouselSanidad]} />
       <RelatedServicesSection excludeId={SECTION_ID} items={servicesMock} />
       <ContactSection description="" submitTo={`/api/contacto-${SECTION_ID}`} />

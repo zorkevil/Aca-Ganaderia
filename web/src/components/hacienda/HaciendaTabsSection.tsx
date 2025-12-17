@@ -1,6 +1,5 @@
 'use client';
 
-import TabMAG from './tabs/tabMAG';
 import TabRemates from './tabs/tabRemates';
 import TabComercializacion from './tabs/tabComercializacion';
 import TabIdentificacion from './tabs/tabIdentificacion';
@@ -8,9 +7,13 @@ import TabAlianzas from './tabs/tabAlianzas';
 
 import { alianzas, identificacionItems, remates, remateTipos, remateModalidades } from '@/lib/mock';
 
-export default function HaciendaTabsSection() {
+type Props = {
+  magTab: React.ReactNode;
+};
+
+export default function HaciendaTabsSection({ magTab }: Props) {
   const tabs = [
-    { id: 'mag', label: 'MAG', component: <TabMAG /> },
+    { id: 'mag', label: 'MAG', component: magTab },
     {
       id: 'remates',
       label: 'Remates',
