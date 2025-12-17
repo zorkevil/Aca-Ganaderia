@@ -1,7 +1,6 @@
 'use client';
 
 import type { HeroSectionProps } from '@/lib/types';
-import { normalizeHeroTitle } from '@/utils/transformTextSlider';
 
 export default function HeroSection({
   title,
@@ -18,12 +17,7 @@ export default function HeroSection({
       <div className="container-fluid z-1">
         <div className="row">
           <div className="col text-center">
-            <h1
-              className="text-white mb-4 wow animate__animated animate__fadeInUp"
-              dangerouslySetInnerHTML={{
-                __html: normalizeHeroTitle(title),
-              }}
-            />
+            <h1 className="text-white mb-4 wow animate__animated animate__fadeInUp">{title}</h1>
 
             {showBreadcrumb && breadcrumbs.length > 0 && (
               <p
@@ -43,6 +37,7 @@ export default function HeroSection({
                         <span>{crumb.label}</span>
                       )}
 
+                      {/* Separador excepto en el último */}
                       {!isLast && <span> &gt; </span>}
                     </span>
                   );

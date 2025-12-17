@@ -1,6 +1,7 @@
 'use client';
 
 import type { HeroSlide } from '@/lib/types';
+import { normalizeHeroTitle } from '@/utils/transformTextSlider';
 
 type Props = {
   slides: HeroSlide[];
@@ -40,7 +41,9 @@ export default function HeroSection({ slides }: Props) {
                       <h2
                         className="h1 text-white wow animate__animated animate__fadeInUp"
                         data-wow-delay="0.2s"
-                        dangerouslySetInnerHTML={{ __html: slide.titleHtml }}
+                        dangerouslySetInnerHTML={{
+                          __html: normalizeHeroTitle(slide.titleHtml),
+                        }}
                       />
                     </div>
                   </div>
