@@ -8,9 +8,7 @@ type MagApiResponse = {
 
 export async function getMagPrecios(): Promise<MagApiResponse> {
   try {
-    const response = await apiFetch<MagApiResponse>('/mag/precios', {
-      next: { revalidate: 3600 },
-    });
+    const response = await apiFetch<MagApiResponse>('/mag/precios', { cache: 'no-store' });
 
     return {
       fecha: response.fecha,
