@@ -8,24 +8,45 @@ import InformesPagination from '@/components/informes/InformesPagination';
 import MarketPresenter from '@/components/informes/MarketPresenter';
 
 import { heroImageInformes, marketPresenterMock } from '@/lib/mock';
-import { getReports } from '@/lib/api/reports';
 import type { ReportsItem } from '@/lib/types';
 
 const SECTION_NAME = 'Informes';
 
-export default function InformesPage() {
-  const [page, setPage] = useState(1);
-  const [reports, setReports] = useState<ReportsItem[]>([]);
-  const [totalPages, setTotalPages] = useState(1);
-  const [total, setTotal] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
-  const perPage = 9;
+type Props = {
+  initialReports: ReportsItem[];
+  initialMeta: {
+    current_page: number;
+    last_page: number;
+    total: number;
+    per_page: number;
+  };
+};
+
+export default function InformesPage({ initialReports, initialMeta }: Props) {
+  const [page, setPage] = useState(initialMeta.current_page);
+  const [reports, setReports] = useState<ReportsItem[]>(initialReports);
+  const [totalPages, setTotalPages] = useState(initialMeta.last_page);
+  const [total, setTotal] = useState(initialMeta.total);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const perPage = initialMeta.per_page;
 
   useEffect(() => {
+    if (page === initialMeta.current_page) return;
+
     const fetchReports = async () => {
       setIsLoading(true);
       try {
-        const response = await getReports(page, perPage);
+        const res = await fetch(`/api/reports?page=${page}&per_page=${perPage}`, {
+          cache: 'no-store',
+        });
+
+        if (!res.ok) {
+          throw new Error('Error fetching reports');
+        }
+
+        const response = await res.json();
+
         setReports(response.data);
         setTotalPages(response.meta.last_page);
         setTotal(response.meta.total);
@@ -37,7 +58,7 @@ export default function InformesPage() {
     };
 
     fetchReports();
-  }, [page]);
+  }, [page, perPage, initialMeta.current_page]);
 
   const startItem = total > 0 ? (page - 1) * perPage + 1 : 0;
   const endItem = Math.min(page * perPage, total);
