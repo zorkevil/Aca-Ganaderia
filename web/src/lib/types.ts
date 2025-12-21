@@ -43,7 +43,7 @@ export interface NewsItem {
   metaDescription: string;
 }
 
-export interface InformesItem {
+export interface ReportsItem {
   id: number;
   title: string;
   date: string; // formato ISO: "2025-10-31"

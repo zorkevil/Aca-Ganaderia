@@ -1,43 +1,46 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 
 import HeroSection from '@/components/misc/HeroSection';
 import InformesGrid from '@/components/informes/InformesGrid';
 import InformesPagination from '@/components/informes/InformesPagination';
 import MarketPresenter from '@/components/informes/MarketPresenter';
 
-import { heroImageInformes, informes, marketPresenterMock } from '@/lib/mock';
+import { heroImageInformes, marketPresenterMock } from '@/lib/mock';
+import { getReports } from '@/lib/api/reports';
+import type { ReportsItem } from '@/lib/types';
 
 const SECTION_NAME = 'Informes';
 
 export default function InformesPage() {
-  //const categories = [...new Set(informes.map((i) => i.category))];
-  const [selectedCats, setSelectedCats] = useState<string[]>([]);
   const [page, setPage] = useState(1);
+  const [reports, setReports] = useState<ReportsItem[]>([]);
+  const [totalPages, setTotalPages] = useState(1);
+  const [total, setTotal] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
   const perPage = 9;
 
-  const filteredInformes = useMemo(() => {
-    let result = informes;
-    if (selectedCats.length > 0) {
-      //result = result.filter((i) => selectedCats.includes(i.category));
-    }
-    return result;
-  }, [selectedCats]);
+  useEffect(() => {
+    const fetchReports = async () => {
+      setIsLoading(true);
+      try {
+        const response = await getReports(page, perPage);
+        setReports(response.data);
+        setTotalPages(response.meta.last_page);
+        setTotal(response.meta.total);
+      } catch (error) {
+        console.error('Error fetching reports:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-  const totalPages = Math.ceil(filteredInformes.length / perPage);
-  const pageInformes = filteredInformes.slice((page - 1) * perPage, page * perPage);
+    fetchReports();
+  }, [page]);
 
-  const toggleCategory = (cat: string) => {
-    setPage(1);
-    setSelectedCats((prev) =>
-      prev.includes(cat) ? prev.filter((c) => c !== cat) : [...prev, cat],
-    );
-  };
-
-  const clearCategory = (cat: string) => {
-    setSelectedCats((prev) => prev.filter((c) => c !== cat));
-  };
+  const startItem = total > 0 ? (page - 1) * perPage + 1 : 0;
+  const endItem = Math.min(page * perPage, total);
 
   return (
     <main>
@@ -61,22 +64,33 @@ export default function InformesPage() {
           <MarketPresenter {...marketPresenterMock} />
 
           <div className="row">
-            {/* Contenido principal */}
             <div className="col-lg-12">
               <div className="d-flex justify-content-between align-items-center mb-4">
                 <p className="small mb-0">
-                  Mostrando{' '}
-                  {filteredInformes.length > 0
-                    ? `${(page - 1) * perPage + 1}-${Math.min(page * perPage, filteredInformes.length)}`
-                    : '0'}{' '}
-                  de {filteredInformes.length} resultados
+                  {isLoading ? (
+                    'Cargando...'
+                  ) : (
+                    <>
+                      Mostrando {total > 0 ? `${startItem}-${endItem}` : '0'} de {total} resultados
+                    </>
+                  )}
                 </p>
               </div>
 
-              <InformesGrid pageInformes={pageInformes} />
+              {isLoading ? (
+                <div className="text-center py-5">
+                  <div className="spinner-border" role="status">
+                    <span className="visually-hidden">Cargando...</span>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <InformesGrid pageInformes={reports} />
 
-              {totalPages > 1 && (
-                <InformesPagination page={page} totalPages={totalPages} setPage={setPage} />
+                  {totalPages > 1 && (
+                    <InformesPagination page={page} totalPages={totalPages} setPage={setPage} />
+                  )}
+                </>
               )}
             </div>
           </div>

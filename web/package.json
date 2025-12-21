@@ -27,9 +27,10 @@
     "domutils": "^3.2.2",
     "htmlparser2": "^10.0.0",
     "next": "16.0.10",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "react-lite-youtube-embed": "^3.3.3",
+    "react-server-dom-webpack": "^19.2.3",
     "swiper": "^12.0.3",
     "tom-select": "^2.4.3"
   },

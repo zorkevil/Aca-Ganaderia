@@ -1935,7 +1935,7 @@ República Argentina
 <p>Se pondrá a disposición un correo electrónico específico para el ejercicio de los derechos ARCO y se referencia a la Agencia de Acceso a la Información Pública (AAIP) como autoridad de control: <a href="https://www.argentina.gob.ar/aaip" target="_blank" rel="noopener noreferrer">www.argentina.gob.ar/aaip</a>.</p>
 `;
 
-export const informes: InformesItem[] = [
+export const informes: ReportsItem[] = [
   {
     id: 1,
     title: 'Informe ACA Ganadería',
