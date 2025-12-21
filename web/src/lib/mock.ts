@@ -3,7 +3,7 @@ import type {
   ServicesItem,
   ServicesProduccionItem,
   NewsItem,
-  InformesItem,
+  ReportsItem,
   SubserviceItem,
   ProductItem,
   CarouselItem,
