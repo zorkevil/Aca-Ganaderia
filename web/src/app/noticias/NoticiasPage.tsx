@@ -7,7 +7,7 @@ import NoticiasSidebar from '@/components/noticias/NoticiasSidebar';
 import NoticiasGrid from '@/components/noticias/NoticiasGrid';
 import NoticiasPagination from '@/components/noticias/NoticiasPagination';
 
-import { heroImageNoticias, news } from '@/lib/mock';
+import { news } from '@/lib/mock';
 
 const SECTION_NAME = 'Noticias';
 
@@ -43,7 +43,7 @@ export default function NoticiasPage() {
     <main>
       <HeroSection
         title={SECTION_NAME}
-        backgroundImage={heroImageNoticias}
+        backgroundImage={'ejemplo'}
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: SECTION_NAME }]}
       />
 
