@@ -16,20 +16,20 @@ import type {
   MarketPresenterData,
 } from './types';
 
-export const heroImageNutricion = '/img/sections/nutricion/nutricion-hero-bg.webp';
-export const heroImageSanidad = '/img/sections/sanidad/sanidad-hero-bg.webp';
-export const heroImageHacienda = '/img/sections/hacienda/hacienda-hero-bg.webp';
-export const heroImageProduccion = '/img/sections/produccion/produccion-hero-bg.webp';
-export const heroImageProduccionCarne =
-  '/img/sections/produccion/carne/produccion-carne-hero-bg.webp';
-export const heroImageProduccionTambo =
-  '/img/sections/produccion/tambo/produccion-tambo-hero-bg.webp';
-export const heroImageProduccionProyectoCampoGanadero =
-  '/img/sections/produccion/proyecto-campo-ganadero/produccion-proyecto-campo-ganadero-hero-bg.webp';
-export const heroImageNoticias = '/img/sections/noticias/noticias-hero-bg.webp';
-export const heroImageInformes = '/img/sections/noticias/noticias-hero-bg.webp';
-export const heroImageContacto = '/img/sections/contacto/contacto-hero-bg.webp';
-export const heroImageGracias = '/img/sections/contacto/contacto-hero-bg.webp';
+export const heroImagesBySection: Record<string, string> = {
+  nutricion: '/img/sections/nutricion/nutricion-hero-bg.webp',
+  sanidad: '/img/sections/sanidad/sanidad-hero-bg.webp',
+  hacienda: '/img/sections/hacienda/hacienda-hero-bg.webp',
+  produccion: '/img/sections/produccion/produccion-hero-bg.webp',
+  carne: '/img/sections/produccion/carne/produccion-carne-hero-bg.webp',
+  tambo: '/img/sections/produccion/tambo/produccion-tambo-hero-bg.webp',
+  proyecto_campo_ganadero:
+    '/img/sections/produccion/proyecto-campo-ganadero/produccion-proyecto-campo-ganadero-hero-bg.webp',
+  noticias: '/img/sections/noticias/noticias-hero-bg.webp',
+  informes: '/img/sections/noticias/noticias-hero-bg.webp',
+  contacto: '/img/sections/contacto/contacto-hero-bg.webp',
+  gracias: '/img/sections/contacto/contacto-hero-bg.webp',
+};
 
 export const heroSlides: HeroSlide[] = [
   {

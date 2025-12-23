@@ -3,11 +3,15 @@ import type { Metadata } from 'next';
 import InformesPage from './InformesPage';
 import { getReports } from '@/lib/api/reports';
 import { getMarketPresenter } from '@/lib/api/marketPresenter';
+import { getMainBanner } from '@/lib/api/mainBanner';
 
 export const metadata: Metadata = {
   title: 'Informes',
   description: '',
 };
+
+const SECTION_ID = 'informes';
+const SECTION_NAME = 'Informes';
 
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
@@ -16,6 +20,7 @@ interface InformesProps {
 }
 
 export default async function Informes({ searchParams }: InformesProps) {
+  const mainBanner = await getMainBanner(SECTION_ID);
   const perPage = 10;
 
   const params = await searchParams;
@@ -41,6 +46,7 @@ export default async function Informes({ searchParams }: InformesProps) {
       meta={reportsResponse.meta}
       page={safePage}
       marketPresenter={marketPresenter}
+      mainBanner={mainBanner}
     />
   );
 }

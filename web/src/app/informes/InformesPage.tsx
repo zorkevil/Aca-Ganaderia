@@ -5,9 +5,9 @@ import InformesGrid from '@/components/informes/InformesGrid';
 import InformesPagination from '@/components/informes/InformesPagination';
 import MarketPresenter from '@/components/informes/MarketPresenter';
 
-import { heroImageInformes } from '@/lib/mock';
-import type { ReportsItem } from '@/lib/types';
+import type { ReportsItem, MainBannerData } from '@/lib/types';
 
+const SECTION_ID = 'informes';
 const SECTION_NAME = 'Informes';
 
 type Props = {
@@ -24,9 +24,10 @@ type Props = {
     imageAlt: string;
     text: string;
   } | null;
+  mainBanner: MainBannerData;
 };
 
-export default function InformesPage({ reports, meta, page, marketPresenter }: Props) {
+export default function InformesPage({ reports, meta, page, marketPresenter, mainBanner }: Props) {
   const startItem = meta.total > 0 ? (page - 1) * meta.per_page + 1 : 0;
   const endItem = Math.min(page * meta.per_page, meta.total);
 
@@ -34,7 +35,7 @@ export default function InformesPage({ reports, meta, page, marketPresenter }: P
     <main>
       <HeroSection
         title={SECTION_NAME}
-        backgroundImage={heroImageInformes}
+        backgroundImage={mainBanner.image}
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: SECTION_NAME }]}
       />
 

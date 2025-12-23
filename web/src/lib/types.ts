@@ -162,6 +162,12 @@ export interface MarketPresenterData {
   text: string;
 }
 
+export interface MainBannerData {
+  section: string;
+  image: string;
+  imageAlt: string;
+}
+
 // =============================================================================
 // INTERFACES DE SECCIONES
 // =============================================================================

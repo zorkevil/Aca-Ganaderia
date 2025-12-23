@@ -12,7 +12,9 @@ export default function HeroSection({
     <section
       id="internal-hero"
       className="d-flex align-items-center justify-content-center"
-      style={{ backgroundImage: `url('${backgroundImage}')` }}
+      style={{
+        backgroundImage: backgroundImage ? `url('${backgroundImage}')` : undefined,
+      }}
     >
       <div className="container-fluid z-1">
         <div className="row">

@@ -3,6 +3,7 @@ import DescriptionSection from '@/components/produccion/proyecto-campo-ganadero/
 import CarouselSection from '@/components/misc/CarouselSection';
 import RelatedServicesSection from '@/components/misc/RelatedServicesSection';
 import ContactSection from '@/components/misc/ContactSection';
+import { getMainBanner } from '@/lib/api/mainBanner';
 
 import type { Metadata } from 'next';
 
@@ -13,22 +14,20 @@ export const metadata: Metadata = {
 
 const SECTION_FATHER_ID = 'produccion';
 const SECTION_FATHER_NAME = 'Producción';
-const SECTION_ID = 'proyecto-campo-ganadero';
+const SECTION_ID = 'proyecto_campo_ganadero';
 const SECTION_NAME = 'Proyecto Campo Ganadero';
 
 // Mock temporal
-import {
-  services as servicesMock,
-  heroImageProduccionProyectoCampoGanadero,
-  carouselNutricion,
-} from '@/lib/mock';
+import { services as servicesMock, carouselNutricion } from '@/lib/mock';
 
-export default function NutricionPage() {
+export default async function NutricionPage() {
+  const mainBanner = await getMainBanner(SECTION_ID);
+
   return (
     <main>
       <HeroSection
         title={SECTION_NAME}
-        backgroundImage={heroImageProduccionProyectoCampoGanadero}
+        backgroundImage={mainBanner.image}
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Producción', href: '/produccion' },

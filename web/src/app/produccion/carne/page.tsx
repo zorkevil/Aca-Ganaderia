@@ -3,6 +3,7 @@ import DescriptionSection from '@/components/produccion/carne/DescriptionSection
 import CarouselSection from '@/components/misc/CarouselSection';
 import RelatedServicesSection from '@/components/misc/RelatedServicesSection';
 import ContactSection from '@/components/misc/ContactSection';
+import { getMainBanner } from '@/lib/api/mainBanner';
 
 import type { Metadata } from 'next';
 
@@ -17,14 +18,16 @@ const SECTION_ID = 'carne';
 const SECTION_NAME = 'Carne';
 
 // Mock temporal
-import { services as servicesMock, heroImageProduccionCarne, carouselNutricion } from '@/lib/mock';
+import { services as servicesMock, carouselNutricion } from '@/lib/mock';
 
-export default function NutricionPage() {
+export default async function CarnePage() {
+  const mainBanner = await getMainBanner(SECTION_ID);
+
   return (
     <main>
       <HeroSection
         title={SECTION_NAME}
-        backgroundImage={heroImageProduccionCarne}
+        backgroundImage={mainBanner.image}
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Producción', href: '/produccion' },
