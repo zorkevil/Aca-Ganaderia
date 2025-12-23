@@ -10,7 +10,7 @@ import '@/styles/styles.css';
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import WhatsAppButton from '@/components/misc/WhatsAppButton';
+import WhatsAppButtonServer from '@/components/misc/WhatsAppButton/WhatsAppButton.server';
 import Script from 'next/script';
 
 const heebo = Heebo({
@@ -47,7 +47,7 @@ export default function RootLayout({
       <body data-bs-theme="light" className={`${heebo.variable} font-sans antialiased`}>
         <Header />
         <main>{children}</main>
-        <WhatsAppButton />
+        <WhatsAppButtonServer />
         <Footer />
 
         {/* Script de Bootstrap */}

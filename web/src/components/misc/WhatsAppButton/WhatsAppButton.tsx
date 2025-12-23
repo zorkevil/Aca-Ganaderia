@@ -1,18 +1,18 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { whatsappContacts } from '@/lib/mock';
+import type { WhatsAppContact } from '@/lib/api/contacts';
 
-export default function WhatsAppButtonAuto() {
+type Props = {
+  contacts: WhatsAppContact[];
+};
+
+export default function WhatsAppButton({ contacts }: Props) {
   const pathname = usePathname();
+  const section = pathname.split('/')[1];
 
-  // Detectar la sección principal
-  const section = pathname.split('/')[1]; // ej: /hacienda/... → 'hacienda'
+  const contact = contacts.find((c) => c.section === section);
 
-  // Buscar el número correspondiente
-  const contact = whatsappContacts.find((c) => c.section === section);
-
-  // Si no hay match → NO mostrar botón
   if (!contact) return null;
 
   const url = `https://wa.me/${contact.phone}`;
