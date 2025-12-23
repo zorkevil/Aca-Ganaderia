@@ -6,7 +6,7 @@ import HeroSection from '@/components/misc/HeroSection';
 import Badge from '@/components/misc/Badge';
 import NoticiasSidebarRecent from '@/components/noticias/NoticiasSidebarRecent';
 
-import { heroImageNoticias, news } from '@/lib/mock';
+import { news } from '@/lib/mock';
 
 const SECTION_NAME = 'Noticias';
 
@@ -68,7 +68,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
     <main>
       <HeroSection
         title={SECTION_NAME}
-        backgroundImage={heroImageNoticias}
+        backgroundImage={'ejemplo'}
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Noticias', href: '/noticias' },
