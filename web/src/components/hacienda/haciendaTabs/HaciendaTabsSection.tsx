@@ -1,17 +1,26 @@
 'use client';
 
-import TabRemates from './tabs/tabRemates';
-import TabComercializacion from './tabs/tabComercializacion';
-import TabIdentificacion from './tabs/tabIdentificacion';
-import TabAlianzas from './tabs/tabAlianzas';
+import TabRemates from '../tabs/tabRemates';
+import TabComercializacion from '../tabs/tabComercializacion';
+import TabIdentificacion from '../tabs/tabIdentificacion';
+import TabAlianzas from '../tabs/tabAlianzas';
 
-import { alianzas, identificacionItems, remates, remateTipos, remateModalidades } from '@/lib/mock';
+import type { AlianzaItem } from '@/lib/types';
+
+import { identificacionItems, remates, remateTipos, remateModalidades } from '@/lib/mock';
 
 type Props = {
   magTab: React.ReactNode;
+  alliances: {
+    text: string;
+    items: AlianzaItem[];
+  };
 };
 
-export default function HaciendaTabsSection({ magTab }: Props) {
+export default function HaciendaTabsSection({ magTab, alliances }: Props) {
+  // Validación adicional por seguridad
+  const safeAlliances = alliances ?? { text: '', items: [] };
+
   const tabs = [
     { id: 'mag', label: 'MAG', component: magTab },
     {
@@ -30,7 +39,7 @@ export default function HaciendaTabsSection({ magTab }: Props) {
     {
       id: 'alianzas',
       label: 'Alianzas estratégicas',
-      component: <TabAlianzas alianzas={alianzas} />,
+      component: <TabAlianzas alianzas={safeAlliances.items} text={safeAlliances.text} />,
     },
   ];
 

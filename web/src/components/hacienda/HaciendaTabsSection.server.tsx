@@ -1,4 +1,4 @@
-import HaciendaTabsSectionClient from './HaciendaTabsSection';
+import HaciendaTabsSectionClient from './haciendaTabs/HaciendaTabsSection';
 import TabMAGServer from './tabs/tabMAG.server';
 
 export default async function HaciendaTabsSectionServer() {

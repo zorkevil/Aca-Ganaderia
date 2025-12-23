@@ -125,6 +125,11 @@ export interface AlianzaItem {
   img: string;
 }
 
+export interface AlliancesData {
+  text: string;
+  items: AlianzaItem[];
+}
+
 export interface RemateCategory {
   id: string;
   name: string;

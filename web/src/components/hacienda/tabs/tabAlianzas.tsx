@@ -11,18 +11,15 @@ import type { AlianzaItem } from '@/lib/types';
 
 type Props = {
   alianzas: AlianzaItem[];
+  text: string;
 };
 
-export default function TabAlianzas({ alianzas }: Props) {
+export default function TabAlianzas({ alianzas, text }: Props) {
   return (
     <>
       <div className="row justify-content-center mb-5">
         <div className="col-lg-7">
-          <p className="text-center">
-            Las alianzas estratégicas nos permiten expandir nuestra propuesta de valor, sumar
-            capacidades y mejorar la eficiencia en todos los procesos ganaderos. Trabajamos con
-            frigoríficos, feedlots y expertos del sector.
-          </p>
+          <p className="text-center">{text}</p>
         </div>
       </div>
 
