@@ -4,11 +4,11 @@ import ServicesSection from '@/components/home/ServicesSection';
 import ContactSection from '@/components/misc/ContactSection';
 
 import { getHomeSliders } from '@/lib/api/home';
-
-import { services } from '@/lib/mock';
+import { getGeneralCategories } from '@/lib/api/generalCategories';
 
 export default async function HomePage() {
   const heroSlides = await getHomeSliders();
+  const services = await getGeneralCategories();
 
   return (
     <main>
