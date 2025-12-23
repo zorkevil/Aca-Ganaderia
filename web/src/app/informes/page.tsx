@@ -8,10 +8,29 @@ export const metadata: Metadata = {
   description: '',
 };
 
-export default async function Informes() {
-  const perPage = 9;
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
-  const initialResponse = await getReports(1, perPage);
+interface InformesProps {
+  searchParams: SearchParams;
+}
 
-  return <InformesPage initialReports={initialResponse.data} initialMeta={initialResponse.meta} />;
+export default async function Informes({ searchParams }: InformesProps) {
+  const perPage = 10;
+
+  // Await searchParams first
+  const params = await searchParams;
+  const pageRaw = params?.page;
+
+  const page =
+    typeof pageRaw === 'string'
+      ? parseInt(pageRaw, 10)
+      : Array.isArray(pageRaw)
+        ? parseInt(pageRaw[0], 10)
+        : 1;
+
+  const safePage = Number.isNaN(page) || page < 1 ? 1 : page;
+
+  const response = await getReports(safePage, perPage);
+
+  return <InformesPage reports={response.data} meta={response.meta} page={safePage} />;
 }

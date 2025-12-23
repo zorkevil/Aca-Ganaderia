@@ -1,20 +1,27 @@
+'use client';
+
+import Link from 'next/link';
+
 type Props = {
   page: number;
   totalPages: number;
-  setPage: (p: number) => void;
 };
 
-export default function InformesPagination({ page, totalPages, setPage }: Props) {
+export default function InformesPagination({ page, totalPages }: Props) {
   return (
     <nav aria-label="Paginación de informes">
       <ul className="pagination justify-content-center">
-        {Array.from({ length: totalPages }, (_, i) => (
-          <li key={i} className={`page-item ${page === i + 1 ? 'active' : ''}`}>
-            <button className="page-link" onClick={() => setPage(i + 1)}>
-              {i + 1}
-            </button>
-          </li>
-        ))}
+        {Array.from({ length: totalPages }, (_, i) => {
+          const pageNumber = i + 1;
+
+          return (
+            <li key={pageNumber} className={`page-item ${page === pageNumber ? 'active' : ''}`}>
+              <Link href={`/informes?page=${pageNumber}`} className="page-link">
+                {pageNumber}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
