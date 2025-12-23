@@ -5,7 +5,7 @@ import InformesGrid from '@/components/informes/InformesGrid';
 import InformesPagination from '@/components/informes/InformesPagination';
 import MarketPresenter from '@/components/informes/MarketPresenter';
 
-import { heroImageInformes, marketPresenterMock } from '@/lib/mock';
+import { heroImageInformes } from '@/lib/mock';
 import type { ReportsItem } from '@/lib/types';
 
 const SECTION_NAME = 'Informes';
@@ -19,9 +19,14 @@ type Props = {
     per_page: number;
   };
   page: number;
+  marketPresenter: {
+    image: string;
+    imageAlt: string;
+    text: string;
+  } | null;
 };
 
-export default function InformesPage({ reports, meta, page }: Props) {
+export default function InformesPage({ reports, meta, page, marketPresenter }: Props) {
   const startItem = meta.total > 0 ? (page - 1) * meta.per_page + 1 : 0;
   const endItem = Math.min(page * meta.per_page, meta.total);
 
@@ -44,7 +49,13 @@ export default function InformesPage({ reports, meta, page }: Props) {
             </div>
           </div>
 
-          <MarketPresenter {...marketPresenterMock} />
+          {marketPresenter && (
+            <MarketPresenter
+              image={marketPresenter.image}
+              imageAlt={marketPresenter.imageAlt}
+              text={marketPresenter.text}
+            />
+          )}
 
           <div className="row">
             <div className="col-lg-12">

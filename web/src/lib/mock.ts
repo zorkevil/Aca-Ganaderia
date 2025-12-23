@@ -13,6 +13,7 @@ import type {
   RemateItem,
   MagRow,
   WhatsAppContact,
+  MarketPresenterData,
 } from './types';
 
 export const heroImageNutricion = '/img/sections/nutricion/nutricion-hero-bg.webp';
@@ -1935,38 +1936,7 @@ República Argentina
 <p>Se pondrá a disposición un correo electrónico específico para el ejercicio de los derechos ARCO y se referencia a la Agencia de Acceso a la Información Pública (AAIP) como autoridad de control: <a href="https://www.argentina.gob.ar/aaip" target="_blank" rel="noopener noreferrer">www.argentina.gob.ar/aaip</a>.</p>
 `;
 
-export const informes: ReportsItem[] = [
-  {
-    id: 1,
-    title: 'Informe ACA Ganadería',
-    date: '2025-11-26',
-    image: '/img/sections/informes/informes-imagen-bg.jpg',
-    href: 'https://youtube.com/shorts/7z_y6CeI8t4',
-  },
-  {
-    id: 2,
-    title: 'Informe ACA Ganadería',
-    date: '2025-11-28',
-    image: '/img/sections/informes/informes-imagen-bg.jpg',
-    href: 'https://www.youtube.com/shorts/D_x0QP1junA',
-  },
-  {
-    id: 3,
-    title: 'Informe ACA Ganadería',
-    date: '2025-12-03',
-    image: '/img/sections/informes/informes-imagen-bg.jpg',
-    href: 'https://www.youtube.com/shorts/7enUjgwGXbY',
-  },
-  {
-    id: 4,
-    title: 'Informe ACA Ganadería',
-    date: '2025-12-11',
-    image: '/img/sections/informes/informes-imagen-bg.jpg',
-    href: 'https://youtu.be/idnLIM0HpQM',
-  },
-];
-
-export const marketPresenterMock = {
+export const marketPresenterMock: MarketPresenterData = {
   image: '/img/sections/informes/javier-lauria.webp',
   imageAlt: 'Javier Lauria - Periodista Agropecuario',
   text: 'Los días de mercado el periodista agropecuario, Javier Lauria, presenta la información y tendencias del Mercado Agroganadero de Cañuelas, analizando los precios, la cantidad de oferta, el comportamiento de la demanda de los compradores y las tendencias del mercado.',

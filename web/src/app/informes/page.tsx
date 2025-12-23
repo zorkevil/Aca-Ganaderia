@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import InformesPage from './InformesPage';
 import { getReports } from '@/lib/api/reports';
+import { getMarketPresenter } from '@/lib/api/marketPresenter';
 
 export const metadata: Metadata = {
   title: 'Informes',
@@ -17,7 +18,6 @@ interface InformesProps {
 export default async function Informes({ searchParams }: InformesProps) {
   const perPage = 10;
 
-  // Await searchParams first
   const params = await searchParams;
   const pageRaw = params?.page;
 
@@ -30,7 +30,17 @@ export default async function Informes({ searchParams }: InformesProps) {
 
   const safePage = Number.isNaN(page) || page < 1 ? 1 : page;
 
-  const response = await getReports(safePage, perPage);
+  const [reportsResponse, marketPresenter] = await Promise.all([
+    getReports(safePage, perPage),
+    getMarketPresenter(),
+  ]);
 
-  return <InformesPage reports={response.data} meta={response.meta} page={safePage} />;
+  return (
+    <InformesPage
+      reports={reportsResponse.data}
+      meta={reportsResponse.meta}
+      page={safePage}
+      marketPresenter={marketPresenter}
+    />
+  );
 }

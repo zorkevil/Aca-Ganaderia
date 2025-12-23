@@ -156,6 +156,12 @@ export interface WhatsAppContact {
   label?: string;
 }
 
+export interface MarketPresenterData {
+  image: string;
+  imageAlt: string;
+  text: string;
+}
+
 // =============================================================================
 // INTERFACES DE SECCIONES
 // =============================================================================
