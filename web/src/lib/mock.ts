@@ -3,7 +3,6 @@ import type {
   ServicesItem,
   ServicesProduccionItem,
   NewsItem,
-  ReportsItem,
   SubserviceItem,
   ProductItem,
   CarouselItem,
@@ -12,7 +11,6 @@ import type {
   RemateCategory,
   RemateItem,
   MagRow,
-  WhatsAppContact,
   MarketPresenterData,
 } from './types';
 
@@ -1701,29 +1699,6 @@ export const magData: MagRow[] = [
     promedioKgs: 414,
   },
   { categoria: 'MEJ Regular', maximo: 2000.0, minimo: 2000.0, promedio: 2000.0, promedioKgs: 380 },
-];
-
-export const whatsappContacts: WhatsAppContact[] = [
-  {
-    section: 'hacienda',
-    phone: '5491137987619',
-    label: 'Rodrigo Miguez',
-  },
-  {
-    section: 'nutricion',
-    phone: '5493401418484',
-    label: 'Alejandro Aghemo',
-  },
-  {
-    section: 'produccion',
-    phone: '5493401418484',
-    label: 'Alejandro Aghemo',
-  },
-  {
-    section: 'sanidad',
-    phone: '5491166170733',
-    label: 'Juan Ghirardi',
-  },
 ];
 
 export const terminosCondiciones = `

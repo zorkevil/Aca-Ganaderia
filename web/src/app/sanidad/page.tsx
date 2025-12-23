@@ -6,6 +6,7 @@ import RelatedServicesSection from '@/components/misc/RelatedServicesSection';
 import ContactSection from '@/components/misc/ContactSection';
 import ProductsSection from '@/components/misc/ProductsSection';
 import { getMainBanner } from '@/lib/api/mainBanner';
+import { getSubservicesBySection } from '@/lib/api/services';
 
 import type { Metadata } from 'next';
 
@@ -20,7 +21,6 @@ const SECTION_NAME = 'Sanidad';
 // Mock temporal
 import {
   services as servicesMock,
-  subservicesByArea,
   productsSanidad,
   categoriesSanidad,
   carouselSanidad,
@@ -28,8 +28,8 @@ import {
 } from '@/lib/mock';
 
 export default async function NutricionPage() {
-  const subServicesMock = subservicesByArea[SECTION_ID] || [];
   const mainBanner = await getMainBanner(SECTION_ID);
+  const subServices = await getSubservicesBySection(SECTION_ID);
 
   return (
     <main>
@@ -39,7 +39,7 @@ export default async function NutricionPage() {
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: SECTION_NAME }]}
       />
       <DescriptionSection />
-      <ServicesSection title="Nuestras propuestas" items={subServicesMock} />
+      <ServicesSection title="Nuestras propuestas" items={subServices} />
       <ProductsSection
         products={productsSanidad}
         categories={categoriesSanidad}
