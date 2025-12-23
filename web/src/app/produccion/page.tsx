@@ -3,6 +3,7 @@ import ServicesSection from '@/components/produccion/ServicesSection';
 import RelatedServicesSection from '@/components/misc/RelatedServicesSection';
 import ContactSection from '@/components/misc/ContactSection';
 import { getMainBanner } from '@/lib/api/mainBanner';
+import { getGeneralCategories } from '@/lib/api/generalCategories';
 
 import type { Metadata } from 'next';
 
@@ -15,11 +16,12 @@ const SECTION_ID = 'produccion';
 const SECTION_NAME = 'Producción';
 
 // Mock temporal
-import { services as servicesMock, subservicesByArea, servicesProduccion } from '@/lib/mock';
+import { subservicesByArea, servicesProduccion } from '@/lib/mock';
 
 export default async function NutricionPage() {
   const subServicesMock = subservicesByArea[SECTION_ID] || [];
   const mainBanner = await getMainBanner(SECTION_ID);
+  const services = await getGeneralCategories();
 
   return (
     <main>
@@ -29,7 +31,7 @@ export default async function NutricionPage() {
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: SECTION_NAME }]}
       />
       <ServicesSection servicesProduccion={servicesProduccion} />
-      <RelatedServicesSection excludeId={SECTION_ID} items={servicesMock} />
+      <RelatedServicesSection excludeId={SECTION_ID} items={services} />
       <ContactSection description="" submitTo={`/api/contacto-${SECTION_ID}`} />
     </main>
   );

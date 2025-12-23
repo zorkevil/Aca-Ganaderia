@@ -6,6 +6,7 @@ import CarouselSection from '@/components/misc/CarouselSection';
 import RelatedServicesSection from '@/components/misc/RelatedServicesSection';
 import ContactSection from '@/components/misc/ContactSection';
 import { getMainBanner } from '@/lib/api/mainBanner';
+import { getGeneralCategories } from '@/lib/api/generalCategories';
 
 import type { Metadata } from 'next';
 
@@ -18,10 +19,11 @@ const SECTION_ID = 'hacienda';
 const SECTION_NAME = 'Hacienda';
 
 // Mock temporal
-import { services as servicesMock, carouselNutricion, carouselSanidad } from '@/lib/mock';
+import { carouselNutricion, carouselSanidad } from '@/lib/mock';
 
 export default async function NutricionPage() {
   const mainBanner = await getMainBanner(SECTION_ID);
+  const services = await getGeneralCategories();
 
   return (
     <main>
@@ -48,7 +50,7 @@ export default async function NutricionPage() {
       />
       <HaciendaTabsSectionServer />
       <CarouselSection items={[...carouselNutricion, ...carouselSanidad]} />
-      <RelatedServicesSection excludeId={SECTION_ID} items={servicesMock} />
+      <RelatedServicesSection excludeId={SECTION_ID} items={services} />
       <ContactSection description="" submitTo={`/api/contacto-${SECTION_ID}`} />
     </main>
   );

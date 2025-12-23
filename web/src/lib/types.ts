@@ -80,6 +80,7 @@ export type ProductItem = {
   senasa?: string;
   especieAnimal?: string;
   image: string;
+  imageAlt: string;
   price: number;
   sales: number;
   date: string; // formato ISO: "2025-10-31"
