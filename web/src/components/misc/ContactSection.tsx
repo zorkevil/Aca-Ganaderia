@@ -8,7 +8,7 @@ import type { ContactSectionProps } from '@/lib/types';
 export default function ContactSection({
   title = 'Contacto',
   description = 'Si querés recibir asesoramiento o conocer nuestras soluciones adaptadas a tu producción, completá este breve formulario.',
-  submitTo,
+  submitTo, // ← sigue entrando pero ahora es SOLO para identificar sección
   noImage = false,
 }: ContactSectionProps & { noImage?: boolean }) {
   const router = useRouter();
@@ -20,20 +20,59 @@ export default function ContactSection({
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    router.push('/gracias');
+
+    try {
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+
+      const area = formData.get('area-de-negocio');
+
+      // -----------------------------
+      // Payload unificado
+      // -----------------------------
+      const payload = {
+        nombre: formData.get('nombre'),
+        apellido: formData.get('apellido'),
+        email: formData.get('email'),
+        telefono: formData.get('celular'),
+        rol: formData.get('rol'),
+        otro_rol: formData.get('otro-rol'),
+        localidad: formData.get('localidad'),
+        area,
+        mensaje: formData.get('mensaje'),
+
+        section: submitTo?.replace('/api/contacto-', '') ?? area,
+      };
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      console.log(response);
+
+      if (!response.ok) {
+        throw new Error('Error al enviar el formulario');
+      }
+
+      router.push('/gracias');
+    } catch (error) {
+      console.error('Error envío contacto:', error);
+      console.log('Hubo un error al enviar el formulario. Intentá nuevamente.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <section id="contacto" className={`bg-color-4 ${noImage ? 'contacto-content-bg py-7' : ''}`}>
       <div className={`${noImage ? 'container' : 'container-fluid'}`}>
         <div className="row justify-content-center">
-          {/* Imagen lateral (solo si noImage = false) */}
           {!noImage && (
-            <div className="col-lg-6 contacto-bg border-top-right-radius-40 wow animate__animated animate__fadeIn"></div>
+            <div className="col-lg-6 contacto-bg border-top-right-radius-40 wow animate__animated animate__fadeIn" />
           )}
 
-          {/* Formulario — si no hay imagen → ancho mayor */}
           <div
             className={`col-lg-6 ${
               noImage ? '' : 'contacto-form-pe contacto-content-bg py-7 ps-lg-5'
@@ -41,15 +80,9 @@ export default function ContactSection({
           >
             <hr className="heading-hr mb-4 wow animate__animated animate__fadeInUp" />
 
-            <h2 className="mb-4 wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
-              {title}
-            </h2>
+            <h2 className="mb-4 wow animate__animated animate__fadeInUp">{title}</h2>
 
-            {isFullForm && (
-              <p className={`${noImage ? 'mb-5' : 'mb-4'}`} data-wow-delay="0.2s">
-                {description}
-              </p>
-            )}
+            {isFullForm && <p className="mb-4">{description}</p>}
 
             <form onSubmit={handleSubmit}>
               {/* Nombre y Apellido */}
@@ -62,6 +95,7 @@ export default function ContactSection({
                     <input
                       type="text"
                       className="form-control"
+                      name="nombre"
                       id="nombre"
                       placeholder="Nombre"
                       required
@@ -78,6 +112,7 @@ export default function ContactSection({
                     <input
                       type="text"
                       className="form-control"
+                      name="apellido"
                       id="apellido"
                       placeholder="Apellido"
                       required
@@ -97,6 +132,7 @@ export default function ContactSection({
                     <input
                       type="tel"
                       className="form-control"
+                      name="celular"
                       id="celular"
                       placeholder="Celular"
                       required
@@ -113,6 +149,7 @@ export default function ContactSection({
                     <input
                       type="email"
                       className="form-control"
+                      name="email"
                       id="email"
                       placeholder="E-mail"
                       required
@@ -131,6 +168,7 @@ export default function ContactSection({
                   >
                     <div className="form-floating">
                       <TomSelectControl
+                        name="area-de-negocio"
                         id="area-de-negocio"
                         className="form-select"
                         required
@@ -154,6 +192,7 @@ export default function ContactSection({
                       <input
                         type="text"
                         className="form-control"
+                        name="localidad"
                         id="localidad"
                         placeholder="Localidad"
                         required
@@ -173,6 +212,7 @@ export default function ContactSection({
                   >
                     <div className="form-floating">
                       <TomSelectControl
+                        name="rol"
                         id="rol"
                         className="form-select"
                         required
@@ -198,6 +238,7 @@ export default function ContactSection({
                       <input
                         type="text"
                         className="form-control"
+                        name="localidad"
                         id="localidad"
                         placeholder="Localidad"
                         required
@@ -217,6 +258,7 @@ export default function ContactSection({
                   >
                     <div className="form-floating">
                       <TomSelectControl
+                        name="rol"
                         id="rol"
                         className="form-select"
                         required
@@ -246,6 +288,7 @@ export default function ContactSection({
                       <input
                         type="text"
                         className="form-control"
+                        name="otro-rol"
                         id="otro-rol"
                         placeholder="Otro"
                         required
@@ -261,6 +304,7 @@ export default function ContactSection({
                 <div className="form-floating">
                   <textarea
                     className="form-control"
+                    name="mensaje"
                     id="mensaje"
                     placeholder="Mensaje"
                     rows={4}

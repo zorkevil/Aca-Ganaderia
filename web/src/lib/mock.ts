@@ -1008,54 +1008,6 @@ export const identificacionItems: IdentificacionItem[] = [
   },
 ];
 
-export const remateTipos: RemateCategory[] = [
-  { id: 'propios', name: 'Propios' },
-  { id: 'terceros', name: 'De terceros' },
-];
-
-export const remateModalidades: RemateCategory[] = [
-  { id: 'virtual', name: 'Virtual' },
-  { id: 'presencial', name: 'Presencial' },
-];
-
-export const remates: RemateItem[] = [
-  {
-    id: 1,
-    title: 'Remate Cooperativa la Ganadera de Ramirez',
-    modalidad: 'Presencial',
-    tipo: 'De terceros',
-    date: '2025-11-20',
-    time: '09.30 / 15:00',
-    description:
-      'Remate General de Hacienda en la Feria de Gral. Ramirez, Entre Ríos. Con destino a faena a partir de las 09:30 hs, Cría e Invernada a partir de las 15:00 hs. Invita La Ganadera.',
-    image: 'img/sections/hacienda/remates/remate-gralramirez.webp',
-    href: '',
-  },
-  {
-    id: 2,
-    title: 'Remate Grupo de Hacienda Cooperativo',
-    modalidad: 'Virtual',
-    tipo: 'De terceros',
-    date: '2025-12-05',
-    time: '08:45',
-    description:
-      '51º remate por internet. 800 cabezas de invernada & cría. Invitan Cooperativa Espartillar, Cooperativa Puan, Cooperativa La Alianza y Cooperativa Agro Darregueira.',
-    image: 'img/sections/hacienda/remates/remate-ghc.webp',
-    href: 'https://www.ghc.com.ar',
-  },
-  {
-    id: 3,
-    title: 'Remate Televisado',
-    modalidad: 'Virtual',
-    tipo: 'De terceros',
-    date: '2025-12-12',
-    time: '10:00',
-    description: 'Remate Televisado desde General Ramirez. Invita La Ganadera.',
-    image: 'img/sections/hacienda/remates/remate-chacratv.webp',
-    href: '',
-  },
-];
-
 export const magData: MagRow[] = [
   {
     categoria: 'NOVILLOS Esp.Joven + 430',
