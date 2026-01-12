@@ -5,9 +5,9 @@ import TabComercializacion from '../tabs/tabComercializacion';
 import TabIdentificacion from '../tabs/tabIdentificacion';
 import TabAlianzas from '../tabs/tabAlianzas';
 
-import type { AlianzaItem } from '@/lib/types';
+import type { AlianzaItem, RemateItem, RemateCategory } from '@/lib/types';
 
-import { identificacionItems, remates, remateTipos, remateModalidades } from '@/lib/mock';
+import { identificacionItems } from '@/lib/mock';
 
 type Props = {
   magTab: React.ReactNode;
@@ -15,11 +15,26 @@ type Props = {
     text: string;
     items: AlianzaItem[];
   };
+
+  auctions: {
+    text: string;
+    items: RemateItem[];
+  };
+
+  auctionModalities: RemateCategory[];
+  auctionTypes: RemateCategory[];
 };
 
-export default function HaciendaTabsSection({ magTab, alliances }: Props) {
+export default function HaciendaTabsSection({
+  magTab,
+  alliances,
+  auctions,
+  auctionModalities,
+  auctionTypes,
+}: Props) {
   // Validación adicional por seguridad
   const safeAlliances = alliances ?? { text: '', items: [] };
+  const safeAuctions = auctions ?? { text: '', items: [] };
 
   const tabs = [
     { id: 'mag', label: 'MAG', component: magTab },
@@ -27,7 +42,12 @@ export default function HaciendaTabsSection({ magTab, alliances }: Props) {
       id: 'remates',
       label: 'Remates',
       component: (
-        <TabRemates remates={remates} tipos={remateTipos} modalidades={remateModalidades} />
+        <TabRemates
+          remates={safeAuctions.items}
+          text={safeAuctions.text}
+          modalidades={auctionModalities}
+          tipos={auctionTypes}
+        />
       ),
     },
     { id: 'comercializacion', label: 'Comercialización', component: <TabComercializacion /> },

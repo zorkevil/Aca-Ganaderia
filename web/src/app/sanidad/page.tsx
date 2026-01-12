@@ -8,6 +8,9 @@ import ProductsSection from '@/components/misc/ProductsSection';
 import { getMainBanner } from '@/lib/api/mainBanner';
 import { getSubservicesBySection } from '@/lib/api/services';
 import { getGeneralCategories } from '@/lib/api/generalCategories';
+import { getProducts } from '@/lib/api/products';
+import { getCategories } from '@/lib/api/categories';
+import { getSubcategories } from '@/lib/api/subcategories';
 
 import type { Metadata } from 'next';
 
@@ -20,17 +23,15 @@ const SECTION_ID = 'sanidad';
 const SECTION_NAME = 'Sanidad';
 
 // Mock temporal
-import {
-  productsSanidad,
-  categoriesSanidad,
-  carouselSanidad,
-  subcategoriesSanidad,
-} from '@/lib/mock';
+import { carouselSanidad } from '@/lib/mock';
 
 export default async function NutricionPage() {
   const mainBanner = await getMainBanner(SECTION_ID);
   const subServices = await getSubservicesBySection(SECTION_ID);
   const services = await getGeneralCategories();
+  const products = await getProducts(SECTION_ID);
+  const categories = await getCategories(SECTION_ID);
+  const subcategories = await getSubcategories(SECTION_ID);
 
   return (
     <main>
@@ -42,9 +43,9 @@ export default async function NutricionPage() {
       <DescriptionSection />
       <ServicesSection title="Nuestras propuestas" items={subServices} />
       <ProductsSection
-        products={productsSanidad}
-        categories={categoriesSanidad}
-        subcategories={subcategoriesSanidad}
+        products={products}
+        categories={categories}
+        subcategories={subcategories}
         sectionId={`productos-${SECTION_ID}`}
       />
       <CarouselSection items={carouselSanidad} />

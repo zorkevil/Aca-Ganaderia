@@ -1,18 +1,27 @@
+'use client';
+
 import type { ServicesItem } from '@/lib/types';
+import { useMemo } from 'react';
 
 type Props = {
   services: ServicesItem[];
 };
 
 export default function ServicesSection({ services }: Props) {
+  const sortedServices = useMemo(
+    () => [...services].sort((a, b) => a.title.localeCompare(b.title, 'es')),
+    [services],
+  );
+
   return (
     <section id="servicios" className="py-7">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-xxl-10">
             <div className="row g-4">
-              {services.map((a, i) => {
+              {sortedServices.map((a, i) => {
                 const delay = (0 + i * 0.1).toFixed(1);
+
                 return (
                   <div
                     key={a.id}

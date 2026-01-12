@@ -223,16 +223,18 @@ export default function ProductsSection({
                   : 'Mostrando 0 resultados'}
               </p>
 
-              <select
-                className="form-select small w-auto border-color-1"
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-              >
-                <option value="ventas">Ordenar por Ventas</option>
-                <option value="precio-asc">Precio: Bajo a Alto</option>
-                <option value="precio-desc">Precio: Alto a Bajo</option>
-                <option value="recientes">Más recientes</option>
-              </select>
+              {/*
+                  <select
+                    className="form-select small w-auto border-color-1"
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value)}
+                  >
+                    <option value="ventas">Ordenar por Ventas</option>
+                    <option value="precio-asc">Precio: Bajo a Alto</option>
+                    <option value="precio-desc">Precio: Alto a Bajo</option>
+                    <option value="recientes">Más recientes</option>
+                  </select>
+                */}
             </div>
 
             {/* Grid o vacío */}

@@ -6,11 +6,12 @@ import { parseLocalDate } from '@/lib/date';
 
 type Props = {
   remates: RemateItem[];
+  text: string;
   tipos: RemateCategory[];
   modalidades: RemateCategory[];
 };
 
-export default function TabRemates({ remates, tipos, modalidades }: Props) {
+export default function TabRemates({ remates, text, tipos, modalidades }: Props) {
   const [selectedTipos, setSelectedTipos] = useState<string[]>([]);
   const [selectedModalidades, setSelectedModalidades] = useState<string[]>([]);
   const [page, setPage] = useState(1);
@@ -52,11 +53,7 @@ export default function TabRemates({ remates, tipos, modalidades }: Props) {
       {/* Intro */}
       <div className="row justify-content-center mb-5">
         <div className="col-lg-7">
-          <p className="text-center mb-0">
-            Acompañamos a las cooperativas en la organización de remates físicos y virtuales,
-            brindando respaldo comercial, comunicación y herramientas que facilitan la operación y
-            garantizan transparencia.
-          </p>
+          <p className="text-center mb-0">{text}</p>
         </div>
       </div>
 

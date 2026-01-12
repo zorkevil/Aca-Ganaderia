@@ -1,10 +1,11 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
+import { useMemo } from 'react';
 import type { RelatedServicesProps, ServicesItem } from '@/lib/types';
 
 type Props = RelatedServicesProps & {
-  items: ServicesItem[]; // <- los datos vienen de afuera
+  items: ServicesItem[];
 };
 
 export default function RelatedServicesSection({
@@ -16,9 +17,11 @@ export default function RelatedServicesSection({
   const inferredId = pathname?.split('/').filter(Boolean)[0] ?? null;
   const currentId = excludeId || inferredId;
 
-  const filtered = (currentId ? items.filter((s) => s.id !== currentId) : items).sort(
-    (a, b) => (a.order ?? 0) - (b.order ?? 0),
-  );
+  const filteredServices = useMemo(() => {
+    const base = currentId ? items.filter((s) => s.id !== currentId) : items;
+
+    return [...base].sort((a, b) => a.title.localeCompare(b.title, 'es'));
+  }, [items, currentId]);
 
   return (
     <section id="otros-servicios" className="py-7">
@@ -31,9 +34,10 @@ export default function RelatedServicesSection({
         <div className="row justify-content-center mt-5">
           <div className="col-xxl-10">
             <div className="row g-4">
-              {filtered.length > 0 ? (
-                filtered.map((s, i) => {
+              {filteredServices.length > 0 ? (
+                filteredServices.map((s, i) => {
                   const delay = (0.1 + i * 0.1).toFixed(1);
+
                   return (
                     <div
                       key={s.id}
