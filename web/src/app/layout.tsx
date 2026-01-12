@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Heebo } from 'next/font/google';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'animate.css';
@@ -11,6 +12,7 @@ import '@/styles/styles.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppButtonServer from '@/components/misc/WhatsAppButton/WhatsAppButton.server';
+
 import Script from 'next/script';
 
 const heebo = Heebo({
@@ -44,14 +46,43 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        {/* ==============================
+            Google Analytics 4
+        ============================== */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-VC9H8LJ3SW"
+          strategy="afterInteractive"
+        />
+
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-VC9H8LJ3SW');
+          `}
+        </Script>
+      </head>
+
       <body data-bs-theme="light" className={`${heebo.variable} font-sans antialiased`}>
         <Header />
+
         <main>{children}</main>
+
         <WhatsAppButtonServer />
+
         <Footer />
 
-        {/* Script de Bootstrap */}
-        <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" />
+        {/* ==============================
+            Scripts globales
+        ============================== */}
+
+        {/* Bootstrap */}
+        <Script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          strategy="afterInteractive"
+        />
 
         {/* WOW.js */}
         <Script
