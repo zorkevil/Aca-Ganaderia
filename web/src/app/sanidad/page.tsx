@@ -11,6 +11,7 @@ import { getGeneralCategories } from '@/lib/api/generalCategories';
 import { getProducts } from '@/lib/api/products';
 import { getCategories } from '@/lib/api/categories';
 import { getSubcategories } from '@/lib/api/subcategories';
+import StickyBanner from '@/components/sanidad/StickyBanner';
 
 import type { Metadata } from 'next';
 
@@ -35,6 +36,7 @@ export default async function NutricionPage() {
 
   return (
     <main>
+      <StickyBanner />
       <HeroSection
         title={SECTION_NAME}
         backgroundImage={mainBanner.image}
