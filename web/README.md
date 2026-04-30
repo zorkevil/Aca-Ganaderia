@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Proyecto Next.js (SSR) – Guía de instalación
 
-## Getting Started
+Este proyecto está desarrollado en Next.js con renderizado del lado del servidor (SSR) y se conecta a una API backend desarrollada en Laravel.
 
-First, run the development server:
+El entorno local utiliza pnpm como gestor de dependencias.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Instalación del proyecto
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Instalar dependencias
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+pnpm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Configuración del entorno
 
-## Learn More
+cp .env.example .env
 
-To learn more about Next.js, take a look at the following resources:
+Editar las siguientes variables según el entorno:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+API_BASE_URL=
+LARAVEL_API_URL=
+LARAVEL_API_TOKEN=
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Variables de entorno
+Conexión con API Backend (Laravel)
 
-## Deploy on Vercel
+El frontend se comunica con una API desarrollada en Laravel mediante token.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Descripción de variables:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+API_BASE_URL
+URL base utilizada por el frontend.
+
+LARAVEL_API_URL
+URL base del backend Laravel (ej: https://api.midominio.com).
+
+LARAVEL_API_TOKEN
+Token de autenticación para consumir la API Laravel.

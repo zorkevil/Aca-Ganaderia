@@ -39,7 +39,7 @@ export default async function NutricionPage() {
       <DescriptionSection />
       <CarouselSection items={carouselNutricion} />
       <RelatedServicesSection excludeId={SECTION_FATHER_ID} items={services} />
-      <ContactSection description="" submitTo={`/api/contacto-${SECTION_FATHER_ID}`} />
+      <ContactSection description="" submitTo={`/api/contacto-${SECTION_ID}`} />
     </main>
   );
 }
