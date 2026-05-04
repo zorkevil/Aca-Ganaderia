@@ -1,7 +1,18 @@
 import Link from 'next/link';
 import type { ProductItem } from '@/lib/types';
 
+function toSlug(value?: string) {
+  if (!value) return '';
+  return value
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/\s+/g, '-');
+}
+
 export default function ProductDetailSection({ product }: { product: ProductItem }) {
+  const isElectronicId = toSlug(product.category) === 'identificacion-electronica';
+
   return (
     <section className="pb-7">
       <div className="container">
@@ -109,7 +120,7 @@ export default function ProductDetailSection({ product }: { product: ProductItem
         </div>
 
         {/* Tabla de detalles */}
-        <div className="row pt-7">
+        {!isElectronicId && <div className="row pt-7">
           <div className="col-12">
             {/* Presentación */}
             <div
@@ -202,7 +213,7 @@ export default function ProductDetailSection({ product }: { product: ProductItem
               </div>
             )}
           </div>
-        </div>
+        </div>}
       </div>
     </section>
   );
