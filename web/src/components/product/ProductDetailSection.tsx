@@ -12,6 +12,9 @@ function toSlug(value?: string) {
 
 export default function ProductDetailSection({ product }: { product: ProductItem }) {
   const isElectronicId = toSlug(product.category) === 'identificacion-electronica';
+  const isSorgoGranifero = toSlug(product.subcategory) === 'sorgo-granifero';
+  const isMaizDobleProposito = toSlug(product.subcategory) === 'maiz-doble-proposito';
+  const isSorgoForrajero = toSlug(product.subcategory) === 'sorgo-forrajero';
 
   return (
     <section className="pb-7">
@@ -119,8 +122,208 @@ export default function ProductDetailSection({ product }: { product: ProductItem
           </div>
         </div>
 
-        {/* Tabla de detalles */}
-        {!isElectronicId && <div className="row pt-7">
+        {/* Tabla de detalles - Sorgo Granifero */}
+        {isSorgoGranifero && (
+          <div className="row pt-7">
+            <div className="col-12">
+              <div className="row py-4 px-3 bg-color-16 wow animate__animated animate__fadeInUp" data-wow-delay="0.7s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Aptitud de uso</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.aptitud_de_uso}</p>
+                </div>
+              </div>
+              <div className="row py-4 px-3 bg-color-17 wow animate__animated animate__fadeInUp" data-wow-delay="0.8s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Ciclo</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.ciclo}</p>
+                </div>
+              </div>
+              <div className="row py-4 px-3 bg-color-16 wow animate__animated animate__fadeInUp" data-wow-delay="0.9s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Contenido de tanino</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.contenido_de_tanino}</p>
+                </div>
+              </div>
+              <div className="row py-4 px-3 bg-color-17 wow animate__animated animate__fadeInUp" data-wow-delay="1s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Altura cm</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.altura_cm}</p>
+                </div>
+              </div>
+              <div className="row py-4 px-3 bg-color-16 wow animate__animated animate__fadeInUp" data-wow-delay="1.1s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Despeje de panoja</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.despeje_de_panoja}</p>
+                </div>
+              </div>
+              <div className="row py-4 px-3 bg-color-17 wow animate__animated animate__fadeInUp" data-wow-delay="1.2s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Calidad de MS</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.calidad_de_ms}</p>
+                </div>
+              </div>
+              <div className="row py-4 px-3 bg-color-16 wow animate__animated animate__fadeInUp" data-wow-delay="1.3s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Perfil sanitario</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.perfil_sanitario}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Tabla de detalles - Sorgo Forrajero */}
+        {isSorgoForrajero && (
+          <div className="row pt-7">
+            <div className="col-12">
+              <div className="row py-4 px-3 bg-color-16 wow animate__animated animate__fadeInUp" data-wow-delay="0.7s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Ciclo</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.ciclo}</p>
+                </div>
+              </div>
+              <div className="row py-4 px-3 bg-color-17 wow animate__animated animate__fadeInUp" data-wow-delay="0.8s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">BMR</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.bmr}</p>
+                </div>
+              </div>
+              <div className="row py-4 px-3 bg-color-16 wow animate__animated animate__fadeInUp" data-wow-delay="0.9s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Contenido de tanino</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.contenido_de_tanino}</p>
+                </div>
+              </div>
+              <div className="row py-4 px-3 bg-color-17 wow animate__animated animate__fadeInUp" data-wow-delay="1s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Aptitud de uso</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.aptitud_de_uso}</p>
+                </div>
+              </div>
+              <div className="row py-4 px-3 bg-color-16 wow animate__animated animate__fadeInUp" data-wow-delay="1.1s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Porcentaje de panoja</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.porcentaje_de_panoja}</p>
+                </div>
+              </div>
+              <div className="row py-4 px-3 bg-color-17 wow animate__animated animate__fadeInUp" data-wow-delay="1.2s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Calidad de MS</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.calidad_de_ms}</p>
+                </div>
+              </div>
+              <div className="row py-4 px-3 bg-color-16 wow animate__animated animate__fadeInUp" data-wow-delay="1.3s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Zona de adaptación</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.zona_de_adaptacion}</p>
+                </div>
+              </div>
+              <div className="row py-4 px-3 bg-color-17 wow animate__animated animate__fadeInUp" data-wow-delay="1.4s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Densidad de siembra</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.densidad_de_siembra}</p>
+                </div>
+              </div>
+              <div className="row py-4 px-3 bg-color-16 wow animate__animated animate__fadeInUp" data-wow-delay="1.5s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Perfil sanitario</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.perfil_sanitario}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Tabla de detalles - Maíz Doble Propósito */}
+        {isMaizDobleProposito && (
+          <div className="row pt-7">
+            <div className="col-12">
+              <div className="row py-4 px-3 bg-color-16 wow animate__animated animate__fadeInUp" data-wow-delay="0.7s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Tecnología</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.tecnologia}</p>
+                </div>
+              </div>
+              <div className="row py-4 px-3 bg-color-17 wow animate__animated animate__fadeInUp" data-wow-delay="0.8s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Madurez relativa</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.madurez_relativa}</p>
+                </div>
+              </div>
+              <div className="row py-4 px-3 bg-color-16 wow animate__animated animate__fadeInUp" data-wow-delay="0.9s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Ciclo</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.ciclo}</p>
+                </div>
+              </div>
+              <div className="row py-4 px-3 bg-color-17 wow animate__animated animate__fadeInUp" data-wow-delay="1s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Comportamiento a vuelco y quebrado</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.comportamiento_a_vuelco_y_quebrado}</p>
+                </div>
+              </div>
+              <div className="row py-4 px-3 bg-color-16 wow animate__animated animate__fadeInUp" data-wow-delay="1.1s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Velocidad de secado</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.velocidad_de_secado}</p>
+                </div>
+              </div>
+              <div className="row py-4 px-3 bg-color-17 wow animate__animated animate__fadeInUp" data-wow-delay="1.2s">
+                <div className="col-md-3">
+                  <h4 className="text-color-1 mb-md-0">Textura de grano</h4>
+                </div>
+                <div className="col-md-9">
+                  <p className="mb-0">{product.textura_de_grano}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Tabla de detalles - default */}
+        {!isElectronicId && !isSorgoGranifero && !isMaizDobleProposito && !isSorgoForrajero && <div className="row pt-7">
           <div className="col-12">
             {/* Presentación */}
             <div

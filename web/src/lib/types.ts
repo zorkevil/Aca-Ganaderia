@@ -84,6 +84,23 @@ export type ProductItem = {
   price: number;
   sales: number;
   date: string; // formato ISO: "2025-10-31"
+  // Campos específicos de semillas
+  aptitud_de_uso?: string;
+  ciclo?: string;
+  contenido_de_tanino?: string;
+  altura_cm?: string;
+  despeje_de_panoja?: string;
+  calidad_de_ms?: string;
+  perfil_sanitario?: string;
+  bmr?: string;
+  porcentaje_de_panoja?: string;
+  zona_de_adaptacion?: string;
+  densidad_de_siembra?: string;
+  tecnologia?: string;
+  madurez_relativa?: string;
+  comportamiento_a_vuelco_y_quebrado?: string;
+  velocidad_de_secado?: string;
+  textura_de_grano?: string;
 };
 
 export type CarouselItem = {
