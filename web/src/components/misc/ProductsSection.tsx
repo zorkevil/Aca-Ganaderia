@@ -31,6 +31,24 @@ export default function ProductsSection({
   const [page, setPage] = useState(1);
   const perPage = 6;
 
+  // ---- Subcategorías compatibles con las categorías seleccionadas
+  const compatibleSubcats = useMemo(() => {
+    if (selectedCats.length === 0) return null; // null = todas habilitadas
+    const names = new Set<string>();
+    products.forEach((p) => {
+      if (selectedCats.includes(p.category) && p.subcategory) {
+        names.add(p.subcategory);
+      }
+    });
+    return names;
+  }, [products, selectedCats]);
+
+  // Auto-deseleccionar subcategorías que quedaron incompatibles
+  useEffect(() => {
+    if (!compatibleSubcats) return;
+    setSelectedSubcats((prev) => prev.filter((s) => compatibleSubcats.has(s)));
+  }, [compatibleSubcats]);
+
   // ---- Filtrado
   const filteredProducts = useMemo(() => {
     let result = products;
@@ -178,9 +196,18 @@ export default function ProductsSection({
                 <ul className="list-unstyled mt-2">
                   {subcategories.map((sub) => {
                     const isSelected = selectedSubcats.includes(sub.name);
+                    const isCompatible = !compatibleSubcats || compatibleSubcats.has(sub.name);
 
                     return (
-                      <li key={sub.id} className="mb-3">
+                      <li
+                        key={sub.id}
+                        className="mb-3"
+                        style={{
+                          opacity: isCompatible ? 1 : 0.25,
+                          pointerEvents: isCompatible ? 'auto' : 'none',
+                          transition: 'opacity 0.35s ease',
+                        }}
+                      >
                         {isSelected ? (
                           <span className="badge bg-color-3 text-white d-inline-flex align-items-center gap-2">
                             {sub.name}
